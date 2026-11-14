@@ -1,0 +1,32 @@
+%%%%%解析几何模版%%%%%
+\chapter*{解析几何每日一题}
+
+\refer{《高等数学》同济版}
+
+\exercise{设已知两点$M_1\qty(4,\sqrt{2},1)$和$M_2\qty(3,0,2)$}
+
+\teacher{林经翔}
+
+\postdate{2023年4月14日}
+
+\bigresult{
+$\vv{M_1M_2}$的模：$2$；方向余弦：$-\frac{1}{2},\ -\frac{\sqrt{2}}{2},\ \frac{1}{2}$；方向角：$\frac{2\pi}{3},\ \frac{3\pi}{4},\ \frac{\pi}{3}$
+}
+
+\point{
+  向量的模；方向角和方向余弦
+
+  1.点$M_1$和点$M_2$之间的距离$\abs{M_1M_2}$，就是向量$\vv{M_1M_2}$的模.
+
+  2.向量$\vv{M_1M_2}$与三条坐标轴的夹角$\alpha,\ \beta,\ \gamma$称为向量的方向角，$\cos{\alpha},\ \cos{\beta},\ \cos{\gamma}$称为向量$\vv{M_1M_2}$的方向余弦.
+}
+
+\solution{
+  由题意$\vv{M_1M_2}=\qty(-1,-\sqrt{2},1)$，$\vv{M_1M_2}$的模$\abs{\vv{M_1M_2}}=\sqrt{\qty(-1)^2+\qty(-\sqrt{2})^2+1^2}=2$.
+
+  方向余弦$\qty(cos{\alpha},\ \cos{\beta},\ \cos{\gamma})=\frac{\vv{M_1M_1}}{\abs{\vv{M_1M_2}}}=\qty(-\frac{1}{2},\ -\frac{\sqrt{2}}{2},\ \frac{1}{2})$
+  
+  即$\cos{\alpha}=-\frac{1}{2},\ \cos{\beta}=-\frac{\sqrt{2}}{2},\ \cos{\gamma}=\frac{1}{2}$，方向模$\alpha=\frac{2\pi}{3},\ \beta=\frac{3\pi}{4},\ \gamma=\frac{\pi}{3}$
+}
+
+\point{求一个向量的方向余弦，实际上就是将这个向量进行“单位化”的过程，即方向余弦对应的就是这个向量的单位方向向量的各个分量；求方向角，就是对方向余弦通过反余弦两数求值的过程.}

@@ -1,0 +1,263 @@
+\documentclass[fontset = fandol]{ctexart}
+
+\input{../preamble.tex}
+
+\renewcommand*\det[1]{|\mathbf{#1}|}
+\newcommand*\mat[1]{\mathbf{#1}}
+\newcommand*\inv[1]{#1^{-1}}
+\newcommand*\trans[1]{#1^{\mkern-1.5mu\mathsf{T}}}
+\newcolumntype{C}{@{}>{{}}c<{{}}@{}}
+
+% \setCJKmainfont{LXGW WenKai}[AutoFakeSlant]
+% \setCJKsansfont{LXGW Marker Gothic}[AutoFakeBold, AutoFakeSlant, Scale = .95]
+% \setCJKmonofont{LXGW WenKai Mono}[AutoFakeBold, AutoFakeSlant]
+\ctexset{section/format+ = \raggedright}
+\usepackage{newtxmath}
+% \usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+% \setmathfont[AutoFakeBold]{STIX Two Math}
+
+\makeatletter \def \@result #1{\underline{ \quad }} \makeatother
+\DeclareMathOperator{\DFT}{DFT}
+
+\title{\sffamily\bfseries 24Fall \textsc{Hdu} 「线性代数」补考试题}
+\author{} \date{}
+
+\begin{document}
+
+\maketitle
+
+\section{填空题（每题 3 分，共 15 分）}
+
+\begin{problem}
+  设 $\mat A =
+  \begin{pmatrix}
+    1 & 2 & 3\\
+    2 & 4 & 6\\
+    3 & 6 & 9
+  \end{pmatrix}$，则 $|\mat A^*| =$ \result{$0$}.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}
+  已知 $3$ 阶方阵 $\mat A$ 的特征值为 $1$, $2$, $3$，
+  则 $|\mat A^3 - 5\mat A^2 + 7\mat A| =$ \result{$18$}.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  实二次型 $f(x_1,x_2,x_3) = x_1^2 + x_3^2 + 2x_1x_2 - 2x_2x_3$ 的秩为
+  \result{$3$}.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  已知 $\rank(\mat A_{4 \times 3}) = 3$，
+  $\mat B =
+  \begin{pmatrix}
+    2 & -1 & 3\\
+    0 &  3 & 1\\
+    0 &  0 & 0
+  \end{pmatrix}$，则 $\rank(AB) =$ \result{$2$}.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  向量 $\bm\alpha = \trans{(1,2,3)}$
+  与向量 $\bm\beta = \trans{(3,\lambda,1)}$ 正交，则 $\lambda =$ \result{$-3$}.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\section{选择题（每题 3 分，共 15 分）}
+
+\begin{problem}
+  设 $\mat A$ 为 $m$ 行 $n$ 列矩阵，$\mat B$ 为 $n$ 行 $m$ 列矩阵，则
+  \begin{tasks}(2)
+    \task 当 $m > n$ 时，必有 $|\mat{AB}| \neq 0$
+    \task 当 $m > n$ 时，必有 $|\mat{AB}| = 0$
+    \task 当 $m < n$ 时，必有 $|\mat{AB}| \neq 0$
+    \task 当 $m < n$ 时，必有 $|\mat{AB}| = 0$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  设 $\mat A$, $\mat B$ 都是 $n$ 阶对称矩阵，则下列结论 \emph{不正确} 的是
+  \begin{tasks}(2)
+    \task $\mat{AB}$ 也是对称矩阵
+    \task $\mat A + \mat B$ 也是对称矩阵
+    \task $\mat A^m + \mat B^m$（$m$ 为正整数）也是对称矩阵
+    \task $\mat B \trans{\mat A} + \mat A \trans{\mat B}$ 也是对称矩阵.
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  二次型 $f(x_1,x_2,x_3) = x_1^2 + x_3^2 - 2x_1x_2 + 2x_1x_3 + 2x_2x_3$
+  的正惯性指数为
+  \begin{tasks}(4)
+    \task $0$
+    \task $1$
+    \task $2$
+    \task $3$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  $n$ 阶方阵 $\mat A$ 可逆的\emph{充分必要}条件是
+  \begin{tasks}(2)
+    \task $\mat A\bm x = 0$ 有非零解
+    \task $\mat A$ 中任意两个行向量都不成比例
+    \task $\mat A$ 的每个行向量都是非零向量
+    \task 对任何 $n$ 维非零向量 $\bm\alpha$，均有 $\mat A\bm\alpha \neq 0$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  已知 $\eta_1$, $\eta_2$ 是非齐次线性方程组 $\mat A\bm x = \bm b$ 的两个不同的解，
+  $\xi_1$, $\xi_2$ 是其导出组 $\mat A\bm x = 0$ 的一个基础解系，
+  $k_1$, $k_2 \in \mathbb R$，则 $\mat A\bm x = \bm b$ 的通解为
+  \begin{tasks}(2)
+    \task $k_1\xi_1 + k_2(\xi_1 + \xi_2) + (\eta_2 - \eta_1)/2$
+    \task $k_1\xi_1 + k_2(\xi_2 - \xi_1) + (\eta_2 + \eta_1)/2$
+    \task $k_1\xi_1 + k_2(\eta_1 + \eta_2) + (\eta_2 - \eta_1)/2$
+    \task $k_1\xi_1 + k_2(\eta_2 - \eta_1) + (\eta_2 + \eta_1)/2$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\section{计算题（共 70 分）}
+
+\begin{problem}
+  已知向量组 $\bm\alpha_1 = \trans{(1,-1,1)}$, $\bm\alpha_2 = \trans{(1,-2,2)}$,
+  $\bm\alpha_3 = \trans{(1,\lambda,5)}$ 为 $\mathbb R^3$ 空间中的一组基，
+  求 $\lambda$.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  判断实二次型 $f(x_1,x_2,x_3) =
+  \begin{pmatrix}
+    x_1 & x_2 & x_3
+  \end{pmatrix}
+  \begin{pmatrix}
+    3 & 1 & 0\\
+    3 & 3 & 0\\
+    0 & 0 & 1
+  \end{pmatrix}
+  \begin{pmatrix*}
+    x_1\\ x_2\\ x_3
+  \end{pmatrix*}$ 的正定性.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  设向量组 $\bm\alpha_1 = \trans{(1,1,2,-2)}$,
+  $\bm\alpha_2 = \trans{(1,3,-\lambda,-2\lambda)}$,
+  $\bm\alpha_3 = \trans{(1,-1,6,0)}$ 的秩为 $2$，求 $\lambda$ 的值.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  已知 $\mathbb R^3$ 的两组基分别为 $\bm\alpha_1 = \trans{(1,1,0)}$,
+  $\bm\alpha_2 = \trans{(0,1,1)}$, $\bm\alpha_3 = \trans{(0,0,1)}$ 及
+  $\bm\beta_1 = \trans{(1,-1,2)}$, $\bm\beta_2 = \trans{(1,1,-1)}$,
+  $\bm\beta_3 = \trans{(-2,1,3)}$. 试求由基 $\bm\alpha_1$, $\bm\alpha_2$,
+  $\bm\alpha_3$ 到基 $\bm\beta_1$, $\bm\beta_2$, $\bm\beta_3$ 的过渡矩阵 $\mat P$.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  设 $\bm\xi_1 = \trans{(1,1,1)}$, $\bm\xi_2 = \trans{(1,1,0)}$,
+  $\bm\xi_3 = \trans{(1,-2,1)}$ 为 $3$ 阶方阵 $\mat A$ 的分别属于特征值
+  $\lambda_1 = 0$, $\lambda_2 = 1$, $\lambda_3 = 3$ 的特征向量，试求方阵 $\mat A$.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  求向量组 $\bm\alpha_1 = \trans{(1,-1,0)}$, $\bm\alpha_2 = \trans{(2,1,3)}$, $\bm\alpha_3 = \trans{(3,1,0)}$, $\bm\alpha_4 = \trans{(5,0,7)}$ 的一个最大线性无关组，并将其余向量用该最大线性无关组线性表示.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  设向量组 $\bm\alpha_1 = \trans{(\lambda,2,10)}$,
+  $\bm\alpha_2 = \trans{(-2,1,5)}$, $\bm\alpha_3 = \trans{(-1,1,4)}$,
+  $\bm\beta = \trans{(1,1,2025)}$，问 $\lambda$ 为何值时，$\bm\beta$ 能由向量组
+  $\bm\alpha_1$, $\bm\alpha_2$, $\bm\alpha_3$ 唯一线性表示？
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  设矩阵 $\mat A =
+  \begin{pmatrix}
+    0 & 0 & 1\\
+    x & 1 & y\\
+    1 & 0 & 0
+  \end{pmatrix}$
+  有三个线性无关的特征向量，求 $x$, $y$ 应满足的条件.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  求一个正交变换 $\mat X = \mat{QY}$，把实二次型
+  $f(x_1,x_2,x_3) = x_1^2 + 2x_2^2 + 3x_3^2 - 4x_1x_2 - 4x_2x_3$ 化为标准型.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  设 $\mat B$ 是一个三阶非零矩阵，它的每一列都是齐次线性方程组
+  \[
+    \begin{cases}
+      \begin{array}{@{}rCrCrCr@{}}
+        x_1  & + & 2x_2 & - & 2x_3    & = & 0\\
+        2x_1 & - & x_2  & + & \lambda & = & 0\\
+        3x_1 & + & x_2  & - & x_3     & = & 0
+      \end{array}
+    \end{cases}
+  \]
+  的解，求 $\lambda$ 的值和 $|\mat B|$.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\end{document}

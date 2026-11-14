@@ -1,0 +1,463 @@
+\documentclass[quiet, fontset = fandol, AutoFakeSlant, 10pt]{ctexart}
+
+\input{preamble.tex}
+\RequirePackage{paracol, xeCJKfntef, twemojis, extarrows}
+\columnratio{.68}
+\usetikzlibrary{shapes.geometric}
+
+\setCJKmainfont{LXGW WenKai}[AutoFakeSlant]
+\setCJKsansfont{LXGW Marker Gothic}[AutoFakeBold, AutoFakeSlant, Scale = .95]
+\setCJKmonofont{LXGW WenKai Mono}[AutoFakeBold, AutoFakeSlant]
+\ctexset{section/format+ = \raggedright}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\usepackage{comment}
+\excludecomment{solution}
+\let\endsolution\relax
+
+\makeatletter \def \@result #1{\underline{ \quad }} \makeatother
+\let \emph \textbf
+
+\title{\sffamily\bfseries 未央 2025「大学物理 1」期末模拟}
+\author{} \date{}
+
+\begin{document}
+
+\maketitle
+
+% \input{cha/DXWL/DW1/chapterhead.tex}
+
+\section{选择题}
+
+\begin{problem}
+    在某届世界杯足球比赛中，国足球员左孟\emph{以相对于地面$\qty8{\m/\s}$的速度向北朝球门奔跑}，他的队友给他传球. \emph{球相对地面的速度为北偏东$\qty{30}\degree$、$\qty{12}{\m/\s}$}，假设在地面建立直角坐标系，由南向北为$y$正方向，由西向东为$x$正方向（$x$、$y$方向单位矢用$\vec i$、$\vec j$表示），问\emph{足球相对于左孟的速度为}
+    \begin{tasks}(4)
+        \task $6\vec i+(6\sqrt3+8)\vec j$
+        \task[\true] $6\vec i+(6\sqrt3-8)\vec j$
+        \task $14\vec i+6\sqrt3\vec j$
+        \task $2\vec i+6\sqrt3\vec j$
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    足球相对于左孟的速度为$\vec v_\text{球人}=\vec v_\text{球}-\vec v_\text{人}=(6\vec i+6\sqrt3\vec j)-8\vec j=6\vec i+(6\sqrt3-8)\vec j$.
+\end{solution}
+
+\begin{problem}
+    2024年6月2日，中国的月球探测器嫦娥六号成功降落在月球表面，并进行挖土采样工作. 再遥远的月球进行挖土工作，需要用到高度自由度的机械臂. 机器人完成精细动作的基础是精确地测量各种物理量以及算法工程师基于物理定律正确地处理相关数据. 假设\emph{机械臂探测到相对基坐标系$\vec r=2\vec i+3\vec j+4\vec k$处有阻力$\vec F=3\vec i+2\vec j$，则阻力矩为多少？}
+    \begin{tasks}(2)
+        \task $\vec M=-12\vec i-8\vec j$
+        \task[\true] $\vec M=-8\vec i+12\vec j-5\vec k$
+        \task $\vec M=-8\vec i-5\vec k$
+        \task $\vec M=-8\vec i+5\vec k$
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    $\vec M=\vec r\times\vec F=-8\vec i+12\vec j-5\vec k$.
+\end{solution}
+
+\begin{paracol}{2}
+\begin{problem}
+    一``无限大''均匀带电平面$A$，其附近放一与它平行的有一定厚度的``无限大''平面导体板$B$，如图所示. 已知$A$上的电荷面密度为$+\sigma$，则在导体板$B$的两个表面1和2上的感应电荷面密度为
+    \begin{tasks}(2)
+        \task $\sigma_1=-\sigma$，$\sigma_2=+\sigma$
+        \task[\true] $\sigma_1=-\sigma/2$，$\sigma_2=+\sigma/2$
+        \task $\sigma_1=+\sigma/2$，$\sigma_2=-\sigma/2$
+        \task $\sigma_1=-\sigma$，$\sigma_2=0$
+    \end{tasks}
+\end{problem}
+\switchcolumn\vspace*{\fill}
+\centering
+\begin{tikzpicture}
+    \draw [dashed] (0,1.2) node [above] {$+\sigma$} -- (0,-1.2) node [right] {$A$};
+    \draw (0,.9) -- (0,-.9);
+    \draw [dashed] (1,1.2) node [above] {$\sigma_1$} -- (1,-1.2) node at (1.5,-1.2) {$B$};
+    \draw (1,.9) -- (1,-.9);
+    \draw [dashed] (2,1.2) node [above] {$\sigma_2$} -- (2,-1.2);
+    \draw (2,.9) -- (2,-.9);
+    \fill [pattern = north west lines] (1,-.9) rectangle (2,.9);
+\end{tikzpicture}\vspace*{\fill}
+\end{paracol}
+\begin{solution}
+    由于导体板$B$呈现电中性，所以有$\sigma_1=-\sigma_2=\sigma_B$. 从左至右三个表面在导体板$B$中产生的场强分别为$\sigma/2\epsilon_0\vec i$，$\sigma_1/2\epsilon_0\vec i$，$-\sigma_2/2\epsilon_0\vec i$. 由于导体内部场强为零
+    \[\frac\sigma{2\epsilon_0}\vec i+\frac{\sigma_1}{2\epsilon_0}\vec i-\frac{\sigma_2}{2\epsilon_0}\vec i=0\]
+    得$\sigma_B=\sigma/2$，即$\sigma_1=-\sigma/2$，$\sigma_2=+\sigma/2$.
+\end{solution}
+
+\begin{problem}
+    一座塔高$\qty{24}\m$，一质量为$\qty{76}\kg$的人从塔底走到塔顶，已知地球的质量为$\qty{6e24}\kg$，从日心参考系观察，地球移动的距离为
+    \begin{tasks}(4)
+        \task $\qty{12}\m$
+        \task $\qty{24}\m$
+        \task $\qty{4e-24}\m$
+        \task[\true] $\qty{3e-22}\m$
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    设地球运动的距离为$x$，由于人和地球系统动量守恒，质心位置不变，所以有
+    \[m(l-x)-Mx=0\]
+    其中$l+x$为人相对日心参考系的位移. 解得$x=ml/(M+m)=\qty{3e-22}\m$.
+\end{solution}
+
+\begin{paracol}{2}
+\begin{problem}
+    如图，两根直导线$ab$和$cd$沿半径方向被接到一个\CJKunderwave{截面处处相等的匀质铁环}上，稳恒电流$I$从$a$端流入而从$d$端流出，则磁感强度$\vec B$沿图中右侧的闭合路径$L$的积分$\oint_L\vec B\cdot\d\vec l$：
+    \begin{tasks}(4)
+        \task $0$
+        \task $\mu_0I/3$
+        \task $\mu_0I/2$
+        \task $2\mu_0I/3$
+    \end{tasks}
+    \switchcolumn\vspace*{\fill}
+    \centering
+    \begin{tikzpicture}
+        \draw (0,0) circle (.9);
+        \draw (0,0) circle (1);
+        \draw [dashed] (.45,{.45*sqrt(3)}) -- (0,0) -- (.45,{-.45*sqrt(3)});
+        \draw [->] (.75,{.75*sqrt(3)}) -- (.5,{.5*sqrt(3)});
+        \draw [-<] (.75,{-.75*sqrt(3)}) -- (.5,{-.5*sqrt(3)});
+        \draw (.75,{.75*sqrt(3)}) node [above left] {$a$} -- (.45,{.45*sqrt(3)}) node [above left] {$b$};
+        \draw (.75,{-.75*sqrt(3)}) node [right] {$c$} -- (.45,{-.45*sqrt(3)}) node [right] {$d$};
+    \end{tikzpicture}\vspace*{\fill}
+\end{problem}
+\end{paracol}
+\begin{solution}
+    $bc$右侧和左侧电阻之比为$1:2$，通过的电流之比为$2:1$，即右侧电流大小为$2I/3$. 由安培环路定理得环路积分得沿右侧闭合路径$L$的环路积分结果为$2\mu_0I/3$.
+\end{solution}
+
+\begin{paracol}{2}
+\begin{problem}
+    \switchcolumn*[
+    某一电路元器件，将其简化为理想模型后，其电场空间分布如图所示，其中$r$可以是关于空间某一点的距离，也可以是关于某一条轴的距离，则该元器件的简化模型为]\switchcolumn
+    \begin{tasks}(2)
+        \task 均匀带电的薄球壳
+        \task 均匀带电的球体
+        \task![\true] 带等量异种电荷并且半径分别为$R_1$和$R_2$的两个均匀带电的无限长同轴圆柱面
+        \task! 带等量异种电荷并且半径分别为$R_1$和$R_2$的两个均匀带电的无限长同轴球壳
+    \end{tasks}
+    \switchcolumn\vspace*{\fill}\centering
+    \begin{tikzpicture}[scale=1.2]
+        \draw [<->] (0,2) node [left] {$E$} -- (0,0) -- (1.8,0) node [below] {$r$};
+        \draw[very thick,teal,variable=\x,domain=.5:1.5,smooth,line cap=round] plot ({\x},{.75/\x}) node [above right] at (1,.75) {$E\propto1/r$};
+        \draw [dashed] (.5,1.5) -- (.5,0) node [below] {$R_1$} node [above left] {$\scriptscriptstyle E=0$};
+        \draw [dashed] (1.5,.5) -- (1.5,0) node [below] {$R_2$};
+    \end{tikzpicture}\vspace*{\fill}
+\end{problem}
+\end{paracol}
+\begin{solution}
+    $r<R_1$区间内$E=0$，$R_1\leq r\leq R_2$区间内$E\propto1/r$，所以该元器件为圆柱面；由于$r>R_2$时$E=0$，根据Gaussian's定理，其为带等量异种电荷的无限长同轴圆柱面.
+\end{solution}
+
+\begin{problem}
+    关于静电场中某点电势值的正负，下列说法中正确的是
+    \begin{tasks}
+        \task 电势值的正负取决于置于该点的试验电荷的正负
+        \task 电势值的正负取决于电场力对试验电荷做功的正负
+        \task[\true] 电势值的正负取决于电势零点的选取
+        \task 电势值的正负取决于产生电场的电荷的正负
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    电势的正负与试验电荷无关；正电荷形成的电场中也可能有负电势，负电荷形成的电场中也有正电势. 所以C选项正确.
+\end{solution}
+
+\begin{paracol}{2}
+\begin{problem}
+    在真空中，通以电流$I$的无限长载流导线在一平面内弯成如图形状，则圆心$O$点的磁感应强度$\vec B$的值为
+    \begin{tasks}(14)
+        \task*(3) $\mu_0I/2\pi a$
+        \task*(3) $\mu_0I/4\pi a$
+        \task*(3)[\true] $\mu_0I/4a$
+        \task* $\mu_0I/4a+\mu_0I/2\pi a$
+    \end{tasks}
+    \switchcolumn\vspace*{\fill}
+    \centering
+    \begin{tikzpicture}
+        \draw [->] (-1.6,0) -- (-1,0) node [midway, above] {$I$};
+        \draw [->] (-1.6,0) -- (-1,0) arc (180:0:1) -- (1.6,0);
+        \draw [->] (0,0) node [below] {$O$} -- ({sqrt(2)/2},{sqrt(2)/2}) node [midway, right] {$a$};
+    \end{tikzpicture}
+    \vspace*{\fill}
+\end{problem}
+\end{paracol}
+\begin{solution}
+    由毕奥--萨伐尔定律，两侧的半无限长通电导线在$O$点产生的磁感应强度大小为零，中间半圆在$O$点产生的磁感应强度大小为$B=\int_0^\pi\mu_0I\d\theta/4\pi a=\mu_0I/4 a$.
+\end{solution}
+
+\begin{problem}
+    带有电荷量为$\qty{7.8}\uC$的粒子以速度$\vec v=\num{-3.8e3}\vec j$运动，测量到离子受到的磁场力为$\vec F=\num{7.6e-3}\vec i-\num{5.2e-3}\vec k$，其中$x$、$y$、$z$方向单位矢用$\vec i$、$\vec j$、$\vec k$表示，且力与速度单位为国际单位制，则磁场为
+    \begin{tasks}(2)
+        \task $\vec B=-0.175\vec i-0.256\vec k$
+        \task $B=\num{-1.36e-6}\vec i-\num{2e-6}\vec k$
+        \task 无法确定磁场的$z$方向分量
+        \task[\true] 无法确定磁场的$y$方向分量
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    由$\vec j\times\vec j=0$可知$\vec B$的$y$分量对$\vec F$无贡献，所以无法确定磁场的$y$方向分量.
+\end{solution}
+
+\begin{problem}
+    一只重$\qty{10.0}\g$的昆虫趴在细棒的一端，细棒初始时静止在光滑的水平桌面上，细棒的另一端以钉在桌面上的钉子为轴，可以近似无摩擦地自由转动，细棒重$\qty{50.0}\g$，长$\qty{100}\cm$，昆虫沿着水平桌面以$\qty{20}{\cm/\s}$的速率垂直细棒跳离，则昆虫刚刚跳离时，细棒获得的角速度为多少$\unit{\radian/\s}$？
+    \begin{tasks}(4)
+        \task[\true] $0.120$
+        \task $1.2$
+        \task $4$
+        \task $0.4$
+    \end{tasks}
+\end{problem}
+\begin{solution}
+    由于昆虫与细棒构成的系统对钉轴角动量守恒，即$mv_0l-\omega Ml^2/3=0$，解得细棒的角速度为$\omega=3mv_0/Ml^2=\qty{0.12}{\radian/\s}$.
+\end{solution}
+
+\begin{problem}
+    在均匀磁场$\vec B$中，取一半径为$R$的圆，圆面的法线$\vec n$与$\vec B$成$\qty{60}\degree$角，则通过以该园周为边线的\emph{任意曲面$S$的磁通量}为
+    \begin{tasks}(4)
+        \task[\true] $-\frac12B\pi R^2$
+        \task $0$
+        \task $B\pi R^2$
+        \task $-2B\pi R^2$
+    \end{tasks}
+    % \switchcolumn\vspace*{\fill}
+    % \centering
+    % \begin{tikzpicture}
+    %     % 
+    % \end{tikzpicture}
+    % \vspace*{\fill}
+\end{problem}
+\begin{solution}
+    
+\end{solution}
+
+\begin{paracol}{2}
+\begin{problem}
+    圆柱形空间内，磁感应强度$B$正以$\odv B/t=C<0$的变化率变化，金属导线$abc$如图所示放置，则$a$，$b$，$c$三点电势之间的关系是
+    \begin{tasks}(2)
+        \task $U_a=U_b=U_c$
+        \task $U_a<U_b<U_c$
+        \task[\true] $U_a>U_b>U_c$
+        \task $U_a>U_b=U_c$
+    \end{tasks}
+    \switchcolumn\vspace*{\fill}
+    \centering
+    \begin{tikzpicture}
+        \draw (0,0) circle (1);
+        \draw [very thick, line cap = rect] ({-.5*sqrt(3)},-.5) node [below left] {$a$} --++ (2.4,0) node [below] {$c$};
+        \node [below] at ({.5*sqrt(3)},-.5) {$b$};
+        \draw [->] (0,0) -- ({-cos(15)},{sin(15)}) node [midway, above] {$R$};
+        \node (B) at (.25,.25) {$\otimes$} node [above right] at (B) {$\bm B$};
+    \end{tikzpicture}
+    \vspace*{\fill}
+\end{problem}
+\end{paracol}
+\begin{solution}
+    
+\end{solution}
+
+\section{填空题（共18分）}
+
+\begin{problem}[本题3分]
+    阿强驾驶的星际飞船在\emph{地球上}休息，\emph{一颗弹珠沿水平桌面发射出去后落在距桌角距离为$D$处，并留下了痕迹}. 多年后，飞船降落在未知星球X上，阿强望着当年留下的坑，决定以相同的速率在相同桌面上将同一小球沿水平发射出去，发现落在距桌角$2.76D$处，问X星的重力加速度是\result{$0.131g\approx\qty{1.286}{\m/\s^2}$}.
+\end{problem}
+\begin{solution}
+    由$D=v_0\sqrt{2h/g}$，$2.76D=v_0\sqrt{2h/g'}$得X星的重力加速度$g'=g/2.76^2\approx\qty{1.286}{\m/\s^2}$.
+\end{solution}
+
+\begin{problem}[本题3分]
+    在今日中国和柬埔寨举行的``金龙-2024''联合演习中，中国解放军对外展示了装在冲锋枪的战斗机器狗，众所周知，冲锋枪在发射时，会产生强大的后坐力，因此对机器狗的稳定性要求非常高，从演习视频中可以看到，机器狗在实战中表现优越. 已知国产CQ-A自动步枪弹头初速$\qty{900}{\m/\s}$，战斗射速$\qty{15}{\text{发}/\s}$，弹头质量为$\qty{12.5}\g$，忽略火药质量，则在连射作战时，步枪后坐力大小为$F=$\result{$\qty{168.75}\N$}.
+\end{problem}
+\begin{solution}
+    短时间$\Delta t$内由动量定理$F\Delta t=mv_0\Delta N=mv_0n\Delta t$得后坐力大小$F=mv_0n=\qty{168.75}\N$.
+\end{solution}
+
+\begin{problem}[本题3分]
+    两个点电荷$+q$和$-3q$，相距为$d$. 在它们的连线上电场强度$\vec E=0$的点与电荷为$+q$的点电荷相距为\result{$\sqrt3d/2+d$}.
+\end{problem}
+\begin{solution}
+    设电场强度为零的点与点电荷$+q$的距离为$x$，由$q/x^2-3q/(x+d)^2=0$得$x=\sqrt3d/2+d$.
+\end{solution}
+
+\begin{paracol}{2}
+\begin{problem}[本题3分]
+    很多生物都具有感知地磁场的能力，并且利用地磁场导航，比如鲨鱼. 鲨鱼头部有一种叫做洛伦兹壶腹的组织，可以感知$\qty5\nV$的电压. 有人提出过简单的电磁感应模型来解释鲨鱼感知磁场的能力，如图所示，鲨鱼自西向东运动，磁场方向如图（垂直纸面向里），假设鲨鱼头部尺寸为$\qty{0.5}\m$，在地磁场中做切割磁力线运动，已知地球磁场为$\qty{5e-4}\T$，鲨鱼最低可以感知$\qty{5}\nV$电势，则鲨鱼以多大的速度运动即可感知到地磁场？\result{$\qty{2e-5}{\m/\s}$}.
+    \switchcolumn\vspace*{\fill}
+    \centering
+    \begin{tikzpicture}
+        \node [xscale = -1] at (0,0) {\twemoji[height = 20ex]{1f988}};
+        \draw [DarkSeaGreen] (4ex,5ex) rectangle + (8ex,-8ex);
+        \draw [ultra thick, DarkSeaGreen] (4ex,5ex) -- (4ex,-3ex);
+    \end{tikzpicture}
+    \vspace*{\fill}
+\end{problem}
+\end{paracol}
+\begin{solution}
+    由动生电动势$\mathscr E_{\min}=Blv_{\min}$得感知地磁场的最低速度大小$v_{\min}=\mathscr E/Bl=\qty{2e-5}{\m/\s}$.
+\end{solution}
+
+\begin{problem}[本题3分]
+    反映电磁场基本性质和规律的积分形式的Maxwell方程组为
+    \begin{tasks}[label = (\arabic*)](2)
+        \task $\oint_S\vec E\cdot\d\vec S=\frac1{\epsilon_0}\oint_V\rho\d V$
+        \task $\oint_L\vec E\cdot\d\vec r=-\int_S\pdv{\vec B}t\cdot\d\vec S$
+        \task $\oint_S\vec B\cdot\d\vec S=0$
+        \task $\oint_L\vec B\cdot\d\vec r=\mu_0\int_S\ab(\vec j+\epsilon_0\pdv{\vec E}t)\cdot\d\vec S$
+    \end{tasks}
+    试判断下列结论是包含于或等效于哪一个Maxwell方程式的. 将你确定的方程式用代号填在相应结论后的空白处：
+    \begin{tasks}[label = \arabic*.](2)
+        \task 变化的磁场一定伴随有电场\result{(2)}.
+        \task 磁感线是无头无尾的\result{(3)}.
+        \task 电荷总伴随有电场\result{(1)}.
+    \end{tasks}
+\end{problem}
+
+\begin{problem}[本题3分]
+    电磁弹射技术作为一种先进的飞机起飞辅助系统，已经开始替代传统的蒸汽弹射器，尤其是在最新一代的航空母舰上. 在中国，这项技术被运用于最新服役的福建舰航空母舰上. ``电磁弹射器''的技术要求非常之高，需要在短短的几秒钟内，把几十吨重的飞机加速到几百公里的时速，需要的能量非常之大. 目前电磁弹射系统有两种储能方式，一种是超级电容储能，一种是传统的飞轮储能技术. 假设\emph{飞轮是绕轴转动的匀质圆盘，半径为$\qty{0.5}\m$，当飞轮转速从$\qty{10000}{r/\min}$下降到$\qty{5000}{r/\min}$时，单个飞轮能释放$\qty{100e6}\J$的能量（不考虑能量传输效率）}，则单个飞轮重为\result{$\qty{1945.37}\kg$}.
+\end{problem}
+\begin{solution}
+    飞轮释放能量$\Delta E_k=\frac12\cdot\frac12MR^2(\omega_1^2-\omega_2^2)$，由此得$M=4\Delta E_k/[(\omega_1^2-\omega_2^2)R^2]=\qty{1945.37}\kg$.
+\end{solution}
+
+\section{计算题（共46分）}
+
+\begin{paracol}{2}
+\begin{problem}[本题10分]
+    一质量均匀分布的圆盘，质量为$M$，半径为$R$，放在粗糙水平面上，与水平面之间的摩擦系数为$\mu$，圆盘可绕通过其中心$O$的竖直固定光滑轴转动. 开始时圆盘静止，一质量为$m$的子弹以水平速度$v_0$垂直于圆盘半径打入圆盘边缘并嵌在盘边上，忽略子弹重力造成的摩擦力矩.
+    \switchcolumn
+    \centering
+    \begin{tikzpicture}
+        \node (db-slice1) [scale = .8, cylinder, shape border rotate=90, draw, cylinder, cylinder uses custom fill, cylinder body fill = DarkGreen!80, fill opacity = .75,
+                    minimum height=.3cm, minimum width=5cm] {};
+    \end{tikzpicture}
+    \switchcolumn*[\vspace*{-1.5ex}
+        \begin{enumerate}
+            \item 求子弹击中圆盘后，盘所获得的角速度.
+            \item 求经过多少时间后，圆盘停止转动.
+        \end{enumerate}\vspace*{-2.5ex}
+    ]
+\end{problem}
+\end{paracol}
+\begin{solution}\leavevmode
+    \begin{enumerate}
+        \item 由子弹嵌入盘瞬间二者对轴的角动量守恒$mv_0R=\ab(MR^2/2+mR^2)\omega$得盘所获得的角速度$\omega=2mv_0/(MR+2mR)$.
+        \item 圆盘所受摩擦力矩为
+        \[M=\iint_D\mu\rho\d\sigma gr=\iint_D\mu\rho gr\cdot r\d r\d\theta=\mu\rho g\int_0^{2\pi}\d\theta\int_0^R r^2\d r\xlongequal{\rho=m/\pi R^2}\frac23\mu MgR\tag*{}\]
+        由角动量定理$M\Delta t=\Delta L$得$\Delta t=mv_0R/M=3mv_0/2\mu Mg$.
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}[本题6分]
+    小力为了探究摩擦起电的带电量，设计了这样的实验：他用锡纸包裹着半径为$\qty{2e-2}\m$的乒乓球，再经过打磨形成比较理想的球面；然后他利用干毛巾抹擦玻璃棒（绝缘体）起电，并将玻璃棒上电量全部转移到锡纸球上. 40次摩擦起电后，小力将一\emph{接地导体}靠近到距离锡纸球面$\qty{0.5e-2}\m$时，发生空气击穿放电. 已知空气击穿电场强度为$\qty{3e6}{\V/\m}$，问小力每次摩擦玻璃棒能获得大约多少电量？\emph{（忽略导体靠近锡纸球时对锡纸球电量分布的影响）}
+\end{problem}
+\begin{solution}
+    设锡纸球带电量$Q$，接地导体产生感应电荷$-Q$. 二者电势差等于空气击穿电压
+    \[\Delta\phi=\frac{1}{4\pi\epsilon_0}\ab(\frac{Q}{R}+\frac{-Q}{R+d})-0=Ed\]
+    由此得$Q=4\pi\epsilon_0ER(R+d)=\qty{1.67e-7}\C$.
+\end{solution}
+
+\begin{problem}[本题6分]
+    不懂物理的前端不是一个好的游戏开发者，计算机毕业的小力是一个游戏设计师，为了模拟真实世界中，子弹在水中的射程将急剧变小. 他假定\emph{子弹在水中的阻力与子弹速度满足平方正比关系$F=-kv^2$}，已知国产191突击步枪\emph{子弹初速度为$\qty{735}{\m/\s}$}，假设\emph{子弹重量$m=\qty{12.5e-3}\kg$}，考虑最简单情况，\emph{子弹在水中做一维运动，则如果要让子弹在水中行进$x=\qty2\m$距离后速度降为$v=\qty1{\m/\s}$，则小力需要设置水中的阻力系数$k$为多少？}（$\d t=\d x/v$；$\ln(735)\approx6.60$）
+\end{problem}
+\begin{solution}\leavevmode
+    \begin{description}
+        \item 由牛顿运动定律$F=-kv^2=m\odv v/t=m\odv v/x\cdot\odv x/t=mv\odv v/x$.
+        \item 分离变量得$\d v/v=-k\d x/m$. 对其积分$\ln\frac v{v_0}=-\frac km x$.
+        \item 带入条件$x=\qty2\m$，$v=\qty1{\m/\s}$得$k=m/x_0\ln735=0.041$.
+    \end{description}
+\end{solution}
+
+\begin{paracol}{2}
+\begin{problem}[本题6分]
+    有一\emph{无限长}通电流的\emph{扁平铜片}，宽度为$a$，厚度不计，电流$I$在铜片上均匀分布，在铜片外与铜片共面，离铜片右边缘为$b$处的$P$点（如图）的磁感应强度$B$大小为多少？
+    \switchcolumn\vspace*{\fill}
+    \centering
+    \begin{tikzpicture}
+        \draw (0,0) sin (.4,.1) cos (.8,0) sin (1.2,-.1) cos (1.6,0) -- (1.6,1.6) sin (1.2,1.5) cos (.8,1.6) sin (.4,1.7) cos (0,1.6) -- cycle;
+        % \length{(0,.25)}{(1.6,.25)}{$a$}{(1em,0)};
+        % \length{(1.6,.25)}{(2.8,.25)}{$b$}{(1em,0)};
+        \fill (2.8,.25) circle (.05) node [right] {$P$};
+        \draw [->] (.8,.5) -- (.8,1.1) node [left, midway] {$I$};
+    \end{tikzpicture}
+    \vspace*{\fill}
+\end{problem}
+\end{paracol}
+\begin{solution}
+    取$x\sim x+\d x$处的电流源，其与$P$点距离为$a+b-x$，在$P$点产生的磁感应强度大小为
+    \[\d B=\int_0^a\frac{\mu_0I\d x/a}{2\pi(a+b-x)}\tag*{}\]
+    积分得通电铜片在$P$点处的磁感应强度大小为
+    \[B=\int_0^a\d B=|\int_0^a\frac{\mu_0I\d x/a}{2\pi(a+b-x)}|=\frac{\mu_0I}{2\pi a}\ln\frac{a+b}{b}\tag*{}\]
+\end{solution}
+
+\begin{problem}[本题8分]
+    利用相互垂直的均匀电场和磁场设计一个速度选择器，你要想选择的正离子带有电荷$+5e$，以$\qty{8.75e3}{\m/\s}$的速度垂直进入电磁场. 你所使用的磁场大小为$\qty{0.55}\T$.
+    \begin{enumerate}
+        \item 你需要的电场大小是多少？
+        \item 画出两个场的方向与离子速度方向之间的关系.
+        \item 你的速度选择器是否允许电荷不等于$+5e$离子以相同的速度入射并无偏转地通过？
+    \end{enumerate}
+\end{problem}
+\begin{paracol}{2}
+\begin{solution}\leavevmode
+    \begin{itemize}
+        \item 被选择的粒子在电磁场中运动过程中不会发生偏转，所受电场力与洛伦兹力平衡，即$qE=qvB$. 由此得所需电场大小为$E=vB=\qty{4.8125e3}{\N/\C}$.
+        \item 所需电场大小与粒子的电荷无关，允许电荷不等于$+5e$的离子\emph{以相同的速度入射}并无偏转地通过.
+    \end{itemize}
+    \switchcolumn\vspace{\fill}
+    \begin{figure}[htbp]
+        \centering
+        \begin{tikzpicture}
+            \draw [->] (1.5,0) -- (-1.5,0) node [left] {$\bm E$};
+            \node at (.5,.5) {$\odot$} node [right] at (.5,.5) {$\bm B$};
+            \node [circle, ball color = DarkRed!20,inner sep = .25ex] (0,0) {$+$};
+            \draw [->,DarkGreen] (0,0) --++ (0,1) node [right] {$\vec v$};
+            \draw [->, very thick, opacity = .6, MidnightBlue] (0,0) --++ (-1,0) node [below] {$qE$};
+            \draw [->, very thick, opacity = .6, MidnightBlue] (0,0) --++ (1,0) node [below] {$qvB$};
+        \end{tikzpicture}
+        \caption*{场与离子速度方向的关系\texttt{(2pt)}}
+    \end{figure}
+    \vspace*{\fill}
+\end{solution}
+\end{paracol}
+
+\begin{paracol}{2}
+\begin{problem}[本题10分]
+    边长为$l$的方形导线框，总阻值为$R$，现在以速度$v$把它拉出如图所示的阴影区域，这片区域为一匀强磁场，磁感应强度垂直指纸外，大小为$B$. 考虑方形框左顶点距阴影区域边界为$x$（其中，$x\leq\sqrt2l/2$）的时刻.
+    \begin{enumerate}
+        \item 当方框以速度$v$匀速运动时，感应电炉为多少？
+    \end{enumerate}
+    \switchcolumn\vspace*{\fill}
+    \centering
+    \begin{tikzpicture}[every node/.style = {font = {\footnotesize}}]
+        \fill [gray, opacity = .2] ({-sqrt(2)-1},1.5) rectangle ({-sqrt(2)+1},-1.5);
+        \node [above, align = center] at ({-sqrt(2)},-1.5) {$\bm B$\\指向纸外};
+        \node [above, align = center] at ({sqrt(2)},-1.5) {线框电阻\\$R$};
+        \draw [rotate = 45] (-1,1) rectangle (1,-1);
+        \draw [<->] ({-sqrt(2)},0) --++ (1,0) node [above, midway] {$x$};
+    \end{tikzpicture}
+    \vspace*{\fill}
+    \switchcolumn*[\vspace*{-2.5ex}
+        \begin{enumerate}
+            \addtocounter{enumi}{1}
+            \item 你需要施加在方框上的力应如何变化（即求$F(x)$表达式）才能保持方框以速度$v$匀速运动？
+            \item 证明从$x=x_0$（其中，$x_0\leq\sqrt2l/2$）到$x=0$期间，你做的功等于耗散在电阻上的能量（电阻耗散功率为$P=I^2R$；$\d t=\d x/v$）.
+        \end{enumerate}
+        \vspace*{-2.5ex}
+    ]
+\end{problem}
+\end{paracol}
+\begin{solution}\leavevmode
+    \begin{enumerate}
+        \item \begin{description}
+            \item 通过线框的磁通量$\Phi=B\cdot\frac12x\cdot 2x=Bx^2$.
+            \item 由法拉第电磁感应定律，动生电动势大小$|\mathscr E|=|-\pdv\Phi/t|=2Bxv$.
+            \item 感应电流大小$I=\mathscr E/R=2Bxv/R$.
+        \end{description}
+        \item \begin{description}
+            \item 切割磁感线有效长度为$2x$，所以安培力大小$\vec F_A(x)=-BI\cdot2x=4B^2x^2v/R\vec i$.
+            \item 施加在方框上的力应与安培力等大反向，即$\vec F(x)=BI\cdot2x=4B^2x^2v/R\vec i$.
+        \end{description}
+        \item \begin{description}
+            \item 电阻功率$P(R)=I^2R=4B^2x^2v/R$，做功功率$P(F)=Fv=I^2R=4B^2x^2v/R$.
+            \item $P(R)=P(F)$，所以$x=x_0$到$x=0$区间内做功等于耗散在电阻上的能量.
+        \end{description}
+    \end{enumerate}
+\end{solution}
+
+\end{document}

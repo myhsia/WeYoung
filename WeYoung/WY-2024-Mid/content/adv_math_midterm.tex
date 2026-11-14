@@ -1,0 +1,421 @@
+\chapter*{2024年\textsf{HDU}「高等数学1」期中模拟}
+
+\vspace{-.4\baselineskip}\setcounter{page}{1}
+\begin{minipage}{.66\textwidth}
+  \centering
+  \includegraphics[width = .96\linewidth]{border}
+  % \begin{tasks}
+  %   [ label-width = 5\ccwd, item-indent = 2cm,
+  %     after-item-skip = 0pt ](2)
+  %   \task[\textbf{开课学院}：] 理学院
+  %   \task[\textbf{解析提供}：] \textsf{秋鱼喵 \& \textsc{A.N. Liu}}
+  %   \task[\textbf{课程编码}：] A0714201
+  %   \task[\textbf{\textsf\TeX~排版}：] \textsf{Skyrmion}
+  % \end{tasks}
+\end{minipage}
+\hfill
+\begin{minipage}{.15\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \node [ inner sep = 0 ] at (0,0) {
+      \qrcode[ height = 4em, version = 4 ]{http://weixin.qq.com/r/sRJiemTEGjllrSAZ90ej}};
+    \fill [ white ] (-14em/33,14em/33) rectangle (14em/33,-14em/33);
+    \fill [ DarkGreen!60, rounded corners = 4em/33 ]
+      (-12em/33,12em/33) rectangle (12em/33,-12em/33);
+    \node [ inner sep = 0, white, font = \scriptsize ]
+      (weixin) at (0,0) {\faIcon{weixin}};
+    \node
+      [ inner sep = .5ex, align = center, right,
+        xshift = 2em, font = \scriptsize ] at (weixin.east) {未\\央\\学\\社};
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.15\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \node [ inner sep = 0 ] at (0,0) {
+      \qrcode [ height = 4em, version = 4 ]{https://qm.qq.com/q/Oo6vNR8ccU}};
+    \fill [ white ] (-14em/33,14em/33) rectangle (14em/33,-14em/33);
+    \fill [ MidnightBlue!60, rounded corners = 4em/33 ]
+      (-12em/33,12em/33) rectangle (12em/33,-12em/33);
+    \node [ inner sep = 0, white, font = \scriptsize ]
+      (qq) at (0,0) {\faIcon{qq}};
+    \node
+      [ inner sep = .5ex, align = center, left,
+        xshift = -2em, font = \scriptsize ] at (qq.west) {数\\学\\营};
+  \end{tikzpicture}
+\end{minipage}
+
+\section{选择题（每题3分，共24分）}
+
+\begin{problem}
+  设 $y = \sin\frac1x \cos\frac1x \arctan x$，则当 $x \to 0$ 时，$y$ 是
+  \begin{tasks}(4)
+    \task[\true] 无穷小量
+    \task 无穷大量
+    \task 有界但非无穷小量
+    \task 无界但非无穷大量
+  \end{tasks}
+\end{problem}
+\scratch[4ex]
+\begin{solution}
+  无穷小乘以有界量为无穷小. $x \to 0$ 时，$\tan^2x \sin\frac1x \sim x^2 \to 0$.
+  所以本题选择A项.
+\end{solution}
+
+\begin{problem}
+  极限 $L = \lim\limits_{x \to 1} \frac{\sqrt{x + 3} - 2}{|x - 1|}$ 的取值为
+  \begin{tasks}(4)
+    \task $1$
+    \task $1/4$
+    \task $0$
+    \task[\true] 不存在
+  \end{tasks}
+\end{problem}
+\scratch[6ex]
+\begin{solution}
+  $L = \lim\limits_{x \to 1} \frac{x - 1}{\ab(\sqrt{x + 3} + 2)|x - 1|}$，
+  两侧极限分别为 $1/4,~ -1/4$，故极限不存在，所以本题选择D项.
+\end{solution}
+
+\begin{problem}
+  曲线 $y = x^2$ 与曲线 $y = a\ln x (a \neq 0)$ 相切，则 $a = $
+  \begin{tasks}(4)
+    \task $4e$
+    \task $3e$
+    \task[\true] $2e$
+    \task $e$
+  \end{tasks}
+\end{problem}
+\scratch[6ex]
+\begin{solution}
+  对于曲线 $y = x^2 $，其导数为 $\odv y/x = 2x$.
+  对于曲线 $y = a \ln x $，其导数为 $\odv y/x = a/x$.
+  当 $2x = a/x$，解得相切时 $x = \sqrt{a/2}$，代入两曲线，当 $y$ 值相同时解得 $a = 2e$.
+\end{solution}
+
+\begin{problem}
+  设 $f'(x_0) = f''(x_0) = 0$，$f'''(x_0) > 0$，则下列选项正确的是
+  \begin{tasks}(2)
+    \task $f'(x_0)$ 是 $f'(x)$的 极大值
+    \task $f(x_0)$ 是 $f(x)$ 的极大值
+    \task $f(x_0)$ 是 $f(x)$ 的极小值
+    \task[\true] $(x_0,f(x_0))$ 是曲线 $y = f(x)$ 的拐点
+  \end{tasks}
+\end{problem}
+\scratch[14ex]
+\begin{solution}\leavevmode
+  \begin{itemize}
+    \item 由导数定义
+    $ f'''(x_0) = \lim\limits_{x \to x_0} \frac{f''(x) - f''(x_0)}{x - x_0}
+                = \lim\limits_{x \to x_0} \frac{f''(x)}{x - x_0} > 0$.
+    \item 由极限的保号性可知，在去心邻域 $\mathring{U}(x_0,\delta)$ 中
+    \begin{itemize}
+      \item 当 $x \in (x_0,\delta)$ 时，$x - x_0 > 0,~ f''(x) > 0$.
+      \item 当 $x \in (-\delta,x_0)$ 时，$x - x_0 < 0,~ f''(x) < 0$.
+    \end{itemize}
+    \item 于是，$(x_0,f(x_0))$ 是曲线 $y = f(x)$ 的拐点. 所以本题选择D项.
+  \end{itemize}
+\end{solution}
+
+\begin{problem}
+  设函数 $f(x)$ 在 $x = 0$ 点连续，下列命题中错误的是
+  \begin{tasks}(2)
+    \task 若 $\lim\limits_{x \to 0} \frac{f(x)}{x}$ 存在，则 $f(0) = 0$
+    \task 若 $\lim\limits_{x \to 0} \frac{f(x) + f(-x)}{x}$ 存在，则 $f(0) = 0$
+    \task 若 $\lim\limits_{x \to 0} \frac{f(x)}{x}$ 存在，则 $f'(0)$ 存在
+    \task[\true] 若 $\lim\limits_{x \to 0} \frac{f(x) + f(-x)}{x}$ 存在，
+    则 $f'(0)$ 存在
+  \end{tasks}
+\end{problem}
+\scratch[4ex]
+\begin{solution}
+  $\sign(x)$ 满足D选项的前提，但是其在 $0$ 点导数不存在.
+\end{solution}
+
+\begin{problem}
+  设 $f(0) = 0,~ f'(0) = 3$，
+  则 $L = \lim\limits_{x \to 0} \frac{f[3\ln(2x + 1)]}{x} = $
+  \begin{tasks}(4)
+    \task $2$
+    \task $6$
+    \task $9$
+    \task[\true] $18$
+  \end{tasks}
+\end{problem}
+\scratch[10ex]
+\begin{solution}
+  $ L = \lim\limits_{x \to 0} \frac{f(3\ln(2x + 1)) - f(0)}{x - 0}
+      = \lim\limits_{x \to 0}
+        \frac{f(3\ln(2x + 1)) - f(0)}{3\ln(2x + 1) - 0} \cdot
+        \frac{3\ln(2x + 1)}{x} = f'(3\ln(2x + 1)) \cdot \frac{6x}{x} = 18$.
+\end{solution}
+
+\begin{problem}
+  设函数 $f(x)$ 连续，且 $f'(0) > 0$，则存在 $\delta > 0$，使得
+  \begin{tasks}(2)
+    \task $f(x)$ 在 $(0,\delta)$ 内单调增加
+    \task $f(x)$ 在 $(-\delta,0)$ 内单调减少
+    \task[\true] $\forall x \in (0,\delta)$，有 $f(x) > f(0)$
+    \task $\forall x \in (-\delta,0)$，有 $f(x) > f(0)$
+  \end{tasks}
+\end{problem}
+\scratch[4ex]
+\begin{solution}
+  根据导数的定义，存在区间 $(-\delta,+\delta),~ (f(x) - f(0))/x > 0$.
+\end{solution}
+
+\begin{problem}
+  设函数 $g(x)$ 可导，$h(x) = e^{1 + g(x)}$，其中 $h'(1) = 1,~ g'(1) = 2$，
+  则 $g(1) = $
+  \begin{tasks}(4)
+    \task $\ln 3 - 1$
+    \task $-\ln 3 - 1$
+    \task[\true] $-\ln 2 - 1$
+    \task $\ln 2 - 1$
+  \end{tasks}
+\end{problem}
+\scratch[6ex]
+\begin{solution}
+  由题意可知 $h'(x) = g'(x) e^{1 + g(x)}$，
+  将 $h'(1) = 1,~ g'(1) = 2$ 代入得 $g(1) = -\ln 2 - 1$.
+\end{solution}
+
+\begin{problem}
+  使函数 $f(x) = \sqrt[3]{x^2(1 - x)^2}$ 满足罗尔定理条件的区间是
+  \begin{tasks}(4)
+    \task[\true] $[0,1]$
+    \task $[-1,1]$
+    \task $[-2,2]$
+    \task $[-3/5,4/5]$
+  \end{tasks}
+\end{problem}
+\scratch[4ex]
+\begin{solution}
+  对于选项BCD中的区间，因函数 $f(x)$ 在 $x = 0$ 处导数不存在，故排除. 所以本题选择A项.
+\end{solution}
+
+\begin{problem}
+  函数 $f(x) = x^2\sin(x)$，求 $f^{(5)}(0)$ 为
+  \begin{tasks}(4)
+    \task $20$
+    \task[\true] $-20$
+    \task $10$
+    \task $-10$
+  \end{tasks}
+\end{problem}
+\scratch[8ex]
+\begin{solution}
+  使用莱布尼兹公式，
+  $f^{(5)}(0) = C_5^0 \cdot x^2 \cdot \cos(x) + C_5^1 \cdot 2x \cdot \sin(x)
+              + C_5^2 \cdot 2 \cdot (-\cos(x)) + 0 + 0 = -20$.
+\end{solution}
+
+\section{填空题（共16分）}
+
+\begin{problem}[本题5分]
+  求参数方程的导数：
+  $
+    \begin{cases}
+      x = \cos t\\
+      y = \sin t + t
+    \end{cases}
+  $，求解结果\result{$-\cot t - \csc t$}.
+\end{problem}
+\scratch[8ex]
+\begin{solution}
+  $ \odv yx = \frac{\odv y/t}{\odv x/t},~
+    \odv xt = -\sin t,~ \odv yt = \cos t + 1$. 于是有
+  $y' = \frac{\cos t + 1}{-\sin t} = -\cot t - \csc t$.
+\end{solution}
+
+\begin{problem}[本题5分]
+  求极限 $L = \lim\limits_{x \to 1} \frac{\cos\frac\pi2 x}{x - 1} = $
+  \result{$-\pi/2$}.
+\end{problem}
+\scratch[8ex]
+\begin{solution}
+  $ L = \lim\limits_{x \to 1} \frac{\cos\frac\pi2 (x - 1) + \frac\pi2}{x - 1}
+      = \lim\limits_{x \to 1} \frac{-\sin\frac\pi2 (x - 1)}{x - 1}
+      = \lim\limits_{x \to 1} \frac{-\frac\pi2 (x - 1)}{x - 1}
+      = -\frac\pi2$.
+\end{solution}
+
+\begin{problem}[本题6分]
+  曲线 $y = xe^{-x}$ 的拐点为\result{$(2,2/e^2)$}，
+  在拐点处的曲率为 $\kappa = $\result{$0$}.  
+\end{problem}
+\scratch[12ex]
+\begin{solution}
+  $y' = e^{-x}(1 - x),~ y'' = e^{-x}(x - 2)$.
+  \begin{itemize}
+    \item 令 $y'' = 0$，$x = 2$.
+      当 $x > 2$ 时，$y'' > 0$；当 $x < 2$ 时，$y'' < 0$. 故 $x = 2$ 为拐点的横坐标.
+    \item 当 $x = 2$ 时，$y = 2e^{-2}$. 故拐点为 $(2,2e^{-2})$.
+    \item 拐点处的曲率
+    $\kappa|_{x = 2} = |y''(2)|/[1 + y'^2(2)]^{3/2}
+                     = 0/[1 + (\sim)^2]^{3/2} = 0$.
+  \end{itemize}
+\end{solution}
+
+\section{解答题（共60分）}
+
+\begin{problem}[本题5分]
+  求极限 $L = \lim\limits_{{x \to \infty}} (1^x + 2^x + 3^x)^{1/x}$.
+\end{problem}
+\scratch[12ex]
+\begin{solution}
+  $ L = \lim\limits_{{x \to \infty}} (1^x + 2^x + 3^x)^{1/x}
+      = \lim\limits_{{x \to \infty}}
+        (3^x)^{1/x}\ab[(\frac13)^x + (\frac23)^x + 1^x]^{1/x}
+      = \lim\limits_{{x \to \infty}} 3(0 + 0 + 1)^{1/x} = 3$.
+\end{solution}
+
+\begin{problem}[本题5分]
+  求极限：
+  $L = \lim\limits_{x \to 2} \frac{\sqrt{5x - 1} - \sqrt{2x + 5}}{x^2 - 4}$.
+\end{problem}
+\scratch[18ex]
+\begin{solution}
+  将分子有理化
+  \[
+    L = \lim_{x \to 2}
+        \frac{\ab(\sqrt{5x - 1} - \sqrt{2x + 5})
+              \ab(\sqrt{5x - 1} + \sqrt{2x + 5})}
+          {(x^2 - 4)\ab(\sqrt{5x - 1} + \sqrt{2x + 5})}
+      = \lim_{x \to 2}
+        \frac{(5x - 1) - (2x + 5)}{(x^2 - 4) \ab(\sqrt9 + \sqrt9)}
+      = \lim_{x \to 2} \frac{3(x - 2)}{6(x - 2)(x + 2)} = \frac18
+  \]
+\end{solution}
+
+\begin{problem}[本题5分]
+  函数 $y = y(x)$ 由方程 $\ln(x^2 + y) = x^3y + \sin x$ 确定，
+  则 $\odv yx \bigg|_{x = 0}$ 为？
+\end{problem}
+\scratch[20ex]
+\begin{solution}\leavevmode
+  \begin{itemize}
+    \item 将 $x = 0$ 代入方程：
+    $\ln(0^2 + y) = 0^3 \cdot y + \sin 0,~ \ln y = 0,~ y = 1$.
+    \item 对方程两边同时求导：
+    $\frac{1}{x^2 + y} \cdot (2x + y') = 3x^2y + x^3y' + \cos x$.
+    \item 将 $x = 0,~ y = 1$ 代入上述方程
+    $ \frac{1}{0^2 + 1} \cdot (2 \cdot 0 + y'(0))
+    = 3 \cdot 0^2 \cdot 1 + 0^3 \cdot y' + \cos 0,~
+      \odv yx\Big|_{x = 0} = y'(0) =  1$.
+  \end{itemize}
+\end{solution}
+
+\begin{problem}[本题5分]
+  $y = x^{x^x}$，求$y'$.
+\end{problem}
+\scratch[16ex]
+\begin{solution}\leavevmode
+  \begin{itemize}
+    \item 对 $y = x^{x^x}$ 两侧取对数
+    $
+      \ln y = \ln x^{x^x} = x^x\ln x,~
+      \ln\ln y = \ln(x^x\ln x ) = \ln(x^x) + \ln\ln x = x\ln x + \ln\ln x
+    $.
+    \item 两侧求导
+    $\frac{1}{\ln y} \cdot \frac1y \cdot y' = \ln x + 1 + \frac{1}{x\ln x}$，
+    整理得 $y' = x^{x^x + x - 1} (x\ln ^2x + x\ln x + 1)$.
+  \end{itemize}
+\end{solution}
+
+\begin{problem}[本题6分]
+  设 $y = \frac{e^x + 1}{e^x - 1}$，求
+  \begin{tasks}[ label = \arabic*. ](2)
+    \task 函数的间断点并判断其类型.
+    \task 该函数的水平渐近线和垂直渐近线.
+  \end{tasks}
+\end{problem}
+\scratch[24ex]
+\begin{solution}\leavevmode
+  \begin{enumerate}
+    \item 当 $x = 0$ 时，函数无定义，因此 $x = 0$ 为间断点.
+    \item 当 $x = 0$ 时，函数无定义，
+    $\lim\limits_{x \to 0} \frac{e^x + 1}{e^x - 1} = \infty$，
+    因此 $x = 0$ 为垂直渐近线.
+    \[
+        \lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} \frac{e^x + 1}{e^x - 1}
+      = \lim_{x \to +\infty} \frac{1 + \frac{1}{e^x}}{1 - \frac{1}{e^x}}
+      = \frac{1 + 0}{1 - 0} = 1,~
+        \lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} \frac{e^x + 1}{e^x - 1}
+      = \frac{0 + 1}{0 - 1} = -1
+    \]
+    因此，$y = -1,~ y = 1$为水平渐近线.
+  \end{enumerate}
+\end{solution}
+
+\begin{problem}[本题7分]
+  多项式 $P(x) = a_1x + a_2x^2 + \cdots + a_nx^n$ 的系数满足
+  $\sum^n_{i = 1}a_i = 0$.
+  证明在 $(0,2)$ 上多项式 $a_1t + 2a_2t^2 + \cdots + na_nt^n = 0$ 有实数解.
+\end{problem}
+\scratch[10ex]
+\begin{solution}
+  \begin{proof}
+    显然 $P(0) = P(1) = 0$，将第二个多项式除以 $t$ 得
+    $a_1 + 2a_2t + \cdots + na_nt^{n - 1} = 0$，
+    后者刚好为 $P'(t)$. 根据罗尔定理即得证.
+  \end{proof}
+\end{solution}
+
+\begin{problem}[本题5分]
+  求极限 $L = \lim\limits_{{x \to \infty}}  x - x^2\ln\ab(1 + \frac1x)$.
+\end{problem}
+\scratch[14ex]
+\begin{solution}
+  令 $t = 1/x$，使用洛必达法则
+  \[
+    L = \lim_{t \to 0} \frac1t - \frac{1}{t^2}\ln(1 + t)
+      = \lim_{t \to 0} \frac{t - \ln(1 + t)}{t^2}
+      \xlongequal{\text{L'Hôpital}} \lim_{t \to 0} \frac{1 - 1/(1 + t)}{2t}
+      = \lim_{t \to 0} \frac{1/(1 + t)^2}{2} = 1/2
+  \]
+\end{solution}
+
+\begin{problem}[本题5分]
+  设 $y = f(\ln x)e^{f(x)}$，其中 $f$ 可微，则 $\d y$ 为？
+\end{problem}
+\scratch[8ex]
+\begin{solution}
+  $
+     \d y = y'\d x = [f(\ln x)]' \cdot e^{f(x)} + f(\ln x)\ab[e^{f(x)}]'\d x
+          = e^{f(x)} \ab[\frac{f'(\ln x)}{x} + f(\ln x)f'(x)] \d x  
+  $.
+\end{solution}
+
+\begin{problem}[本题6分]
+  讨论函数 $f(x) =
+  \begin{cases}
+    \frac{x}{1 + e^{\frac1x}}, & x\neq 0\\
+    0,                         & x = 0
+  \end{cases}$ 在点 $x = 0$ 的连续性和可导性质.
+\end{problem}
+\scratch[28ex]
+\begin{solution}\leavevmode
+  \begin{itemize}
+    \item 连续性讨论左右极限和函数值
+    \[
+      f(0^-) = \lim_{x \to 0^-}\frac{x}{1 + e^{1/x}} = \frac{0}{1 + 0} = 0,~
+      f(0) = 0,~
+      f(0^-) = \lim_{x \to 0^+}\frac{x}{1 + e^{1/x}} = \frac{0}{1 + \infty} = 0
+    \]
+    于是，$f(0^-) = f(0) = f(0^+)$，$f(x)$ 在 $x = 0$ 处连续.
+    \item 可导性讨论左右导数
+    \begin{gather*}
+      f'(0^-) = \lim_{x \to 0^-} \frac{f(x) - f(0)}{x - 0}
+              = \lim_{x \to 0^-} \frac{\frac{x}{1 + e^{1/x}} - 0}{x}
+              = \lim_{x \to 0^-} \frac{x}{(1 + e^{1/x})}
+              = \lim_{x \to 0^-} \frac{1}{1 + e^{1/x}} = \frac{1}{1 + 0} = 1\\
+      f'(0^+) = \lim_{x \to 0^+} \frac{f(x) - f(0)}{x-0}
+              = \lim_{x \to 0^+} \frac{\frac{x}{1 + e^{1/x}} - 0}{x}
+              = \lim_{x \to 0^+} \frac{x}{(1 + e^{1/x})}
+              = \lim_{x \to 0^+} \frac{1}{1 + e^{1/x}}
+              = \frac{1}{1 + \infty} = 0
+    \end{gather*}
+    于是，$f'(0^-) \neq f'(0^+)$，$f(x)$ 在 $x = 0$ 处不可导.
+  \end{itemize}
+\end{solution}

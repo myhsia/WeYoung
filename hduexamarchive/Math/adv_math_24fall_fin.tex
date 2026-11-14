@@ -1,0 +1,252 @@
+\documentclass[quiet]{ctexart}
+
+\input{../preamble.tex}
+
+\setCJKmainfont{LXGW WenKai}[AutoFakeSlant]
+\setCJKsansfont{LXGW Marker Gothic}[AutoFakeBold, AutoFakeSlant, Scale = .95]
+\setCJKmonofont{LXGW WenKai Mono}[AutoFakeBold, AutoFakeSlant]
+\ctexset{section/format+ = \raggedright}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\setmathfont[AutoFakeBold]{STIX Two Math}
+
+\makeatletter \def \@result #1{\underline{ \quad }} \makeatother
+\DeclareMathOperator{\DFT}{DFT}
+
+\title{\sffamily\bfseries 24Fall \textsc{Hdu} 「高等数学 A1」期末试题}
+\author{} \date{}
+
+\begin{document}
+
+\maketitle
+
+\section{选择题（每题 3 分，共 24 分）}
+
+\begin{problem}
+  极限 $\lim_{x \to \infty} (\sqrt{x^2 + x} - x) =$
+  \begin{tasks}(4)
+    \task $0$
+    \task $\frac12$
+    \task $\infty$
+    \task 不存在
+  \end{tasks}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}
+  曲线 $y = \frac{x^2 + x}{x^2 - 1}$ 的渐近线条数为
+  \begin{tasks}(4)
+    \task $0$
+    \task $1$
+    \task $2$
+    \task $3$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  已知 $f(x)$ 的一个原函数为 $\ln x$，则 $f'(x) =$
+  \begin{tasks}(4)
+    \task $\frac1x$
+    \task $-\frac1{x^2}$
+    \task $x\ln x - x + C$
+    \task $e^{x^2}$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  设 $\lim_{x \to 0} \frac{f(x) - f(0)}{1 - \cos x} = 1$，则 $f(x)$ 在 $x = 0$ 处
+  \begin{tasks}(4)
+    \task 可导且 $f'(0) \neq 0$
+    \task 取极小值
+    \task 取极大值
+    \task 不可导
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  设函数 $f(x) =
+  \begin{cases}
+    xe^{x^2}, & -1 \leq x < 1\\
+    -1,       & x \geq 1
+  \end{cases}$，
+  则 $\int_0^3 f(x - 1) \d x =$
+  \begin{tasks}(4)
+    \task $-1$
+    \task $1$
+    \task $-2$
+    \task $2$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  以下反常积分收敛的是
+  \begin{tasks}(4)
+    \task $\int_e^{+\infty} \frac{\ln x}{x} \d x$
+    \task $\int_e^{+\infty} \frac{1}{x \ln x} \d x$
+    \task $\int_e^{+\infty} \frac{1}{x (\ln x)^2} \d x$
+    \task $\int_e^{+\infty} \frac{1}{x \sqrt{\ln x}} \d x$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  设函数 $f(x)$ 连续，则 $\odv{}x \int_0^x tf(x^2 - t^2) \d t =$
+  \begin{tasks}(4)
+    \task $xf(x^2)$
+    \task $-xf(x^2)$
+    \task $2xf(x^2)$
+    \task $-2xf(x^2)$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  若线性无关函数 $y_1$，$y_2$，$y_3$ 是二阶非齐次线性方程
+  $y'' + P(x)y' + Q(x)y = f(x)$ 的三个特解，$C_1$，$C_2$ 且为任意常数，
+  则此方程的通解为
+  \begin{tasks}(2)
+    \task $C_1y_1 + C_2y_2 + y_3$
+    \task $C_1y_1 + C_2y_2 - (C_1 + C_2)y_3$
+    \task $C_1y_1 + C_2y_2 - (1 - C_1 - C_2)y_3$
+    \task $C_1y_1 + C_2y_2 + (1 - C_1 - C_2)y_3$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\section{填空题（每题 3 分，共 12 分）}
+
+\begin{problem}
+  设 $y = \ln \cos x$，则 $\d y =$ \result{}.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  $\int_{-1}^1 \ln (x + \sqrt{1 + x^2}) \d x =$ \result{}.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  曲线 $y = \int_0^x \sqrt{\sin t} \d t$（$0 \leq x \leq \pi$）的弧长为 \result{}.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  微分方程 $(y + x^2 e^x) \d x - x \d y = 0$ 的通解为 \result{}.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\section{计算题（每题 6 分，共 24 分）}
+
+\begin{problem}
+  隐函数 $y = y(x)$ 由方程 $x^3 - \int_0^y e^{-t^2} \d t + y^3 + 4$ 所确定，
+  求 $\odv yx$.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  计算 $\int \ln (1 + x^2) \d x$.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  计算定积分 $\int_0^{\pi/2} e^{2x} \cos x \d x$.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}
+  求极限 $\lim_{x \to 0}
+  \frac{\int_0^x [3 sin t + t^2 + \cos(1/t)] \d t}{\int_0^x \ln(1 + t) \d t}$.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\section{解答题（共 40 分）}
+
+\begin{problem}[7 pt]
+  已知 $\int_0^{+\infty} \frac{\sin x}{x} \d x = \frac\pi2$，
+  求 $\int_0^{+\infty} \frac{\sin^2 x}{x^2} \d x$.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}[7 pt]
+  已知函数 $f(x)$ 具有二阶导数，若曲线 $y = f(x)$ 过点 $(0,0)$，
+  且与曲线 $y = 2^x$ 在点 $(1,2)$ 处相切，求 $\int_0^1 xf''(x) \d x$.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}[7 pt]
+  求函数 $y = \frac{x^3}{(x - 1)^2}$ 的极值，凹凸区间和拐点.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}[7 pt]
+  求微分方程 $y'' + 3y' + 2y = 3xe^{-x}$ 的通解.
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}[8 pt]
+  已知抛物线 $y = ax^2$ （$a > 0$） 将两坐标轴和抛物线 $y = 4 - x^2$（$x \geq 0$
+  所围成的屏幕区域 $D$ 分成面积相等的左、右两部分区域 $D_1$ 和 $D_2$.
+  \begin{enumerate}
+    \item 求 $a$ 的值.
+    \item 分别求区域 $D_1$ 和 $D_2$ 绕 $x$ 轴旋转一周所得的旋转体的体积.
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}[4 pt]
+  设 $f(x)$ 在区间 $[0,1]$ 上连续，在 $(0,1)$ 内可导，且 $f(x) > 0$，
+  且 $2\int_{1/2}^1 f(x) \d x = f(0)$. 证明：在 $(0,1)$ 内至少存在一点 $\xi$，
+  使 $f'(\xi) = 0$.
+\end{problem}
+\begin{solution}
+  \begin{proof}
+    
+  \end{proof}
+\end{solution}
+
+\end{document}

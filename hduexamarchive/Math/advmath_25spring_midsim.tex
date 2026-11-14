@@ -1,0 +1,144 @@
+\documentclass[quiet]{ctexart}
+
+\input{../preamble.tex}
+
+\setCJKmainfont{LXGW WenKai}[AutoFakeSlant]
+\setCJKsansfont{LXGW Marker Gothic}[AutoFakeBold, AutoFakeSlant, Scale = .95]
+\setCJKmonofont{LXGW WenKai Mono}[AutoFakeBold, AutoFakeSlant]
+\ctexset{section/format+ = \raggedright}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+\setmathfont[AutoFakeBold]{STIX Two Math}
+
+\makeatletter \def \@result #1{\underline{ \quad }} \makeatother
+\DeclareMathOperator{\DFT}{DFT}
+
+\title{\sffamily\bfseries 25Spring \textsc{Hdu} 「高等数学 A2」期中模拟}
+\author{} \date{}
+
+\begin{document}
+
+\section{选择题}
+
+\begin{problem}
+  母线平行于$y$轴且通过曲线$\left\{ \begin{array}{r}
+    x^{2} + 3y^{2} + z^{2} = 24 \\
+    x^{2} - y^{2} + z^{2} = 0
+    \end{array} \right.\ $的柱面方程为（）
+    
+    A.$4x^{2} + 3z^{2} = 24$ \quad B.$x^{2} + 3y^{2} = 24$ \quad C.$4x^{2} - z^{2} = 24$ \quad D.$4y^{2} - z^{2} = 24$
+\end{problem}
+
+\begin{problem}
+  二元函数$z = f(x,y)$在$(x_{0},y_{0})$处可微是偏导数$f_{x}(x_{0},y_{0})$和$f_{y}(x_{0},y_{0})$存在的（）
+        
+        A.充分不必要条件 \quad B.必要不充分条件 \quad C.充要条件 \quad D.既不充分也不必要条件
+\end{problem}
+
+\begin{problem}
+  设有直线$L_{1}: \frac{x - 2}{2} = \frac{y + 3}{- 1} = \frac{z - 1}{3}$，与$L_{2}: \left\{ \begin{array}{r}
+    x + y = 4 \\
+    y - z = 2
+    \end{array} \right.\ $，则$L_{1}$与$L_{2}$的夹角为（）
+    
+    A.$\frac{\pi}{6}$ \quad B.$\frac{\pi}{4}$ \quad C.$\frac{\pi}{3}$ \quad D.$\frac{\pi}{2}$
+\end{problem}
+
+\begin{problem}
+  函数$u = 2x^{2} + 3y^{2} + 4z^{2}$在点$(1,1,1)$处的方向导数最大值为（）
+        
+        A.$2\sqrt{11}$ \quad B.$2\sqrt{13}$ \quad C.$2\sqrt{29}$ \quad D.$2\sqrt{57}$
+\end{problem}
+
+\begin{problem}
+  曲面$x^{2} + y^{2} + \cos{xy} - yz + xy = 0$上点$(0,1,2)$处的切平面方程（）
+        
+        A.$x + y - z = - 2$ \quad B.$x + z = 2$ \quad C.$x + 2y - z = 3$ \quad D.$y - 2z = 3$
+\end{problem}
+
+\begin{problem}
+  函数$f(x,y) = 2x + (y - 2)\arccos\sqrt{\frac{x}{y}}$，则$f_{x}(x,2) =$（）
+        
+        A.$1$ \quad B.$2$ \quad C.$3$ \quad D.$4$
+\end{problem}
+
+\begin{problem}
+  $\int_{0}^{2}{dx}\int_{x}^{2x}{f(x,y)dy} = \int_{0}^{\Psi}{dy}\int_{\varphi(y)}^{\Psi(y)}{f(x,y)dx}$成立，则$\varphi(y)$和$\Psi(y)$分别为（）
+        
+        A.$\varphi(y) = \frac{y}{2},\Psi(y) = y$ \quad B.$\varphi(y) = y,\Psi(y) = \frac{y}{2}$ \\
+        C.$\varphi(y) = \frac{y}{2},\Psi(y) = 2y$ \quad D.$\varphi(y) = 2y,\Psi(y) = \frac{y}{2}$
+\end{problem}
+
+\begin{problem}
+  曲线$\left\{ \begin{array}{r}
+    x = 2t \\
+    y = t^{2} \\
+    z = - t^{3}
+    \end{array} \right.\ $，在$t = 2$处的切线方程为（）
+    
+    A.$\frac{x - 4}{2} = \frac{y - 4}{4} = \frac{z + 8}{- 12}$ \quad B.$\frac{x - 4}{2} = \frac{y - 1}{1} = \frac{z + 1}{- 3}$ \\
+    C.$(x - 4) + (y - 4) - (z - 8) = 0$ \quad D.$(x - 2) + (y - 1) - (z + 1) = 0$
+\end{problem}
+
+\begin{problem}
+  设$f(x,y)$是连续函数，则$\int_{0}^{\frac{\pi}{2}}{d\theta}\int_{0}^{2\cos\theta}{f(\rho\cos\theta,\rho\sin\theta)\rho d\rho} =$（）
+        
+        A.$\int_{0}^{2}{dx}\int_{0}^{\sqrt{4 - x^{2}}}{f(x,y)dy}$ \quad B.$\int_{0}^{2}{dy}\int_{0}^{\sqrt{4 - y^{2}}}{f(x,y)dx}$ \\
+        C.$\int_{0}^{1}{dx}\int_{0}^{\sqrt{2x - x^{2}}}{f(x,y)dy}$ \quad D.$\int_{0}^{1}{dy}\int_{0}^{\sqrt{2y - y^{2}}}{f(x,y)dx}$
+\end{problem}
+
+\begin{problem}
+  已知函数$f(x,y)$在点$(x_{0},y_{0})$的某邻域内满足有一阶和二阶连续的偏导数，且$f_{x}(x_{0},y_{0}) = f_{y}(x_{0},y_{0}) = 0$，记$A = f_{xx}(x_{0},y_{0})$，$B = f_{xy}(x_{0},y_{0})$，$C = f_{yy}(x_{0},y_{0})$，则满足（）时函数在点$(x_{0},y_{0})$处取得极小值
+        
+        A.$AC - B^{2} < 0$且$A > 0$ \quad B.$AC - B^{2} < 0$且$A < 0$ \\
+        C.$AC - B^{2} > 0$且$A > 0$ \quad D.$AC - B^{2} > 0$且$A < 0$
+\end{problem}
+
+\section{填空题}
+
+\begin{problem}
+  经过已知点$(1,-1,4)$和直线$\frac{2}{x+1}=\frac{y}{5}=\frac{1-z}{-1}$的平面方程是（\rule{3cm}{0.15mm}）
+\end{problem}
+
+\begin{problem}
+  曲线$\{3x^{2} + 2y^{2} = 12,z=0\}$绕$y$轴旋转一周达到的旋转面在点$(0,\sqrt{3},\sqrt{2})$处的指向外侧的单位法向量为（\rule{3cm}{0.15mm}）
+\end{problem}
+
+\begin{problem}
+  设$f(x,y) = \int_{0}^{xy}e^{xt^{2}}dt$，则$\left.\frac{\partial^2 f}{\partial x \partial y}\right|_{(1,1)}=$（\rule{3cm}{0.15mm}）
+\end{problem}
+
+\begin{problem}
+  
+\end{problem}
+
+\begin{enumerate}
+
+    \item[14.] 设曲线$u(x,y,z)=1+\frac{x^2}{6}+\frac{y^2}{12}+\frac{z^2}{18}$，单位向量$\mathbf{n}=\frac{1}{\sqrt{3}}(1,1,1)$，则$\left.\frac{\partial u}{\partial n}\right|_{(1,2,3)}$等于（\rule{3cm}{0.15mm}）
+\end{enumerate}
+
+三、计算题
+
+\begin{enumerate}
+    \item[15.] 求过点$(-1,0,4)$，且平行于平面$3x - 4y + z - 10 = 0$，又与直线$\frac{x + 1}{1} = \frac{y - 3}{1} = \frac{z}{2}$相交的直线的方程。
+
+    \item[16.] 设平面$\pi$：$x + y + 2z - 1 = 0$与球面$x^{2} + y^{2} + z^{2} = 1$相交成一个圆，试求这个圆的圆心。
+
+    \item[17.] 求过点$A(2, -3,1)$且与直线$\frac{x - 1}{2} = \frac{y + 1}{-1} = \frac{z - 3}{3}$垂直相交的直线方程。
+
+    \item[18.] 求平面$\frac{x}{3} + \frac{y}{4} + \frac{z}{5} = 1$和柱面$x^{2} + y^{2} = 1$的交线上与$xOy$面距离最短的点。
+
+    \item[19.] 某厂家生产的一种产品同时在两个市场销售，售价分别为$p_1$和$p_2$，销售量分别为$q_1$和$q_2$，需求函数分别为$q_1 = 24 - 0.2p_1$，$q_2 = 10 - 0.05p_2$，总成本函数为$C = 35 + 40(q_1 + q_2)$。试问：厂家如何确定两个市场的售价，能使其获得的总利润最大，最大总利润为多少？
+
+    \item[20.] 求函数$f(x,y) = x^{3} + 8y^{3} - xy$的极值。
+
+    \item[21.] 计算以$xOy$面上的圆周$x^{2} + y^{2} = ax\ (a > 0)$围成的闭区域为底，而以曲面$z = x^{2} + y^{2}$为顶的曲顶柱体的体积。
+
+    \item[22.] 计算三重积分$\iiint_{\Omega}\sqrt{y^{2} + z^{2}}\,dxdydz$，其中$\Omega$由$xOy$平面上的曲线$x = hy\ (h > 0)$绕$x$轴旋转而成的曲面与平面$x = h$所围成的闭区域。
+
+    \item[23.] 设函数$f(x)$在$[a,b]$上连续，证明不等式：
+    \[
+    \left( \int_{a}^{b}f(x)\,dx \right)^{2} \leq (b - a)\int_{a}^{b}f^{2}(x)\,dx
+    \]
+\end{enumerate}
+
+\end{document}

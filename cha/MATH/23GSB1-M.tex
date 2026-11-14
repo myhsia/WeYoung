@@ -1,0 +1,287 @@
+\chapter{2023年「高等数学B1」\titlelogo{https://sci.hdu.edu.cn}{HDU}期中回忆}
+\date{2023年12月2日}{基础数学教学团队}{A0714201}
+{未央数学讲师~bry}
+{\qrcode{https://qm.qq.com/q/OlkSiy9W04}}{\href{https://qm.qq.com/q/OlkSiy9W04}{HDU 数学营}}
+{\qrcode{http://weixin.qq.com/r/mhKYgFTEMQlOrRDj90eI}}{\href{http://weixin.qq.com/r/mhKYgFTEMQlOrRDj90eI}{未央学社公众号}}
+
+\section{选择题（每题3分，共24分）}
+\begin{choice}{D}[函数的间断点]
+    函数$y=f(x)$在$x=0$处极限存在，则在$x=0$点
+\begin{tasks}(2)
+    \task 函数$y=f(x)$一定连续
+    \task 函数$y=f(x)$一定可导
+    \task 函数$y=f(x)$一定可微分
+    \task 函数$y=f(x)$可能是间断点
+\end{tasks}
+\end{choice}
+\begin{solution}*\textbf{反例}：
+\begin{itemize}
+    \item 函数$y=\abs{x}$在$x=0$处不可导，不可微分.
+    \item 函数
+    $y=\begin{cases}
+        \abs{x}, & x\neq 0\\
+        1, & x=0
+    \end{cases}$
+    在$x=0$处是可去间断点.
+\end{itemize}
+\end{solution}
+
+\begin{choice}{D}[洛必达法则]
+    极限$\lim_{x\to 0}\frac{\ln(1-x)}{\sin x}$的结果是
+\begin{tasks}(4)
+    \task $0$
+    \task $2$
+    \task $1$
+    \task $-1$
+\end{tasks}
+\end{choice}
+\begin{solution}*
+    使用洛必达法则：$\lim_{x\to 0}\tfrac{\ln(1-x)}{\sin x}=\lim_{x\to 0}\tfrac{\frac{1}{x-1}}{\cos x}=-1$.
+\end{solution}
+
+\begin{choice}{C}[等价无穷小]
+    当$x\to 0$时，$f(x)=(1+x^2)^a-1$与$g(x)=2x^2$是等价无穷小，则$a=$
+\begin{tasks}(4)
+    \task $-1$
+    \task $1$
+    \task $2$
+    \task $4$
+\end{tasks}
+\end{choice}
+\begin{solution}*
+    等价无穷小代换：$\lim_{x\to 0}\ab[(1+x^2)^a-1]/2x^2=\lim_{x\to 0}ax^2/2x^2=1$.
+\end{solution}
+
+\begin{choice}{C}[函数的间断点]
+    设$f(x)=\begin{cases}
+        \e^x & x>0\\
+        -1 & x=0\\
+        \cos x & x<0
+    \end{cases}$，则$x=0$是$f(x)$的
+\begin{tasks}(4)
+    \task 连续点
+    \task 跳跃间断点
+    \task 可去间断点
+    \task 无穷间断点
+\end{tasks}
+\end{choice}
+\begin{solution}*
+    $\lim_{x\to 0^+}\e^x=1=\lim_{x\to 0^-}\cos x\neq -1$，故为可去间断点.
+\end{solution}
+
+\begin{choice}{A}[函数的微分]
+    若函数$y=f(x)$的微分为$\d y=\sec^2x\cdot\e^{\tan x}\d x$，则$y=$
+\begin{tasks}(4)
+    \task $\e^{\tan x}+C$
+    \task $\e^{\sec x\cdot\tan x}+C$
+    \task $\sec x\cdot\e^{\sec x}+C$
+    \task $\e^{\sec\frac1x}+C$
+\end{tasks}
+\end{choice}
+\begin{solution}*
+    $\int\sec^2x\cdot\e^{\tan x}\d x=\e^{\tan x}+C$.
+\end{solution}
+
+\begin{choice}{B}[函数的单调性]
+    函数$y=x^{\frac23}$单调减区间是
+\begin{tasks}(4)
+    \task $[-1,2]$
+    \task $(-\infty,0)$
+    \task $[0,1]$
+    \task $[1,+\infty)$
+\end{tasks}
+\end{choice}
+\begin{solution}*
+    $\odv yx=\frac23x^{-\frac13}<0,\ x\in(-\infty,0)$.
+\end{solution}
+
+\begin{choice}{B}[函数图形的描绘]
+    曲线$y=\frac{x}{x-2}$的水平渐近线是
+\begin{tasks}(4)
+    \task $x=2$
+    \task $y=1$
+    \task $y=1$
+    \task $x=1$
+\end{tasks}
+\end{choice}
+\begin{solution}*
+    $\lim_{x\to\infty}\frac{x}{x-2}=1$，故$y=1$.
+\end{solution}
+
+\begin{choice}{A}[罗尔定理]
+    使函数$f(x)=\sqrt{x^2-x^4}$满足罗尔定理条件的区间为
+\begin{tasks}(4)
+    \task $[0,1]$
+    \task $[-1,1]$
+    \task $[-2,1]$
+    \task $[0,2]$
+\end{tasks}
+\end{choice}
+\begin{solution}
+\begin{itemize}
+    \item $f'(x)=\frac12\cdot\frac{2x-4x^3}{\sqrt{x^2-x^4}}$.
+    \item 令$x^2-x^4=0,\ x_1=0,\ x_2=1,\ x_3=-1$，分母为$0$时函数没有定义，则有定义的区间为$[0,1]$.
+\end{itemize}
+\end{solution}
+
+\section{填空题（每题3分，共12分）}
+\begin{problem}[函数的微分]
+    已知$f(x)$可导，函数$y=f(\cos\e^x)$的微分$\d y=$\ans{$-\e^x\cdot\sin\e^x\cdot f'(\cos\e^x)\d x$}.
+\end{problem}
+\begin{solution}*
+    $\odv yx=f'(\cos\e^x)\cdot(-\sin\e^x)\e^x,\ \d y=-\e^x\cdot\sin\e^x\cdot f'(\cos\e^x)\d x$.
+\end{solution}
+
+\begin{problem}[第二个重要极限]
+    $\lim_{x\to\infty}\ab(\frac{3+x}{2+x})^x=$\ans{$\e$}.
+\end{problem}
+\begin{solution}*
+    $\lim_{x\to\infty}\ab(\frac{3+x}{2+x})^x=\lim_{x\to\infty}\ab(1+\frac{1}{2+x})^{2+x\cdot\frac{x}{2+x}}=\e^1=\e$.
+\end{solution}
+
+\begin{problem}[导数的概念]
+    圆$x^2+y^2=1$上点$\ab(\frac12,\frac{\sqrt{3}}{2})$处的切线方程为\ans{$x+\sqrt3y-2=0$}.
+\end{problem}
+\begin{solution}*
+    $k=\frac{\sqrt3/2}{1/2}=\sqrt{3},\ k\cdot k_1=-1,\ k_1=-\frac{1}{\sqrt{3}}$. 使用点斜式，代入该点坐标得切线方程$x+\sqrt3y-2=0$.
+\end{solution}
+
+\begin{problem}[函数的单调性与极值]
+    设函数$f(x)=x^3+ax^2-5x$在点$x=1$处取得极值，则$a=$\ans{$1$}.
+\end{problem}
+\begin{solution}*
+    $f'(x)=3x^2+2ax+5,\ f'(1)=3+2a-5=0$，故$a=1$.
+\end{solution}
+
+\newpage
+\section{计算题（共64分）}
+\begin{problem}[导数商的求导法则]
+    $y=\frac{\e^x}{x}$，求导数$\odv yx$.
+\end{problem}
+\begin{solution}*
+    $\odv yx=\frac{\e^xx-\e^x}{x^2}=\frac{\e^x(x-1)}{x^2}$.
+\end{solution}
+
+\begin{problem}[隐函数求导]
+    求由方程$y-x\e^y=1$所确定的隐函数$y=y(x)$在$x=0$处的二阶导数$y''(0)$.
+\end{problem}
+\begin{solution}
+\begin{itemize}
+    \item 方程两边对$y$求导：$y'-\e^y-x\e^yy'=0$.
+    \item 方程两边对$x$求导$y''-\e^yy'-(\e^yy'+x\e^yy'^2+x\e^yy'')=0$.
+    \item $x=0,\ y=1,\ y'(0)=\e$代入得到$y''(0)=2\e^2$.
+\end{itemize}
+\end{solution}
+
+\begin{problem}[幂指函数求极限（化为指数对数）]
+    $\lim_{x\to 0^+}x^{\sin x}$.
+\end{problem}
+\begin{solution}
+    先对幂指函数变形，化为指数对数：$\lim_{x\to 0^+}x^{\sin x}=\lim_{x\to 0^+}\e^{\ln x^{\sin x}}=\lim_{x\to 0^+}\e^{\sin x\ln x}$.
+\begin{enumerate}
+    \item 无穷小乘有界量为无穷小
+    \[\lim_{x\to 0^+}\sin x\ln x=0,\ \exp\lim_{x\to 0^+}\sin x\ln x=\e^0=1\]
+    \item 洛必达法则+等价无穷小代换
+    \[\lim_{x\to 0^+}\sin x\ln x=\lim_{x\to 0^+}\frac{\ln x}{\csc x}=\lim_{x\to 0^+}\frac{1/x}{-\csc x\cot x}=\lim_{x\to 0^+}\frac{\sin^2x}{-x\cos x}=\lim_{x\to 0^+}\frac{x\sin x}{-x\cos x}=0,\ \e^0=1\]
+    \item 亦可写作
+    \[\begin{aligned}
+        \lim_{x\to 0^+}x^{\sin x}&=\lim_{x\to 0^+}\e^{\sin x\ln x}=\exp\lim_{x\to 0^+}\frac{\ln x}{1/\sin x}=\exp\lim_{x\to 0^+}\frac{1/x}{-\cos x/\sin^2 x}\\
+        &=\exp\lim_{x\to 0^+}\frac{-\sin^2x}{x\cos x}=\exp\lim_{x\to 0^+}\frac{-x\sin x}{x\cos x}=\e^0=1
+    \end{aligned}\]
+\end{enumerate}
+\end{solution}
+
+\begin{problem}[罗尔中值定理]
+    已知$f(x),\ g(x)$在区间$[0,1]$连续，在$(0,1)$内可导，$f(0)=f(1)=0$. 证明$\exists\xi\in (0,1)$，使得$f'(\xi)+f(\xi)g'(\xi)=0$.
+\end{problem}
+\begin{solution}
+\begin{proof}
+    构造辅助函数$F(x)=\e^{g(x)}f(x)$满足罗尔中值定理
+    \[F(0)=\e^{g(0)}f(0)=0,\ F(1)=\e^{g(1)}f(1)=0,\ F(0)=F(1),\ \exists\xi\in(0,1),\ \text{s.t.}\ F'(\xi)=\e^{g(\xi)}f'(\xi)+f(\xi)\e^{g(\xi)}g'(\xi)=0\]
+    故$f'(\xi)+f(\xi)g'(\xi)=0$.
+\end{proof}
+\end{solution}
+
+\begin{problem}[参数方程求导]
+    求由参数方程$\begin{cases}
+        x=\ln(1+t^2)\\
+        y=t-\arctan t
+    \end{cases}$所确定函数的二阶导数$\frac{\d^2y}{\d x}$.
+\end{problem}
+\begin{solution}*
+    \begin{itemize}
+        \item $\odv xt=\frac{2t}{1+t^2},\ \odv yt=\frac{1}{1+t^2},\ \odv yx=\odv yt\odv tx=\frac{\d y/\d t}{\d x/\d t}=\frac t2$.
+        \item $\frac{\d^2y}{\d x^2}=\odv{\ab(\odv yx)}{x}=\odv{\ab(\odv yx)}{t}\odv tx=\frac{\d\ab(\odv yx)/\d t}{\odv xt}=\frac{1/2}{2t/(1+t^2)}=\frac{1+t^2}{4t}$.
+    \end{itemize}
+\end{solution}
+
+\begin{problem}[函数的凹凸区间和拐点]
+    求函数$y=f(x)=x^3+3x^2+5$表示图形的凹凸区间与拐点.
+\end{problem}
+\begin{solution}
+\begin{itemize}
+    \item $f'(x)=3x^2+6x$. 令$f''(x)=6x+6=0\Rightarrow x=-1$.
+    \item 令$f''(x)<0$，找$f(x)$的凸区间；令$f''(x)>0$，找$f(x)$的凹区间.
+    \item 凸区间：$(-\infty,-1]$，凹区间：$[-1,+\infty)$，拐点：$(-1,7)$.
+\end{itemize}
+\end{solution}
+
+\begin{problem}[函数的极值]
+    在抛物线$y^2=4x$上找到一点$M$，使得它到点$N(-2,5)$距离最小，并求最小距离值.
+\end{problem}
+\begin{solution}
+    抛物线$y^2=4x$上找到一点$M\ab(\frac{y^2}{4},y)$，$\abs{MN}=\sqrt{\ab(\frac{y^2}{4}+2)^2+(y-5)^2}$.
+
+    令$f(y)=\abs{MN}^2=\ab(\frac{y^2}{4}+2)^2+(y-5)^2$，则
+    \[f'(y)=\frac14y^3+4y-10=\frac14(y-2)(y^2+2y+20)\]
+    $f'(y)=0\Rightarrow y=1$是唯一驻点；$f''(y)=7>0$，$y=2$为最小值点，$f(2)=18$. $M(1,2)$为所求点，$\abs{MN}_{\min}=3\sqrt2$.
+\end{solution}
+
+\begin{problem}[泰勒展开]
+    写出函数$f(x)=\frac{1}{x}$按$(x+1)$的幂展开的带有佩亚诺型余项的$n$阶泰勒展开式.
+\end{problem}
+\begin{solution}
+\begin{itemize}
+    \item $f^{(n)}(x)=\frac{(-1)^nn!}{2^{n+1}},\ n=1,2,\cdots$.
+    \item $f^{(n)}(-1)=-n!,\ \frac{f^(n)(-1)}{n!}=-1$.
+    \item $\begin{aligned}[t]
+        f(x)&=\frac1x=f(-1)+f'(-1)(x+1)+\frac{f''(-1)}{2!}(x+1)^2+\cdots+\frac{f^{(n)}(-1)}{n!}(x+1)^n+o\ab[(x+1)^n]\\
+        &=-[1+(x+1)+(x+1)^2+\cdots+(x+1)^n]+o\ab[(x+1)^n]
+    \end{aligned}$.
+\end{itemize}
+\end{solution}
+
+\begin{problem}[拉格朗日中值定理证明不等式]
+    证明$x>0$时，$\frac{1}{1+x}<\ln\frac{1+x}{x}<\frac1x$.
+\end{problem}
+\begin{solution}
+\begin{proof}
+    经观察，$\ln\frac{1+x}{x}=\ln(1+x)-\ln x$. 考察函数$f(t)=\ln t$在区间$[x,1+x]$上满足拉格朗日中值定理
+    \[\exists\xi\in(x,1+x),\ f(1+x)-f(x)=f'(\xi)(1+x-x)\]
+    即$\ln(1+x)-\ln x=\ln\frac{1+x}{x}=\frac1\xi$，其中$\xi\in(x,1+x)$. 故$\frac{1}{1+x}<\ln\frac{1+x}{x}=\frac1\xi<\frac1x$.
+\end{proof}
+\end{solution}
+
+\begin{problem}[函数的连续性]
+    设$f(x)=\begin{cases}
+        x^2\arctan\frac1x, & x\neq 0\\
+        0, & x=0
+    \end{cases}$
+写出函数$f(x)$的导函数$f'(x)$的表达式，并讨论导函数$f'(x)$在点$x=0$处的连续性.
+\end{problem}
+\begin{solution}
+\begin{itemize}
+    \item $x\neq 0$: $f'(x)=\ab(x^2\arctan\frac1x)'=2x\arctan\frac1x-\frac{x^2}{1+x^2}$.
+    \item $x=0$: $f'(0)=\lim_{x\to 0}\frac{f(x)-f(0)}{x-0}=\lim_{x\to 0}\frac{x^2\arctan\frac1x}{x}=0$.
+    \item 亦可使用增量计算$f'(0)=\lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\to 0}\frac{f(0+\Delta x)-f(0)}{\Delta x}=\lim_{\Delta x\to 0}\frac{(\Delta x)^2\arctan\frac1x}{\Delta x}=0$.
+\end{itemize}
+\[f'(x)=\begin{cases}
+    2x\arctan\frac1x-\frac{x^2}{1+x^2}, & x\neq 0\\
+    0, & x=0
+\end{cases}\]
+$\lim_{x\to 0}f'(x)=\lim_{x\to 0}\ab(2x\arctan\frac1x-\frac{x^2}{1+x^2})=0=f'(0)$，导函数$f'(x)$在点$x=0$处连续.
+\end{solution}
+
+
+\vfill
+\rightline{/*Powered by \pkg{LiteSolution} \textsf\LaTeX~Template. Designed by WeYoung \href{https://ctan.org/home/xiamyphys}{Axia}.*/}

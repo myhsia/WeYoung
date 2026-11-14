@@ -1,0 +1,84 @@
+% !TEX builder = latexmk
+% !TEX TS-program = latexmk -xe -synctex=1 -interaction=nonstopmode -file-line-error
+% !TEX option = --shell-escape
+% !TEX encoding = UTF-8 Unicode
+\documentclass[
+    newtxsf,
+    % mtpro2,
+    twoside,openany,
+    % hideanswer
+]{litesolution}
+
+\usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[letterpaper]
+
+\fancyfoot[OL]{\fbox{Profiting from any part of this document is illegal}}
+\usepackage{weyounghead,twemojis}
+\usetikzlibrary{shapes.geometric}
+\makeatletter
+\def\point#1{
+    \leavevmode\cleaders\hb@xt@.44em{\hss$\cdot$\hss}\hfill\kern\z@\ttfamily(#1pt)
+}
+% \preto{\tikzpicture}{\color{DarkSlateGray}\let\default@color\current@color}
+% \newcommand{\globalcolor}[1]{%
+%   \color{#1}\global\let\default@color\current@color
+% }
+% \AtBeginDocument{\globalcolor{DarkSlateGray}}
+\makeatother
+
+\coverset{
+    % title = {\sffamily HDU「大学物理1」期中试题集},
+    title = {\sffamily HDU「理学竞赛」集训试题集},
+    % subtitle = {\sffamily\scshape WeYoung Society in HDU},
+    subtitle = {Hangzhou Dianzi University}
+    bioinfo = {\scshape\sffamily This work is powered by \textbf{\href{https://ctan.org/pkg/litesolution}{LiteSolution}} \hologo{LaTeX} Class},
+    covercolor = MidnightBlue,
+    coverhead = universe,
+    coverhead.rotate = 5,
+    cover = schrodinger,
+    cover.pattern = checkerboard
+}
+% \MagicWatermark{
+%     setup = {
+%         pages = *,
+%         style = {scale = .4},
+%         content = \includegraphics{WeYoung}
+%     }
+% }
+\setCJKmainfont{LXGW WenKai}[AutoFakeBold=3,ItalicFont=*]
+
+\begin{document}
+
+% \frontmatter\maketitle[MidnightBlue]\mainmatter
+\fancyhead[OL]{\itshape\color{DarkGreen}\href{http://weixin.qq.com/r/DBIABcHEqgnWKIVmb0eI}{\faIcon{weixin}~微信公众号：未央学社}}
+
+% \chapterimage{\UPFadingImage[trim={0 {.9\paperheight} 0 0},clip]{cover1}}
+% \fancyhead[ER]{\color{MidnightBlue}\href{https://qm.qq.com/q/OlkSiy9W04}{\faIcon{qq}~\textit{未央数学营：}782790567}}
+
+% \input{cha/probability1.tex}
+% \input{cha/probability2.tex}
+% \input{cha/probability3.tex}
+% \input{cha/MATH/24GS-1.tex}
+% \input{cha/MATH/24GL-M.tex}
+
+\chapterimage{\UPFadingImage*[trim={0 {.7\paperheight} 0 0},clip]{cover2}}
+% \fancyhead[ER]{\color{MidnightBlue}\href{https://qm.qq.com/q/mgD30uPiSs}{\faIcon{qq}~\textit{未央物理营：}560574854}}
+
+% \input{cha/DXWL/DW1/M18.tex}
+% \input{cha/DXWL/DW1/M19.tex}
+% \input{cha/DXWL/DW1/M20.tex}
+% \input{cha/DXWL/DW1/M21.tex}
+% \input{cha/DXWL/DW1/M22.tex}
+% \input{cha/DXWL/DW1/M23.tex}
+% \input{cha/DXWL/DW1/M23s.tex}
+% \input{cha/DXWL/DW1/M24.tex}
+% \input{cha/DXWL/DW1/F24.tex}
+\input{cha/mechanic/2024HDU.tex}
+
+% \chapterimage{\UPFadingImage[trim={0 {.7\paperheight} 0 0},clip]{cover2}}
+% \fancyhead[ER]{\color{MidnightBlue}\href{https://qm.qq.com/q/Jd5GTWrMAs}{\faIcon{qq}~\textit{未央物理营\! $^\dagger$：}875142342}}
+
+% \input{cha/PTWL/22PW1-M.tex}
+% \input{cha/PTWL/23PW1-M.tex}
+
+\end{document}

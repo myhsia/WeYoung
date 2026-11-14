@@ -1,0 +1,34 @@
+%%%%%解析几何模版%%%%%
+\chapter*{解析几何每日一题}
+
+\refer{《高等数学》同济版}
+
+\exercise{一向量的终点在点$B\qty(2,-1,7)$，它在$x$轴，$y$轴，$z$轴上的投影依次为
+$4,\ -4,\ 7$求这向量的起点$A$的坐标.}
+
+\teacher{马心怡}
+
+\postdate{2023年4月15日}
+
+\result{\qty(-2,3,0)}
+
+\analysis{此题考查的是空间向量运算的坐标表示，因为$\vv{a}=a_x\boldsymbol{i}+a_y\boldsymbol{j}+a_k\boldsymbol{k}$中$a_x,\ a_y,\ a_z$分别在$x,y,z$轴上投影，由此可解此题.}
+
+\solution{
+    设向量的起点$A$的坐标为$\qty(x,y,z)$.由
+    \formula{\qty(2-x,-1-y,7-z)=\qty(4,-4,7)}
+    可得
+    \formula{
+        \left\{
+        \addtolength{\jot}{-1.5em}
+        \begin{aligned}
+            &2-x=4\\
+            &-1-y=-4\\
+            &7-x=7
+        \end{aligned}
+        \right.
+    }
+    求得
+    \formula{x=-2,\ y=3,\ z=0}
+    即起点$A$的坐标为$\qty(-2,3,0)$
+}

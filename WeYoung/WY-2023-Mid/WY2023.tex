@@ -1,0 +1,52 @@
+% \special{pdf:encrypt  ownerpw (299792458)}
+\documentclass[
+  % mtpro2, % 没安装mathtime pro 2字体不要启用
+  % noans % 隐藏答案
+  ]{litesolution}
+\def\ans#1{\underline{\phantom{\color{solutioncolor}\ #1\ }}}
+\usepackage{amssymb}
+\usepackage{weyoung}
+% \usepackage{markdown}
+
+\NewDocumentEnvironment{draft}{}{
+    \begin{tcolorbox}[
+    common,
+    borderline west={1.5pt}{0mm}{1号色},
+    title=\textcolor{1号色}{\textbf{\solutionname}},
+    coltitle=1号色,
+    colupper=solutioncolor,
+    collower=solutioncolor
+    ]
+  \kaishu\color{solutioncolor}}{\end{tcolorbox}}
+
+\usepackage{comment}
+\excludecomment{draft}
+\let\enddraft\relax
+% \excludecomment{solution}
+% \let\endsolution\relax
+% \def\solutionname{\faIcon{pen-square} 答题区域}
+% \colorlet{backgroundcolor}{white}
+% \pagecolor{white}
+\watermark{WeYoung}
+\begin{document}
+
+\chapterimage{cover1}
+\chapterfont{FZXiaoBiaoSong-B05S}
+
+\chapter{2023年「大学物理2」杭电期中模拟试题}
+\fancyhead[L]{\,\kaishu{\href{http://weixin.qq.com/r/DBIABcHEqgnWKIVmb0eI}{\color{H4!60!black}\faIcon{weixin}\;微信公众号：WY未央学社}}}
+\fancyhead[R]{\kaishu{\href{https://h5.qun.qq.com/s/WRps3LNC8K}{\color{H4!60!black}「未央学社」HDU物理营：\texttt{560574854}}}\,}
+\input{cha/WY2023DW2.tex}
+
+% \chapter*{2023年「高等数学1」杭电期中模拟试题一}
+% \fancyhead[L]{\,\kaishu{\href{http://weixin.qq.com/r/DBIABcHEqgnWKIVmb0eI}{\color{H4!60!black}\faIcon{weixin}\;微信公众号：WY未央学社}}}
+% \fancyhead[R]{\kaishu{\href{https://qm.qq.com/q/OlkSiy9W04}{\color{H4!60!black}「未央学社」HDU数学营：\texttt{782790567}}}\,}
+% \input{cha/WY2023GS1-1.tex}
+
+% \chapter*{2023年「高等数学1」杭电期中模拟试题二}
+% \fancyhead[L]{\,\kaishu{\href{http://weixin.qq.com/r/DBIABcHEqgnWKIVmb0eI}{\color{H4!60!black}\faIcon{weixin}\;微信公众号：WY未央学社}}}
+% \fancyhead[R]{\kaishu{\href{https://qm.qq.com/q/OlkSiy9W04}{\color{H4!60!black}「未央学社」HDU数学营：\texttt{782790567}}}\,}
+% \input{cha/WY2023GS1-2.tex}
+
+
+\end{document}

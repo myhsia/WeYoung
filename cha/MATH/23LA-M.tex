@@ -1,0 +1,416 @@
+\chapter{2023年HDU线性代数期中试题解析}
+\section{填空题（每题3分，共18分）}
+\vspace{-1em}
+\begin{multicols}{2}
+\begin{exercise}
+    $
+    \begin{vmatrix}
+    5 & 2 & 0 & 0\\
+    2 & 1 & 0 & 0\\
+    0 & 0 & 8 & 3\\
+    0 & 0 & 5 & 2
+    \end{vmatrix}=
+    $\fillans{$1$}.
+\end{exercise}
+\begin{solution}
+$\begin{vmatrix}
+    \boldsymbol{A} & \boldsymbol{O}\\
+    \boldsymbol{O} & \boldsymbol{B}
+\end{vmatrix}=\abs{\boldsymbol{AB}}=\abs{\boldsymbol{A}}\abs{\boldsymbol{B}}=1$.
+\end{solution}
+\end{multicols}
+
+\begin{exercise}
+    设矩阵$\boldsymbol{A}$满足$\boldsymbol{A}^2-\boldsymbol{A}-2\boldsymbol{E}=\boldsymbol{O}$，则$\ab(\boldsymbol{A}+2\boldsymbol{E})^{-1}$=\fillans{$\frac{\ab(3\boldsymbol{E}-\boldsymbol{A})}{4}$}.
+\end{exercise}
+\begin{solution}
+    $\boldsymbol{A}^2-\boldsymbol{A}-2\boldsymbol{E}=\boldsymbol{O}$可分解为$\ab(\boldsymbol{A}+2\boldsymbol{E})\ab(3\boldsymbol{E}-\boldsymbol{A})=4\boldsymbol{E}$，由于零矩阵没有逆矩阵，故$\ab(\boldsymbol{A}+2\boldsymbol{E})^{-1}=\frac{\ab(3\boldsymbol{E}-\boldsymbol{A})}{4}$，
+\end{solution}
+
+\begin{exercise}
+    已知$\boldsymbol{A}$为三阶方阵且$\abs{\boldsymbol{A}}=2$，则$\abs{\frac{1}{2}\boldsymbol{A}^*}=$\fillans{?}.
+\end{exercise}
+\begin{solution}
+    $\abs{\frac{1}{2}\boldsymbol{A}^*}=\abs{\frac{1}{2}\abs{\boldsymbol{A}}\boldsymbol{A}^{-1}}=\abs{\boldsymbol{A}^{-1}}=\frac{1}{2}$.
+\end{solution}
+
+\begin{exercise}
+$f\ab(x)=
+\begin{vmatrix}
+    5x & 1 & 2 & 3\\
+    1 & x & 1 & 2\\
+    1 & 2 & x & 3\\
+    x & 1 & 2 & 2x
+\end{vmatrix}
+$的$x^3$项的系数是\fillans{$-3$}.
+\end{exercise}
+\begin{solution}
+    $x^3$项为$x\cdot x\cdot x\cdot 3\cdot\ab(-1)^{\tau\ab(4231)}=-3x^3$
+\end{solution}
+
+\begin{exercise}
+设$\boldsymbol{A}$是$4\times 3$矩阵，且$\mathrm{R}\ab(\boldsymbol{A})=2$，而$\boldsymbol{B}=
+\begin{pmatrix}
+9 & 0 & 0\\
+9 & -7 & 0\\
+8 & 7 & 8    
+\end{pmatrix}$，则$\mathrm{R}\ab(\boldsymbol{AB})=$\fillans{$?$}.
+\end{exercise}
+\begin{solution}
+    
+\end{solution}
+
+\begin{exercise}
+    方阵$\boldsymbol{A}$为可逆矩阵的充要条件是\fillans{$\boldsymbol{A}$行等价于$\boldsymbol{E}$}.
+\end{exercise}
+\begin{solution}
+    
+\end{solution}
+
+\section{选择题（每题3分，共18分）}
+\vspace{-1em}
+\begin{exercise}
+    设$\boldsymbol{A}$是$n\times n$阶矩阵，且$\mathrm{R}\ab(\boldsymbol{A})<n$，则下面说法不正确的是\ans{}
+    \begin{tasks}(2)
+        \task $\abs{\boldsymbol{A}}=0$
+        \task $\boldsymbol{A}$必有一个零子式
+        \task 齐次线性方程组$\boldsymbol{AX}=0$仅有零解
+        \task $\boldsymbol{A}$经初等行变换可化为单位矩阵
+    \end{tasks}
+\end{exercise}
+\begin{solution}
+    
+\end{solution}
+
+\begin{exercise}
+    已知$\vv{\alpha}_1,\ \vv{\alpha}_2$为$2$维列向量，矩阵$\boldsymbol{A}=\ab(2\vv{\alpha}_1+\vv{\alpha}_2,\vv{\alpha}_1-\vv{\alpha}_2)$，$\boldsymbol{B}=\ab(\vv{\alpha}_1,\vv{\alpha}_2)$.若行列式$\abs{\boldsymbol{A}}=6$，则行列式$\abs{\boldsymbol{B}}=$\ans{A}
+    \begin{tasks}(4)
+        \task $-2$
+        \task $2$
+        \task $-3$
+        \task $3$
+    \end{tasks}
+\end{exercise}
+\begin{solution}
+    
+\end{solution}
+
+\begin{exercise}
+    设$\boldsymbol{A}$为$n$阶矩阵，对矩阵$\boldsymbol{A}$作若干次初等变换得到矩阵$\boldsymbol{B}$，那么必有\ans{}
+    \begin{tasks}(4)
+        \task $\abs{\boldsymbol{A}}=\abs{\boldsymbol{B}}$
+        \task 若$\abs{\boldsymbol{A}}\neq 0$，则$\abs{\boldsymbol{B}}\neq 0$
+        \task $\abs{\boldsymbol{A}}\neq\abs{\boldsymbol{B}}$
+        \task 若$\abs{\boldsymbol{A}}>0$，则$\abs{\boldsymbol{B}}>0$
+    \end{tasks}
+\end{exercise}
+\begin{solution}
+    
+\end{solution}
+
+\begin{exercise}
+    设$\boldsymbol{A}$为$m\times n$矩阵，$\boldsymbol{B}$为$\boldsymbol{n\times m}$矩阵，则线性方程组$\ab(\boldsymbol{AB})\boldsymbol{X}=0$\ans{}
+    \begin{tasks}(2)
+        \task 当$m>n$时仅有零解
+        \task 当$m>n$时必有非零解
+        \task 当$m<n$时仅有零解
+        \task 当$m<n$时必有非零解
+    \end{tasks}
+\end{exercise}
+\begin{solution}
+    
+\end{solution}
+
+\begin{exercise}
+    设$\boldsymbol{A},\ \boldsymbol{B},\ \boldsymbol{C}$是$n$阶方阵，且$\boldsymbol{ABC}=\boldsymbol{E}$，其中$\boldsymbol{E}$为单位矩阵，则\ans{C}
+    \begin{tasks}(4)
+        \task $\boldsymbol{ACB}=\boldsymbol{E}$
+        \task $\boldsymbol{BAC}=\boldsymbol{E}$
+        \task $\boldsymbol{BCA}=\boldsymbol{E}$
+        \task $\boldsymbol{CBA}=\boldsymbol{E}$
+    \end{tasks}
+\end{exercise}
+\begin{solution}
+    $\epsilon_{\boldsymbol{A,B,C}}=1$
+\end{solution}
+
+\begin{exercise}
+    设矩阵$\boldsymbol{A}=
+    \begin{pmatrix}
+        1 & x & x^2 & x^3\\
+        1 & y & y^2 & y^3\\
+        1 & z & z^2 & z^3
+    \end{pmatrix}
+    $，其中$x,\ y,\ z$互补相等，矩阵$\boldsymbol{A}$的秩等于\ans{}
+    \begin{tasks}(4)
+        \task $1$
+        \task $2$
+        \task $3$
+        \task $4$
+    \end{tasks}
+\end{exercise}
+\begin{solution}
+    
+\end{solution}
+
+\section{计算题i（每题6分，共24分）}
+\vspace{-1em}
+\begin{exercise}
+求四阶行列式$
+\begin{vmatrix}
+    2 & 1 & 4 & 1\\
+    3 & -1 & 2 & 1\\
+    1 & 2 & 3 & 2\\
+    5 & 0 & 6 & 2
+\end{vmatrix}
+$
+\end{exercise}
+\begin{solution}
+$
+\begin{aligned}
+    \begin{vmatrix}
+        2 & 1 & 4 & 1\\
+        3 & -1 & 2 & 1\\
+        1 & 2 & 3 & 2\\
+        5 & 0 & 6 & 2
+    \end{vmatrix}\xlongequal{r_4-r_1-r_2}
+    \begin{vmatrix}
+        2 & 1 & 4 & 1\\
+        3 & -1 & 2 & 1\\
+        1 & 2 & 3 & 2\\
+        0 & 0 & 0 & 0
+    \end{vmatrix}=0
+\end{aligned}
+$
+\end{solution}
+
+\begin{exercise}
+    试求矩阵$\boldsymbol{A}=
+    \begin{pmatrix}
+        2 & -1 & -1 & 1 & 2\\
+        1 & 1 & -2 & 1 & 4\\
+        4 & -6 & 2 & -2 & 4\\
+        3 & 6 & -9 & 7 & 9
+    \end{pmatrix}
+    $的行最简形矩阵.
+\end{exercise}
+\begin{solution}
+    $\begin{pmatrix}
+        2 & -1 & -1 & 1 & 2\\
+        1 & 1 & -2 & 1 & 4\\
+        4 & -6 & 2 & -2 & 4\\
+        3 & 6 & -9 & 7 & 9
+    \end{pmatrix}
+    \stackrel{r_2\leftrightarrow r_4}{\longrightarrow}
+    \begin{pmatrix}
+        2 & -1 & -1 & 1 & 2\\
+        3 & 6 & -9 & 7 & 9\\
+        4 & -6 & 2 & -2 & 4\\
+        1 & 1 & -2 & 1 & 4
+    \end{pmatrix}
+    \stackrel{...}{\longrightarrow}\cdots
+    $
+\end{solution}
+
+\begin{exercise}
+    设四阶行列式$
+    \begin{vmatrix}
+        3 & -5 & 2 & 1\\
+        1 & 1 & 0 & -5\\
+        -1 & 3 & 1 & 3\\
+        2 & -4 &-1 & -3
+    \end{vmatrix}
+    $，求$M_{11}+M_{21}+M_{31}+M_{41}$.
+\end{exercise}
+\begin{solution}
+    $M_{11}+M_{21}+M_{31}+M_{41}=  
+    \begin{vmatrix}
+        1 & -5 & 2 & 1\\
+        -1 & 1 & 0 & -5\\
+        1 & 3 & 1 & 3\\
+        -1 & -4 &-1 & -3
+    \end{vmatrix}=0$
+\end{solution}
+
+\begin{exercise}
+    已知$a$是常数，且矩阵$\boldsymbol{A}=
+    \begin{pmatrix}
+        1 & 2 & 2\\
+        1 & 3 & 0\\
+        2 & 7 & -2
+    \end{pmatrix}
+    $可经初等变换化为矩阵$\boldsymbol{B}=
+    \begin{pmatrix}
+        1 & a & 2\\
+        0 &1 & 1\\
+        -1 & 1 & 1
+    \end{pmatrix}
+    $，试求$a$的取值.
+\end{exercise}
+\begin{solution}
+    
+\end{solution}
+\section{计算题ii（每题6分，共24分）}
+\vspace{-1em}
+\begin{exercise}
+    设矩阵$\boldsymbol{A}=
+    \begin{pmatrix}
+        1 & -2 & 3 & -1 & 1\\
+        3 & -1 & 5 & -3 & 2\\
+        2 & 1 & 2 & -2 & 1
+    \end{pmatrix}
+    $，求矩阵$\boldsymbol{A}$的秩.
+\end{exercise}
+\begin{solution}
+    $$\boldsymbol{A}=
+    \begin{pmatrix}
+        1 & -2 & 3 & -1 & 1\\
+        3 & -1 & 5 & -3 & 2\\
+        2 & 1 & 2 & -2 & 1
+    \end{pmatrix}\longrightarrow
+    \begin{pmatrix}
+        1 & -2 & 3 & -1 & 1\\
+        0 & 5 & -4 & 0 & -1\\
+        0 & 5 & -4 & 0 & -1
+    \end{pmatrix}\longrightarrow
+    \begin{pmatrix}
+        1 & -2 & 3 & -1 & 1\\
+        0 & 5 & -4 & 0 & -1\\
+        0 & 0 & 0 & 0 & 0
+    \end{pmatrix}
+    $$
+    故$\mathrm{R}\ab(\boldsymbol{A})=2$.
+\end{solution}
+
+\begin{exercise}
+    已知$\boldsymbol{A}=
+    \begin{pmatrix}
+        1 & 2 & 1\\
+        3 & 4 & 2\\
+        1 & 2 & 2
+    \end{pmatrix}
+    $，矩阵$\boldsymbol{X}$满足$\boldsymbol{AX}=\boldsymbol{A}^{\top}+\boldsymbol{X}$，求$\boldsymbol{X}$.
+\end{exercise}
+\begin{solution}
+    $$
+    \begin{aligned}
+    \boldsymbol{X}&=\ab(\boldsymbol{A}-\boldsymbol{E})^{-1}\boldsymbol{A}^{\top}\\
+    &=\begin{pmatrix}
+        -1 & 0 & 1\\
+        -1 & -1 & 3\\
+        3 & 2 & -6
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 & 3 & 1\\
+        2 & 4 & 2\\
+        1 & 2 & 2
+    \end{pmatrix}=
+    \begin{pmatrix}
+        0 & 0 & 1\\
+        -1 & 0 & 3\\
+        3 & 2 & -5
+    \end{pmatrix}
+    \end{aligned}
+    $$
+\end{solution}
+
+\begin{exercise}
+    设矩阵$\boldsymbol{A}=
+    \begin{pmatrix}
+        0 & 3 & 3\\
+        1 & 1 & 0\\
+        -1 & 2 & 3
+    \end{pmatrix}
+    $，且$\boldsymbol{AB}=\boldsymbol{A}+2\boldsymbol{B}$，求$\abs{\boldsymbol{B}}$.
+\end{exercise}
+\begin{solution}
+    由矩阵方程
+    $$\boldsymbol{AB}=\boldsymbol{A}+2\boldsymbol{B}$$
+    解得
+    $$\boldsymbol{B}=\ab(\boldsymbol{A}-2\boldsymbol{E})^{-1}\boldsymbol{A}$$
+    $$\ab(\boldsymbol{A}-2\boldsymbol{E})^{-1}\boldsymbol{A}=\frac{1}{2}
+    \begin{pmatrix}
+        -1 & 3 & 3\\
+        -1 & 1 & 3\\
+        1 & 1 & -1
+    \end{pmatrix}
+    \begin{pmatrix}
+        0 & 3 & 3\\
+        1 & 1 & 0\\
+        -1 & 2 & 3
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        0 & 3 & 3\\
+        -1 & 2 & 6\\
+        1 & 1 & 0
+    \end{pmatrix}
+    $$
+\end{solution}
+
+\begin{exercise}
+    已知矩阵$\boldsymbol{A}=
+    \begin{pmatrix}
+        2 & 1 & -3\\
+        1 & 2 & -2\\
+        -1 & 3 & 2
+    \end{pmatrix}
+    $，试求$\boldsymbol{A}$的逆矩阵.
+\end{exercise}
+\begin{solution}
+    $$\ab(\boldsymbol{A}\vdots\boldsymbol{E})=
+    \begin{pmatrix}
+        2 & 1 & -3 &\vdots\ 1 & 0 & 0\\
+        1 & 2 & -2 &\vdots\ 0 & 1 & 0\\
+        -1 & 3 & 2 &\vdots\ 0 & 0 & 1
+    \end{pmatrix}\longrightarrow
+    \begin{pmatrix}
+        1 & 0 & 0 &\vdots\ 2 & -11/5 & 4/5\\
+        0 & 1 & 0 &\vdots\ 0 & 1/5 & 1/5\\
+        0 & 0 & 1 &\vdots\ 1 & -7/5 & 3/5
+    \end{pmatrix}=\ab(\boldsymbol{E}\vdots\boldsymbol{A}^{-1})
+    $$
+    $$\boldsymbol{A}^{-1}=
+    \begin{pmatrix}
+    2 & -11/5 & 4/5\\
+    0 & 1/5 & 1/5\\
+    1 & -7/5 & 3/5
+    \end{pmatrix}
+    $$
+\end{solution}
+\section{综合题（12分）}
+\vspace{-1em}
+\begin{exercise}
+    已知线性方程组$
+    \left\{
+        \begin{aligned}
+            &x_1+x_2+x_3=1\\
+            &2x_1+5x_2+px_3=5\\
+            &3x_1+px_2+3x_3=2
+        \end{aligned}
+    \right.
+    $，问
+    \vspace{1em}
+    \begin{enumerate}
+        \item 当参数$p$满足什么条件时，方程组有唯一解？无解？有无穷多解？
+        \item 有无穷多解时，求方程组的通解.
+    \end{enumerate}
+\end{exercise}
+\begin{solution}
+    \begin{enumerate}
+        \item 矩阵方程为
+        $$
+        \begin{pmatrix}
+            1 & 1 & 1\\
+            2 & 5 & p\\
+            3 & p & 3
+        \end{pmatrix}
+        \begin{pmatrix}
+            x_1\\x_2\\x_3
+        \end{pmatrix}=
+        \begin{pmatrix}
+            1\\5\\2
+        \end{pmatrix}
+        $$
+    \end{enumerate}
+\end{solution}

@@ -1,0 +1,47 @@
+\chapter*{不定积分每日一题}
+\vspace{-2.625em}
+\exercise{求极限$\lim_{n\to\infty}{\frac{\sqrt[n]{2}-1}{\sqrt[n]{2n+1}}\qty(\int_1^{\frac{1}{2n}}{\ee^{-y^2}\d y}+\int_1^{\frac{3}{2n}}{\ee^{-y^2}\d y}+\cdots+\int_1^{\frac{2n-1}{2n}}{\ee^{-y^2}\d y})}$}%在花括号内输入题目
+
+\teacher{管虹安}%在花括号内输入你的名字
+
+\postdate{2023年4月8日}%在花括号内输入你想要发布那一天的日期
+
+\result{\frac{\ln{2}}{2}\qty(\ee^{-1}-1)}%在花括号内输入本题结果
+
+\analysis{
+    今天上上强度，挑战一下考研题.题目是数学营群内同学所问，去年武忠祥老师的每日一题有讲.考察的内容比较综合，主要考察的是定积分定义，同时也考察了极限的四则运算法则和幂指函数的极限求法.
+
+    观察这个综合的极限的每个部分，我们发现：
+    \formula{2^{\frac{1}{n}}-1=\ee^{\dfrac{\ln{2}}{n}}-1\sim\frac{\ln{2}}{n}}
+    因此分子可以等价无穷小，而分母可以直接计算（注意$n$趋向）：
+    \formula{\lim_{n\to\infty}{\qty(2n+1)^{\frac{1}{n}}}=\lim_{n\to\infty}{\exp\qty[\dfrac{\ln{\qty(2n+1)}}{n}]}=\ee^0=1}
+    这里有同学可能会这样操作（错误的）：
+    \formula{\lim_{n\to\infty}{\qty(2n+1)^{\frac{1}{n}}}=\lim_{n\to\infty}{\exp\qty[\dfrac{\ln{\qty(2n+1)}}{n}]}=\lim_{n\to\infty}{\ee^{\frac{2n}{n}}}=\ee^2}
+    错误原因：胡乱等价无穷小（等价的前提是它本身就是无穷小）.
+
+    到这我们就可以利用等价无穷小和极限四则运算法则化简：
+    \formula{
+        \begin{aligned}
+            &\lim_{n\to\infty}{\frac{\sqrt[n]{2}-1}{\sqrt[n]{2n+1}}\qty(\int_1^{\frac{1}{2n}}{\ee^{-y^2}\d y}+\int_1^{\frac{3}{2n}}{\ee^{-y^2}\d y}+\cdots+\int_1^{\frac{2n-1}{2n}}{\ee^{-y^2}\d y})}\\
+            =&\ln{2}\lim_{n\to\infty}{\frac{\displaystyle\int_1^{\frac{1}{2n}}{\ee^{-y^2}\d y}+\displaystyle\int_1^{\frac{3}{2n}}{\ee^{-y^2}\d y}+\cdots+\displaystyle\int_1^{\frac{2n-1}{2n}}{\ee^{-y^2}\d y}}{n}}
+        \end{aligned}
+    }
+    接下来的内容不容易想到，其实用的是定积分的定义.我们令
+        \formula{f\qty(x)=\int_1^x{\ee^{-y^2}\d y,\ \xi_k=\frac{2k-1}{n}}}
+        那么就有$0<\xi_1<\xi_2<\cdots<\xi_n<1$，将区间$\qty[0,1]$划分为$n=1$个区间，并且区间长度
+        \formula{l\le\frac{1}{n}\to 0\ (n\to\infty)}
+        那么由定积分的定义，分割$\to$求和$\to$取极限
+        \formula{
+            \begin{aligned}
+                &\lim_{n\to\infty}{\frac{\displaystyle\int_1^{\frac{1}{2n}}{\ee^{-y^2}\d y}+\displaystyle\int_1^{\frac{3}{2n}}{\ee^{-y^2}\d y}+\cdots+\displaystyle\int_1^{\frac{2n-1}{2n}}{\ee^{-y^2}\d y}}{n}}\\
+                =&\lim_{n\to\infty}{\frac{1}{n}\sum_{k=1}^n{f\qty(\xi_k)}}=\int_0^1{f\qty(x)\d x}=\int_0^1\int_1^x{\ee^{-y^2}\d y\d x}\\
+                &=-\int_0^1\int_x^1{\ee^{-y^2}\d y\d x}=-\int_0^1{\d y}\int_0^y{\ee^{-y^2}\d x}\\
+                &=-\int_0^1{y\ee^{-y^2}\d y}=\frac{1}{2}\qty(\ee^{-1}-1)
+            \end{aligned}
+        }
+        上述计算过程中，利用定积分定义，将极限转化为二重积分，但在计算二重积分的时候，我们关注到$\int{\ee^{-y^2}\d y}$无初等函数解，因此通过积分换序的方法得到$\int{y\ee^{-y^2}\d y}$.
+
+        因此最后的答案不要忘记乘以前面的$\ln{2}$，极限为
+        \formula{\frac{\ln{2}}{2}\qty(\ee^{-1}-1)}
+        这题综合的程度还是很高的，不知道你做出来了吗，卡在哪一步了呢?考研题的综合 难度还是很有意思的，希望今天的过程能给你启发哦$\sim$
+}%在花括号内输入分析

@@ -1,0 +1,84 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\iint{\frac{1}{x+\sqrt{x^2-x+1}}\d x}$}
+
+\teacher{徐薪雨}
+
+\postdate{2022年12月17日}
+
+\bigresult{
+    $\frac{3}{t+1}+2\ln{\abs{t}}-\frac{1}{2}\ln{\abs{t-1}}-\frac{3}{2}\ln{\abs{t+1}}+C$
+
+    其中$t=\frac{\sqrt{x^2-x+1}+1}{x}$
+}
+
+% \formula{\frac{3x}{x+1+\sqrt{x^2-x+1}}+2\ln{\abs{\frac{\sqrt{x^2+1}+1}{x}}}-\frac{1}{2}\ln{\abs{\frac{\sqrt{x^2-x+1}+1}{x}}}+\frac{3}{2}\ln{\abs{\frac{\sqrt{x^2+x+1}+1}{x}}}+C}
+
+\analysis{
+    对于本题，我们可以采用欧拉换元积分法.对于$\int{R\qty(x,\sqrt{ax^2+bx+c})\d x}$（即含根号下二次式的）这类积分有比较好的效果.
+
+    下面先介绍下欧拉换元积分法.
+
+    不妨将$\sqrt{ax^2+bx+c}$记作$y$，那么，$x$与$y$满足关系
+$y^2-ax^2-bx-c=0$，这给出一条有理曲线.数学研究表明，有理曲线上的$x$与$y$能被分别表为某个参数的有理函数，即
+\formula{x=x\qty(t),\ y=y\qty(t)}
+    那么，原积分就可以转化为$\int{R\qty[x\qty(t),y\qty(t)]}$，即$t$的有理积分.欧拉代换法正是给出了从$x,y$到$t$的一组代换.而对有理曲线的讨论超出本文的内容，故略去. 
+
+那么在我们实际的运算中，有三种情况和对应的替换方法.
+
+1.第一种替换（$a>0$的情况）
+
+令$\sqrt{ax^2+bx+c}=t-\sqrt{a}x$，两边平方化简消去$ax^2$后可得
+\formula{bx=c=t^2-2\sqrt{a}\cdot tx}
+之后我们便可以自然得到
+\formula{x=\frac{t^2-c}{2\sqrt{a}t+b},\ \sqrt{ax^2+bx+c}=\frac{\sqrt{a}t^2+bt+c\sqrt{a}}{2\sqrt{a}t+b},\ \d x=2\frac{\sqrt{a}t^2+bt+c\sqrt{a}}{\qty(2\sqrt{a}t+b)^2}\d t}
+
+2.第二种替换（$c>0$的情况）
+
+令$\sqrt{ax^2+bx+c}=xt+\sqrt{c}$（也可令$\sqrt{ax^2+bx+c}=xt-\sqrt{c}$）
+
+两边平方后，消去$c$，约掉$x$，化简可得
+\formula{ax+b=xt^2+2\sqrt{c}t}
+从而可得
+\formula{x=\frac{2\sqrt{c}t-b}{a-t^2},\ \sqrt{ax^2+bx+c}=\frac{\sqrt{c}t^2-bt+a\sqrt{c}}{a-t^2},\ \d x=2\frac{\sqrt{c}t^2-bt+a\sqrt{c}}{\qty(a-t^2)^2}\d t}
+
+3.第三种替换（根号下的二次式有两个相异根$\lambda,\ \mu$时）
+
+此时我们有$ax^2+bx+c=a\qty(x-\lambda)\qty(x-\mu)$
+
+令$\sqrt{ax^2+bx=c}=t\qty(x-\lambda)$
+
+两边平方后可得
+\formula{ax^2+bx+c=t^2\qty(x-\lambda)^2,\ a\qty(x-\lambda)\qty(x-\mu)=t^2\qty(x-\lambda)^2}
+
+约掉$x-\lambda$可得
+\formula{t^2x-ax=-a\mu+\lambda t^2}
+
+因此可得
+
+\formula{x=\frac{\lambda t^2-a\mu}{t^2-a},\ \sqrt{ax^2+bx+c}=\frac{a\qty(x-\mu)t}{t^2-a},\ \d x=\frac{2a\qty(\mu-\lambda)t}{\qty(t^2-a)^2}\d t}
+
+到这，我们就知道了欧拉换元法的基本使用方法，也就是如何换元的，而对于后面的运算结论不必记忆，届时自行推导即可.而关于这三种替换方法如何使用，下面以本期的每日一题为例，演示下对应的计算方法.
+}
+
+\solution{
+    令$\sqrt{x^2-x+1}=tx-1$，平方得$x^2-x+1=t^2x-2tx+1$
+
+    约去最后的常数项并整理，得到
+    \formula{x=\frac{2t-1}{t^2-1},\ \d t=-2\frac{t^2-t+1}{\qty(t^2-1)^2}\d t}
+
+    于是
+    \formula{\sqrt{x^2-x+1}=\frac{t^2-t+1}{t^2-1},\ x+\sqrt{x^2-x+1}=\frac{t}{t-1}}
+
+    因此，原积分就转化为了有理分式积分，利用待定系数法可得
+    \formula{
+        \begin{aligned}
+            \int{\frac{1}{x+\sqrt{x^2-x+1}}\d x}&=\int{\frac{\qty(t^2-t+1)\qty(t-1)}{t\qty(t^2-1)^2}\d t}\\
+            &=\int{\qty[\frac{2}{t}-\frac{1}{2}\frac{1}{t-1}-\frac{3}{2}\frac{1}{t+1}-\frac{3}{\qty(t+1)^2}]\d t}\\
+            &=\frac{3}{t+1}+2\ln{\abs{t}}-\frac{1}{2}\ln{\abs{t-1}}-\frac{3}{2}\ln{\abs{t+1}}+C
+        \end{aligned}
+    }
+    最后不要忘记换元回代，将$t$变回$x$.代入$t=\frac{\sqrt{x^2-x+1}+1}{x}$后即得参考答案.
+}

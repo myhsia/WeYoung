@@ -1,0 +1,280 @@
+\vskip4ex
+\wysubtitle{logos.pdf}
+{\makebox[.5\textwidth][l]{出题：高数讲师 ch \& xxy \& zwx}\makebox[.5\textwidth][l]{审题：未央学社}}
+{https://qm.qq.com/q/OlkSiy9W04}{HDU 数学营}
+{http://weixin.qq.com/r/mhKYgFTEMQlOrRDj90eI}{未央学社公众号}
+\begin{flushleft}
+    \kaishu\qquad 本资料仅作为模拟练习之用，目的是为了帮助大家更有效地复习，并减轻对考试的担忧。请正确的对待此资料，其旨在辅助复习，而非预示具体的考试内容。我们鼓励同学们认真复习，大学学习主打理解，而非刷题，期望大家在期中考试中取得优异成绩。
+\end{flushleft}
+
+\section{选择题}
+\begin{choice}{D}
+$f'(x_{0})=0$是$f(x)$在$x_{0}$取得极值的
+\begin{tasks}(2)
+        \task 充分条件
+        \task 必要条件
+        \task 充分必要条件
+        \task 既非充分也非必要条件
+\end{tasks}
+\end{choice}
+\begin{solution}*
+导数不存在的点也有可能是极值点，驻点不一定是极值点.
+\end{solution}
+\begin{choice}{D}
+        极限$\lim_{x \to 1}\frac{x-1}{\abs{x-1}}$的值是
+\begin{tasks}(4)
+        \task $1$
+        \task $-1$
+        \task $0$
+        \task 不存在
+\end{tasks}
+\end{choice}
+\begin{solution}*
+        因为$\lim_{x\to 1^+}\frac{x-1}{\abs{x-1}}=1,\ \lim_{x\to 1^-}\frac{x-1}{\abs{x-1}}=-1$，所以极限$\lim_{x \to 1}\frac{x-1}{\abs{x-1}}$的值不存在.
+\end{solution}
+
+\begin{choice}{C}
+        曲线$y=x^2$与曲线$y=a\ln x(a\neq 0)$相切，则$a=$
+\begin{tasks}(4)
+        \task $4\e$
+        \task $3\e$
+        \task $2\e$
+        \task $\e$
+\end{tasks}
+\end{choice}
+\begin{solution}*
+        因为曲线$y=x^2$与曲线$y=a\ln x(a\neq 0)$相切，所以$(x^2)'=(a\ln x)'$，即$2x=a\frac{1}{x}$，得$x=\sqrt{\frac{a}{2}}$时，$y=a\ln \sqrt{\frac{a}{2}}=a\cdot\frac{1}{2}\ln \frac{a}{2}$，于是$\frac{a}{2}=\frac{a}{2}\cdot\ln \frac{a}{2}$得$a=2\e$.\sokka{C}
+\end{solution}
+
+\begin{choice}{C}
+        下列各式中正确的是
+\begin{tasks}(4)
+        \task $\lim_{x\to0}(1+2x)^\frac{1}{x}=\e^\frac12$
+        \task $ \lim_{x\to0}(1-x)^{\frac{1}{x}}=\e$
+        \task $\lim_{x\to0}(1+\mathrm{\tan} x)^{\cot x}=\e$
+        \task $\lim_{x\to 0}\ab(1+n\frac{1}{x})^{x}=\e^{\frac{1}{n}}$
+\end{tasks}
+\end{choice}
+\begin{solution}*
+        根据重要极限2，即$\lim_{x \to 0}(1+x)^{\frac{1}{x}}=\e$，逐步计算选项A，B，C，D，分别得$\e^2,\ \e^{-1},\ \e,\ \e^n$.
+\end{solution}
+
+
+\begin{choice}{D}
+        曲线$y=\frac{x^2}{(x+1)}$
+\begin{tasks}(2)
+        \task 没有渐近线
+        \task 既有铅直渐近线，又有水平渐近线
+        \task 仅有铅直渐近线
+        \task 既有铅直渐近线，又有斜渐近线
+\end{tasks}
+\end{choice}
+\begin{solution}*
+        由于$\lim_{x \to -1 }\frac{x^2}{x+1}=\infty$，因此$x=-1$是铅直渐近线.又$a=\lim_{x \to \infty }\frac{x^2}{x(1+x)}=1,\ b=\lim_{x \to\infty  }\ab(\frac{x^2}{1+x}-x)=-1$故$y=x-1$是斜渐近线.\sokka{D}
+\end{solution}
+
+\begin{choice}{A}
+        使函数$f(x)=\sqrt[3]{x^2(1-x)^2}$满足罗尔定理条件的区间是
+\begin{tasks}(4)
+        \task $[0,1]$
+        \task $[-1,1]$
+        \task $[-2,2]$
+        \task $[-3/5,4/5]$
+\end{tasks}
+\end{choice}
+\begin{solution}*
+        对于选项B，C，D中的区间，因函数$f(x)$在$x=0$处导数不存在，故排除.\sokka{A}
+\end{solution}
+
+\begin{choice}{B}
+        已知实数$a,\ b$满足$\lim_{x\to a}\frac{f(x)-a}{x-a}=b$，则$\lim_{x\to a}\frac{\sin f(x)-\sin a}{x-a}=$
+\begin{tasks}(4)
+        \task $b\sin a$
+        \task $b\cos a$ 
+        \task $b\sin f(a)$
+        \task $b\cos f(a)$ 
+\end{tasks}
+\end{choice}
+\begin{solution}
+        因为$\lim_{x\to a}\frac{\sin f(x)-\sin a}{x-a}=\lim_{x\to a}\frac{\cos\varepsilon [f(x)-a]}{x-a}$（$\varepsilon$介于$f(x)$与$a$之间）.且$\lim_{x\to a}\cos \varepsilon=\cos a$，所以原式=$b\cos a$.
+\end{solution}
+
+\begin{choice}{C}
+        曲线$\begin{cases}
+        x=t^2+7\\
+        y=t^2+4t+1
+\end{cases}$上对应的$t=1$的点处的曲率半径是
+\begin{tasks}(4)
+        \task $\frac{\sqrt{10}}{50}$
+        \task $\frac{\sqrt{10}}{100}$
+        \task $10\sqrt{10}$
+        \task $5\sqrt{5}$
+\end{tasks}
+\end{choice}
+\begin{solution}*
+        由于$\frac{\d y}{\d x} =\frac{\frac{\d y}{\d t} }{\frac{\d x}{\d t} }=
+        \frac{2t-4}{2t},\frac{\d^2 y}{\d x^2}=\frac{\frac{2\cdot2t-2(2t+4)}{(2t)^2} }{2t}=
+        -\frac{8}{(2t)^3}$，因此$\frac{\d y}{\d x}\Bigg|_{t=1}=3,\ \frac{\d^2 y}{\d x^2}\Bigg|_{t=1}=-1,\ K=\frac{|y''|}{[1+(y')^2]^{\frac{3}{2} }}=\frac{1}{(1+3^2)^{\frac{3}{2} }}$，得最终结果$R=\frac{1}{K}=10\sqrt{10}$.
+\end{solution}
+
+\section{填空题}
+\begin{problem}
+    设$f(x)=x(x-1)(x-2)\ldots(x-99)$，求$f'(0)=$\ans{$-99!$}.
+\end{problem}
+\begin{solution}*
+        $f'(0)=\lim_{x \to 0}\frac{f(x)-f(0)}{x}=\lim_{x\to 0}(x-1)(x-2)\cdots(x-99)=-99!$.
+\end{solution}
+\begin{problem}
+    求解函数极限$\lim_{x\to 1}\frac{1-x^2}{\sin \pi x}=$ \ans{$\frac{2}{\pi}$}.
+\end{problem}
+\begin{solution}
+        令$t=x-1$，此时$t\to 0$，得到$x=t+1$，原式可表示为$\lim_{t\to 0}\frac{(t+2)t}{\sin \pi t}=\lim_{t \to 0}\frac{(t+2)t}{\pi t}=\lim_{t\to 0}\frac{t+2}{\pi}=\frac{2}{\pi}$.
+\end{solution}
+\begin{problem}
+    设函数$f(x)$在点$x=a$处可导，则$\lim_{x \to 0}\frac{f(a+x)-f(a-x)}{x}=$\ans{$2f'(a)$}.
+\end{problem}
+\begin{solution}*
+        $\lim_{x\to 0}\frac{f(a+x)-f(a-x)}{x}=\lim_{x\to 0}\ab[\frac{f(a+x)-f(a)}{x}+\frac{f(a-x)-f(a)}{-x}]=2f'(a)$.
+\end{solution}
+\begin{problem}
+    曲线$y=x^2+\ln x$在其拐点处的切线方程是\ans{$y=4x-3$}.
+\end{problem}
+
+\begin{solution}*
+        定义域$(0,+\infty)$，$y'=2x+\frac{2}{x}$，$y''=2+\frac{-2}{x^2}$，$y''(1)=0$，且在$x=1$左右$y''(x)$符号改变，为拐点斜率$k=4$经过点$(1,1)$的方程$y=4x-3$.
+\end{solution}
+
+\newpage
+\section{计算题}
+\begin{problem}
+	求极限$\lim_{x\to +\infty} \ab( \frac{3x+2}{3x-1} ) ^{2x-1}$.
+\end{problem}
+\begin{draft}
+        \vspace{3em}
+\end{draft}
+\begin{solution}*
+        $\lim_{x\to +\infty} \ab( \frac{3x+2}{3x-1} ) ^{2x-1}=\lim_{x\to +\infty} \ab( 1+\frac{3}{3x-1} ) ^{\frac{3x-1}{3}\cdot \frac{3( 2x-1 )}{3x-1}}=\e^2$.
+\end{solution}
+\begin{problem}
+	求极限$\lim_{n\to \infty} \ab( 1+\frac{1}{n^2} ) \cdot \ab( 1+\frac{2}{n^2} ) \cdots \ab( 1+\frac{n}{n^2} )$.
+\end{problem}
+\begin{draft}
+        \vspace{3em}
+\end{draft}
+\begin{solution}
+	$\lim_{n\to \infty} \ln x_n=\lim_{n\to \infty} \ab[ \ln \ab( 1+\frac{1}{n^2} ) +\ln \ab( 1+\frac{2}{n^2} ) +\cdots +\ln \ab( 1+\frac{n}{n^2} ) ]$.当$x>0$时，$x-\frac{x^2}{2}<\ln ( 1+x ) <x$，所以有
+
+	\[\begin{aligned}
+		\ln x_n&<\frac{1}{n^2}+\frac{2}{n^2}+\cdots+\frac{n}{n^2}=\frac{\frac{n(n+1)}{2}}{n^2}\xlongequal{n\to\infty}\frac{1}{2}\\
+		\ln x_n&>\frac{1}{n^2}-\frac{1}{2} \cdot \frac{1}{n^4}+\frac{2}{n^2}-\frac{1}{2} \cdot \frac{4}{n^4}+\cdots+\frac{n}{n^2}-\frac{1}{2} \cdot \frac{n^2}{n^4}=\frac{\frac{n(n+1)}{2}}{n^2}-\frac{1}{2} \cdot \frac{\frac{n(n+1)(2 n+1)}{6}}{n^4}\xlongequal{n\to\infty}\frac{1}{2}
+	\end{aligned}\]
+
+	所以由夹逼准则知$\lim_{n\to \infty} \ln x_n=\frac{1}{2}$，即$\lim_{n\to \infty} x_n=\e^{\frac{1}{2}}$.
+\end{solution}
+\begin{problem}
+	$y=\tan x+\sec x+2$，求$y'$.
+\end{problem}
+\begin{draft}
+        \vspace{3em}
+\end{draft}
+\begin{solution}*
+        $y'=\sec ^2x+\sec x\tan x$.
+\end{solution}
+\begin{problem}
+	设$\begin{cases}
+		x=a(t-\sin t)\\
+		y=a(1-\cos t)
+	\end{cases}$，求$\frac{\d y}{\d x}\Bigg|_{t=\frac{\pi}{2}}$.
+\end{problem}
+\begin{draft}
+        \vspace{3em}
+\end{draft}
+\begin{solution}*
+        $\frac{\d y}{\d x}=\frac{\ab[a\ab(1-\cos t)]'}{\ab[a\ab(t-\sin t)]'}=\frac{1-\cos t}{\sin t}$，所以$\frac{\d y}{\d x}\Bigg|_{\frac{\pi}{2}}=1$.
+\end{solution}
+\begin{problem}
+	已知隐函数$y=y(x)$ 由$y=-y\e^x+2\e^y\sin x-7x$所确定，求$y'(0)$.
+\end{problem}
+\begin{draft}
+        \vspace{3em}
+\end{draft}
+\begin{solution}*
+        将$x=0$代入方程，有$y(0)=-y(0)$，即$y(0)=0$，两边对$x$求导，得$y'=-y' \e^x-y \e^x+2 \e^y y' \sin x+2 \e^y \cos x-7$，将$x=0$，$y(0)=0$代入，有$y'(0)=-y'(0)+2-7$， $y'(0)=-\frac{5}{2}$.
+\end{solution}
+
+\section{综合题}
+\begin{problem}
+        $f(x)=\frac{x+9}{x^2-2x-3}$，求$f^{(n)}(x)$.
+\end{problem}
+\begin{draft}
+        \vspace{3em}
+\end{draft}
+\begin{solution}*
+        注意到$f(x)=\frac{3}{x-3}-\frac{2}{x+1}$，于是我们得到$f^{(n)}(x)=(-1)^nn!\ab[\frac{3}{(x-3)^{n+1}}-\frac{2}{(x+1)^{n+1}}]$
+\end{solution}
+
+\begin{problem}
+        设$f(x)$在$x=2$连续，且$\lim_{x\to 2}\frac{f(x)}{x-2}=3$，求$f(2)$以及$f'(2)$.
+\end{problem}
+\begin{draft}
+        \vspace{3em}
+\end{draft}
+\begin{solution}*
+        显然$f(x)=3(x-2)+o(x-2)$，那么$f(2)=\lim_{x\to 2}f(x)=0,\ f'(2)=3$.
+\end{solution}
+
+\begin{problem}
+        极限$\lim_{x\to 0}\frac{\sqrt{1+\sin x+\sin^2x}-a-b\sin x}{x^2}$存在，求出常数$a,\ b$.
+\end{problem}
+\begin{draft}
+        \vspace{3em}
+\end{draft}
+\begin{solution}
+\textbf{解法1.}
+
+将上式改写为
+$\lim_{x\to 0}\frac{\sqrt{1+\sin x+\sin^2x}-1-\frac{1}{2}\sin x+(1-a)+(\frac{1}{2}-b)\sin x}{x^2}$，然而
+\[\lim_{x\to 0}\frac{\sqrt{1+\sin x+\sin^2x}-1-\frac{1}{2}\sin x}{x^2}=\lim_{x\to 0}\frac{3}{4\ab(\sqrt{1+\sin x+\sin^2x}+1+\frac{1}{2}\sin x)}\]
+所以$\lim_{x\to 0}{(1-a)+\ab(\frac{1}{2}-b)\sin x}$存在. 由于分子极限为0，即可得到$a=1$.带入后得到$\frac{1}{2}-b=0$即$b=\frac{1}{2}$.
+
+\textbf{解法2.}
+
+首先因为原式极限存在，而显然分母极限为0，所以若想要满足原式极限存在的条件，分子的极限也应该为0。首先我们来单独求解分子极限
+\[\lim_{x\to 0}\sqrt{1+\sin x+\sin^2x}-a-b\sin x=0\]
+得到$a=1$,代回原式中去得到
+\[\lim_{x\to 0}\frac{\sqrt{1+\sin x+\sin^2x}-1-b\sin x}{x^2}\]
+根据泰勒公式中$(1+x)^\alpha=1+\alpha x+\frac{\alpha(\alpha-1)}{2!}x^2+\cdots+\frac{\alpha(\alpha-1)\dots(\alpha-n+1)}{n!}x^n+o(x^n)$可得原式为
+\[\lim_{x\to 0}\frac{\frac{1}{2}\sin^2x+\ab(\frac{1}{2}-b)\sin x+o(\sin x+\sin^2x)}{x^2}\]
+因为原极限存在，所以分子必须为分母的高阶或者同阶无穷小，所以$\frac{1}{2}-b=0$,所以$b=\frac{1}{2}$.
+\end{solution}
+
+\begin{problem}
+在半径为$r$的球内内接一圆锥，求圆锥体积的最大值.
+\end{problem}
+\begin{draft}
+        \vspace{3em}
+\end{draft}
+\begin{solution}*
+        设底面距离球心的距离为$d$，那么底面面积为$S=\pi(r^2-d^2)$，圆锥的高为$d+r$，体积$V=\frac13S(d+r)=\frac13\pi(r^2-d^2)(d+r)=\frac13\pi(r^3+r^2d-d^2r-d^3)$，求导得到$V'=\frac13\pi(-3d^2-2rd+r^2)$，得到$d^{*}=\frac{r}{3}$，代入即得.
+\end{solution}
+
+\begin{problem}
+多项式$P(x)=a_1x+a_2x^2+..+a_nx^n$的系数满足$\sum^{n}_{i=1}a_i=0$.证明在$(0,2)$上多项式$a_1t+2a_2t^2+\cdots+na_nt^n=0$有实数解.
+\end{problem}
+\begin{draft}
+\begin{minipage}{0.81\textwidth}
+\begin{flushright}\color{black}
+        扫码观看讲解\href{https://b23.tv/QX7ACak}{【未央学社】2023杭电高等数学上期中模拟卷二讲解}
+
+        答案于微信公众号~\href{http://weixin.qq.com/r/mhKYgFTEMQlOrRDj90eI}{WY未央学社}~后台回复“\textbf{2023期中模拟卷}”获取
+\end{flushright}
+\end{minipage}
+\begin{minipage}{0.15\textwidth}
+        \rightline{\qrcode{https://b23.tv/QX7ACak}\quad}
+\end{minipage}
+\vspace{-1em}
+\end{draft}
+\begin{solution}*
+        显然$P(0)=P(1)=0$，将第二个多项式除以$t$得到$a_1+2a_2t+..+na_nt^{n-1}=0$，
+        后者刚好为$P'(t)$.根据罗尔定理即得.
+\end{solution}

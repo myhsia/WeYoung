@@ -1,0 +1,32 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\int{\csc^{2n+2}{x}\d x}$}%在花括号内输入题目
+
+\teacher{张晓鹏}%在花括号内输入你的名字
+
+\postdate{2022年12月29日}%在花括号内输入你想要发布那一天的日期
+
+\result{-\sum_{k=0}^n\binom{n}{k}\frac{\cot^{2k+1}{x}}{2k+1}+C}%在花括号内输入本题结果
+
+\analysis{
+    偶数情况的$\csc^n{x}$积分和$\sec^n{x}$可以说操作基本是一样的，其实奇数情况的推导也差不多，大家可以看完下面的内容去翻一翻\hyperlink{12.9}{昨天$\sec^n{x}$的奇数情况}，类比推导下的$\csc^n{x}$奇数通式，下面就直接上了.
+
+    \formula{\int{\csc^2{x}\d x}=-\cot{x}+C}
+
+    \formula{
+    \begin{aligned}
+    \int{\csc^4{x}\d x}&=-\int{\qty(1+\cot^2{x})\d\cot{x}}\\
+    &=-\cot{x}-\frac{1}{3}\cot^3{x}+C
+    \end{aligned}
+    }
+    通过这两个例子，我们就可以直接类比到最后通式了
+    \formula{
+        \begin{aligned}
+            \int{\sec^{2n+2}{x}\d x}&=-\int{\qty[1+\binom{n}{1}\cot^2{x}+\binom{n}{2}\cot^4{x}+\cdots+\binom{n}{n}\cot^{2n}{x}]\d\cot{x}}\\
+            &=-\cot{x}-\binom{n}{1}\frac{\cot^3{x}}{3}-\binom{n}{2}\frac{\cot^5{x}}{5}-\cdots-\binom{n}{n}\frac{\cot^{2n+1}{x}}{2n+1}+C\\
+            &=-\sum_{k=0}^n\binom{n}{k}\frac{\cot^{2k+1}{x}}{2k+1}+C
+        \end{aligned}
+    }
+}%在花括号内输入分析
