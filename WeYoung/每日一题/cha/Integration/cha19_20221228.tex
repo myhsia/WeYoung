@@ -1,0 +1,66 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\int{\sec^n{x}\d x}$}%在花括号内输入题目
+
+\teacher{张晓鹏}%在花括号内输入你的名字
+
+\postdate{2022年12月28日}%在花括号内输入你想要发布那一天的日期
+
+\bigresult{
+    \formula{
+        \begin{aligned}
+            \int{\sec^n{x}\d x}=&\frac{1}{n-1}\tan{x}\sec^{n-2}{x}+\frac{n-2}{n-1}\cdot\frac{\tan{x}\sec^{n-4}{x}}{n-3}\\
+            &+\frac{\qty(n-2)\qty(n-4)}{\qty(n-1)\qty(n-3)}\cdot\frac{\tan{x}\sec^{n-6}{x}}{n-5}+\cdots\\
+            &+\frac{\qty(n-2)\qty(n-4)\cdots 3\cdot 1}{\qty(n-1)\qty(n-3)\cdots 4\cdot 2}\ln{\abs{\tan{\qty(\frac{x}{2}+\frac{\pi}{2})}}}+C
+        \end{aligned}
+    }
+}%在花括号内输入本题结果
+
+\analysis{
+    昨日我们探讨了偶数的情况，今天我们来讨论下奇数的情况.刚看到这个通项 的时候会觉得很复杂，实际考到这样程度也不太至于.更多时候我们可能会是像下面这个一样，上下同时乘以$\cos{x}$，然后转化为$\sin{x}$为整体的积分.
+    \formula{
+        \begin{aligned}
+            \int{\frac{\cos{x}}{\cos^{2m+2}{x}\d x}}&=\int{\frac{\d\sin{x}}{\qty(1-\sin^{x})^{m+1}}}\\
+            &=\int{\frac{\d\sin{x}}{\qty(1-\sin^2{x})^{m+1}}}\\
+            &=\int{\frac{\d t}{\qty(1-t^2)^{m+1}}}
+        \end{aligned}
+    }
+    不过我们今天探索的是更一般的通式，其中的处理办法可能比较少见，不明所以也是正常，见见看吧.
+
+    我们处理这个积分主要是利用了这么一个导数公式
+    \formula{\frac{\d}{\d x}\qty(\tan{x}\sec^n{x})=\qty(n+1)\sec^{n+2}{x}-n\sec^n{x}}
+    通过这个我们得到
+    \formula{\sec^{n+2}{x}=\frac{1}{n+1}\cdot\frac{\d}{\d x}\qty(\tan{x}\sec^n{x})+\frac{n}{n+1}\sec^n{x}}
+    两边同时积分一下可以得到
+    \formula{\int{\sec^{n+2}{x}\d x}=\frac{1}{n+1}\cdot\int{\frac{\d}{\d x}\qty(\tan{x}\sec^n{x})\d x}+\int{\frac{n}{n+1}\sec^n{x}\d x}}
+    将$n+2$用$n$替代，则$n$变成$n-2$，我们可以得到$\sec^n{x}$的递推公式
+    \formula{\int{\sec^n{x}\d x}=\frac{1}{n-1}\tan{x}\sec^{n-2}{x}+\frac{n-2}{n-1}\int{\sec^{n-2}{x}\d x}}
+    而\hypertarget{12.9}{$n$是奇数}，因此递推到最后必然是跟$\int{\sec{x}\d x}$有关
+
+    而对于求$\sec{x}$的积分，我们在\hyperlink{12.8}{12.8}日的每日一题中有涉及，这里直接搬一下.
+
+    可以用上下同乘同除$\sin{\theta}$或$\cos{\theta}$的操作转化为有理分式积分
+    \formula{\int{\sec{\theta}\d\theta}=\int{\frac{\d\theta}{\cos{\theta}}}=\int{\frac{\cos{\theta}\d\theta}{\cos^2{\theta}}}=\int{\frac{\d\sin{\theta}}{1-\sin^2{\theta}}}}
+    \formula{\int{\sec^3{\theta}\d\theta}=\int{\frac{\cos{\theta}\d\theta}{\cos^4{\theta}}}=\int{\frac{\d\sin{\theta}}{\qty(1-\sin^2{\theta})^2}}}
+
+
+    或者用下面这两种方式也可以：
+    \formula{
+        \begin{aligned}
+            \int{\sec{\theta}\d\theta}&=\int{\frac{\d\theta}{\cos{\theta}}}=\int{\frac{\d\qty(\theta+\dfrac{\pi}{2})}{\sin{\qty(\theta+\dfrac{\pi}{2})}}}=\int{\frac{\d\qty(\theta+\dfrac{\pi}{2})}{2\sin{\qty(\theta+\dfrac{\pi}{4})\cos\qty({\theta+\dfrac{\pi}{4}})}}}\\
+            &=\int{\frac{\d\qty(\dfrac{\theta}{2}+\dfrac{\pi}{4})/\cos^2{\qty(\dfrac{\theta}{2}+\dfrac{\pi}{4})}}{\sin{\qty(\dfrac{\theta}{2}+\dfrac{\pi}{4})}/\cos{\qty(\dfrac{\theta}{2}+\dfrac{\pi}{4})}}}=\int{\frac{\d\tan{\qty(\frac{\theta}{2}+\frac{\pi}{4})}}{\tan{\qty(\frac{\theta}{2}+\frac{\pi}{4})}}}\\
+            &=\ln{\abs{\tan{\qty(\frac{\theta}{2}+\frac{\pi}{4})}}}+C\\
+        \end{aligned}
+    }
+        那么到这，有了起始项，有了递推公式，最后的结论自然也有了.
+        \formula{
+            \begin{aligned}
+                \int{\sec^n{x}\d x}=&\frac{1}{n-1}\tan{x}\sec^{n-2}{x}+\frac{n-2}{n-1}\cdot\frac{\tan{x}\sec^{n-4}{x}}{n-3}\\
+                &+\frac{\qty(n-2)\qty(n-4)}{\qty(n-1)\qty(n-3)}\frac{\tan{x}\sec^{n-6}{x}}{n-5}+\cdots\\
+                &+\frac{\qty(n-2)\qty(n-4)\cdots 3\cdot 1}{\qty(n-1)\qty(n-3)\cdots 4\cdot 2}\ln{\abs{\tan{\qty(\frac{x}{2}+\frac{\pi}{2})}}}+C
+            \end{aligned}
+        }
+    }
+%在花括号内输入分析

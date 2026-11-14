@@ -1,0 +1,32 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\int{\sin^6{x}\cos^2{x}\d x}$}%在花括号内输入题目
+
+\teacher{张晓鹏}%在花括号内输入你的名字
+
+\postdate{2022年12月24日}%在花括号内输入你想要发布那一天的日期
+
+\result{\frac{1}{2^7}\qty(-\frac{\sin{8x}}{8}+\frac{2\sin{6x}}{3}-\sin{4x}-2\sin{2x}+5x)+C}%在花括号内输入本题结果
+
+\analysis{
+    这题同样可以用倍角法完成，读者也可以自行思考更一般的情况下，即，对于$\int{\sin^p{x}\cos^q{x}\d x}$，哪些是可以使用倍角法的，而另外的情况又该如何处理.下面对本题进行展示.
+
+    先将被积函数化为倍角形式
+    \formula{
+        \begin{aligned}
+            2^6\ii^6\sin^6{x}\cdot 2^2\cos^2{x}&=\qty(y-\frac{1}{y})^6\qty(y+\frac{1}{y})^2=\qty(y-\frac{1}{y})^4\qty(y^2-\frac{1}{y^2})^2\\
+            &=\qty(y^8+\frac{1}{y^9})-4\qty(y^6+\frac{1}{y^6})+4\qty(y^4+\frac{1}{y^4})+4\qty(y^2+\frac{1}{y^2})-10\\
+            &=2\cos{8x}-8\cos{6x}+8\cos{4x}+8\cos{2x}-10
+        \end{aligned}
+    }
+    带入后再分项积分
+    \formula{
+        \begin{aligned}
+            \int{\sin^6{x}\cos^2{x}\d x}&=\frac{1}{2^7}\int{\qty(-\cos{8x}+4\cos{6x}-4\cos{4x}-4\cos{2x}+5)\d x}\\
+            &=\frac{1}{2^7}\qty(-\frac{\sin{8x}}{8}+\frac{2\sin{6x}}{3}-\sin{4x}-2\sin{2x}+5x)+C
+        \end{aligned}
+    }
+    这里是默认倍角法比较熟练了哦，如果不懂的话，可以翻一翻前面的每日一题，有对应的介绍，同时计算过程比较简略，建议自己动手算一下哈.
+}%在花括号内输入分析

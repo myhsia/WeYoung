@@ -1,0 +1,307 @@
+\chapter{2020年「大学物理2」\titlelogo{https://sci.hdu.edu.cn}{HDU}期中试题}
+\date{2020年11月21日}{大学物理教学团队}{A0715012}
+{未央物理讲师 \href{https://qm.qq.com/q/UPbGudx8cK}{\textbf{Axia}}}
+{https://h5.qun.qq.com/s/WRps3LNC8K}{HDU 物理营}
+{http://weixin.qq.com/r/mhKYgFTEMQlOrRDj90eI}{未央学社公众号}
+
+\section{选择题（每题3分，共27分）}
+\begin{paracol}{2}
+\begin{choice}{B}[弹簧振子]
+图(a)、(b)、(c)为三个不同的简谐振动系统，组成各系统的各弹簧的原长、各弹簧的劲度系数及重物质量均相同.三个系统的固有角频率平方之比为
+\begin{tasks}(4)
+    \task $2:1:\frac{1}{2}$
+    \task $1:2:4$
+    \task $2:2:1$
+    \task $1:1:2$
+\end{tasks}
+\end{choice}
+\switchcolumn\centering
+\vfill
+\begin{tikzpicture}[scale=0.93]
+    \foreach \a in {0,2,4}
+    \draw [thick,xshift=\a cm] (-0.8,0)--(0.8,0);
+    \foreach \a in {0,2,4}
+    \fill [pattern=north east lines,xshift=\a cm] (-0.75,0.2) rectangle (0.75,0);
+    \draw[decorate,decoration={coil,segment length=4pt}] (0,0) -- (0,-1) node [midway,anchor=west] {$k$};
+    \draw[decorate,decoration={coil,segment length=4pt}] (0,-1) -- (0,-2) node [midway,anchor=west] {$k$};
+    \draw[decorate,decoration={coil,segment length=4pt}] (2,0) -- (2,-1) node [midway,anchor=west] {$k$};
+    \draw[decorate,decoration={coil,segment length=4pt}] (3.8,0) -- (3.8,-1) node [midway,anchor=west] {$k$};
+    \draw[decorate,decoration={coil,segment length=4pt}] (4.2,0) -- (4.2,-1) node [midway,anchor=west] {$k$};
+    \draw (-0.4,-2) rectangle (0.4,-2.4);
+    \draw (1.6,-1) rectangle (2.4,-1.4);
+    \draw (3.6,-1) rectangle (4.4,-1.4);
+    \node at (0,-2.2) {$m$} node at (2,-1.2) {$m$} node at (4,-1.2) {$m$};
+    \node [anchor=north] at (0,-2.5) {(a)} node [anchor=north] at (2,-2.5) {(b)} node [anchor=north] at (4,-2.5) {(c)};
+\end{tikzpicture}
+\vfill
+\end{paracol}
+\vspace{-0.5em}
+\begin{solution}*
+    三种情况的弹簧劲度系数分别为$k_1=\frac{k}{2},\ k_2=k,\ k_3=2k$.由弹簧振子固有角频率的表达式$\omega^2=\frac{k}{m}$得$\omega_1^2:\omega_2^2:\omega_3^2=k_1:k_2:k_3=1:2:4$.\sokka{B}
+\end{solution}
+
+\begin{choice}{D}[弹簧振子]
+    一弹簧振子作简谐振动，当位移为振幅的一半时，其动能为总能量的
+    \begin{tasks}(5)
+        \task $\frac{1}{4}$
+        \task $\frac{1}{2}$
+        \task $\frac{1}{\sqrt{2}}$
+        \task $\frac{3}{4}$
+        \task $\frac{\sqrt{3}}{2}$
+    \end{tasks}
+\end{choice}
+\begin{solution}*
+    此时物块动能为$E_k=\frac{1}{2}kA^2-\frac{1}{2}k\ab(\frac{A}{2})^2=\frac{3}{8}kA^2$，所以此时物块动能是总能量的$\frac{\frac{3}{8}kA^2}{\frac{1}{2}kA^2}=\frac{3}{4}$.
+\end{solution}
+
+\begin{paracol}{2}
+\begin{choice}{D}[平面简谐波]
+    横波以波速$u$沿$x$轴负方向传播.$t$时刻波形曲线如图.则该时刻
+    \begin{tasks}(2)
+        \task $A$点的振动速度大于零
+        \task $B$点静止不动
+        \task $C$点向下运动
+        \task $D$点的振动速度小于零
+    \end{tasks}
+\end{choice}
+\switchcolumn\centering
+\vfill
+\begin{tikzpicture}
+    \draw [thick,->] (-0.8,0)--(3.2,0) node [anchor=north] {$x$};
+    \draw [thick,->] (0,-1.2)--(0,1.5) node [anchor=east] {$y$};
+    \node [anchor=north east] at (0,0) {$O$};
+    \draw [thick] (-0.6,0) sin (0,1) cos (0.6,0) sin (1.2,-1) cos (1.8,0) sin (2.4,1) cos (3,0);
+    \draw [very thick,<-] (0.6,1.2)--(1.8,1.2) node [anchor=south,midway] {$u$};
+    \shade [ball color=H1] (0.3,0.71) circle (0.05) node [anchor=south west] {$A$};
+    \shade [ball color=H1] (0.6,0) circle (0.05) node [anchor=north east] {$B$};
+    \shade [ball color=H1] (1.2,0) circle (0.05) node [anchor=north west] {$C$};
+    \shade [ball color=H1] (2.7,0.71) circle (0.05) node [anchor=south west] {$D$};
+\end{tikzpicture}
+\vfill
+\end{paracol}
+\begin{solution}*
+    画出横波传播很短时间后的波形，根据各点上下位置变化趋势即可判断.
+\end{solution}
+
+\begin{choice}{C}[波的能量]
+    一平面简谐波在弹性媒介中传播，在媒质质元从最大位移处回到平衡位置的过程中
+    \begin{tasks}(2)
+        \task 它的势能转换成动能
+        \task 它的动能转换成势能
+        \task 它从相邻一段质元获得能量，其能量逐渐增加
+        \task 它把能量传给相邻一段质元，其能量逐渐减小
+    \end{tasks}
+\end{choice}
+\begin{solution}*
+    波在传播过程中介质质元振动的动能和势能同时变化，在从最大位移处运动到平衡位置的过程中动能变大，所以势能也变大，其能量逐渐增加.\sokka{C}
+\end{solution}
+
+\begin{paracol}{2}
+    \begin{choice}{C}[驻波]
+        某时刻\textbf{驻波}波形曲线如图所示，则$a$、$b$两点振动的相位差是
+        \begin{tasks}(4)
+            \task $0$
+            \task $\frac{1}{2}\pi$
+            \task $\pi$
+            \task $\frac{5}{4}\pi$
+        \end{tasks}
+    \end{choice}
+\begin{solution}*
+    $a$、$b$两点位于波节的两侧，所以两点处质元的振动相位相反，相位差为$\pi$.\sokka{C}
+\end{solution}
+\switchcolumn\centering
+\vfill
+\begin{tikzpicture}[decoration={markings,
+    mark=between positions 0.0625 and 1 step 3.6mm
+    with {\draw [-,gray] (0,-0.1) -- (0,0.1);}},scale=1.2,xscale=1.2]
+    \draw [thick,->,postaction=decorate] (-0.2,0)--(3,0) node [anchor=south] {$x/\mathrm{m}$};
+    \draw [thick,->] (0,-1.2)--(0,1.5) node [anchor=south] {$y/\mathrm{m}$};
+    \node [anchor=north east] at (0,0) {$O$};
+    \draw [thick] (0,-1) cos (0.5,0) sin (1,1) cos (1.5,0) sin (2,-1) cos (2.5,0);
+    \draw [dashed] (0,1)--(1,1) node [at start,anchor=east] {$A$} --(1,0) node [anchor=north] {$\lambda/2$} node [anchor=south west] {$a$};
+    \draw [dashed] (2.25,-0.71)--(2.25,0) node [anchor=south] {$b$};
+\end{tikzpicture}
+\vfill
+\end{paracol}
+
+\begin{choice}{B}[光程和光程差]
+    $S_1,\ S_2$是两个相干光源，它们到$P$点的距离分别为$r_1$和$r_2$.路径$S_1P$垂直穿过一块厚度为$t_1$，折射率为$n_1$的介质板，路径$S_2P$垂直穿过厚度为$t_2$，折射率为$n_2$的另一介质板，其余部分可看作真空，这两条路径的光程差等于
+    \begin{tasks}(2)
+        \task $\ab(r_2+n_2t_2)-\ab(r_1+n_1t_1)$
+        \task $\ab[r_2+\ab(n_2-1)t_2]-\ab[r_1+\ab(n_1-1)t_1]$
+        \task $\ab(r_2-n_2t_2)-\ab(r_1-n_1t_1)$
+        \task $n_2t_2-n_1t_1$
+    \end{tasks}
+\end{choice}
+\begin{solution}*
+    路径2的光程为$r_2-t_2+n_2t_2=r_2+\ab(n_2-1)t_2$，同理路径1的光程为$=r_1+\ab(n_1-1)t_1$.所以两条路径的光程差为$\ab[r_2+\ab(n_2-1)t_2]-\ab[r_1+\ab(n_1-1)t_1]$.\sokka{B}
+\end{solution}
+
+\begin{choice}{B}[双缝干涉]
+    在双缝干涉实验中，为使屏上的干涉条纹间距变大，可采取的办法是
+    \begin{tasks}(4)
+        \task 使屏靠近双缝
+        \task 使两缝的间距变小
+        \task 把两缝的宽度调窄
+        \task 改用短波长单色光
+    \end{tasks}
+\end{choice}
+\begin{solution}*
+    已知双缝干涉条纹间距公式$\Delta x=\lambda L/d$.要使$\Delta x$变大，可增大波长$\lambda$、屏幕与双缝的距离$L$或减小双缝间距$d$.\sokka{B}
+\end{solution}
+
+\begin{choice}{D}[光的相干条件]
+    用白光光源进行双缝干实验，若用一个纯红色滤光片遮盖一条缝，用一个纯蓝色滤光片遮盖另一条缝，则
+    \begin{tasks}(2)
+        \task 干涉条纹的宽度将发生改变
+        \task 产生红光和蓝光的两套彩色干涉条纹
+        \task 干涉条纹的亮度将发生改变
+        \task 不产生干涉条纹
+    \end{tasks}
+\end{choice}
+\begin{solution}*
+    根据干涉条件「频率相等」，此时不能产生干涉条纹.\sokka{D}
+\end{solution}
+
+\begin{choice}{B}[牛顿环]
+    用单色光垂直照射在观察牛顿环的装置上，当平凸透镜垂直向上缓慢平移而远离平面玻璃时，可以观察到这些环状干涉条纹
+    \begin{tasks}(5)
+        \task 向右平移
+        \task 向中心收缩
+        \task 向外扩张
+        \task 静止不动
+        \task 向左平移
+    \end{tasks}
+\end{choice}
+\begin{solution}*
+    向中心收缩光程差减小，可抵消透镜上移时导致的光程差增大.\sokka{B}
+\end{solution}
+
+\section{填空题（共19分）}
+\begin{problem}[简谐振动的合成][2]
+    两个同方向简谐振动的振动方程分别为$x_1=0.05\cos(4\pi t+\pi/3)\ (\mathrm{SI}),\ x_2=0.03\cos(4\pi-2\pi/3)\ (\mathrm{SI})$，合成振动的振幅为\ans{$0.02$}$\mathrm{m}$.
+\end{problem}
+\begin{solution}*
+    $A=\sqrt{A_1^2+A_2^2+2A_1A_2\cos{\ab(\varphi_2-\varphi_1)}}=0.02\mathrm{m}$.
+\end{solution}
+
+\begin{problem}[相干光的叠加后的光强分布][4]
+    光强均为$I_0$的两束相干光发生干涉时，在相遇区域内可能出现的最大光强是\ans{$4I_0$}，可能出现的最小光强是\ans{$0$}.
+\end{problem}
+\begin{solution}*
+    两种情况分别对应「干涉相长」与「干涉相消」，即$I=I_1+I_2\pm 2\sqrt{I_1I_2}$，对应光强分别为$4I_0$与$0$.
+\end{solution}
+
+\begin{problem}[惠更斯原理][4]
+    惠更斯引进\ans{子波（或次波）}的概念提出了惠更斯原理，菲涅尔再用\ans{子波相干叠加（或子波干涉）}的思想补充了惠更斯原理发展成了惠更斯 -- 菲涅耳原理.
+\end{problem}
+
+\begin{problem}[增透膜][2]
+    波长为$\lambda$的单色光垂直入射厚度为$e$、折射率$n_2=1.30$的透明薄膜，膜上方、下方介质的折射率分别为$n_1=1.00,\ n_3=1.50$. 则两束反射光的光程差$\delta=$\ans{$2.60e$}.
+\end{problem}
+\begin{solution}*
+    由于$n_3>n_2>n_1$，所以上表面与下表面的反射光均有半波损失，二者光程差为$\delta=2n_2e=2.60e$.
+\end{solution}
+
+\begin{problem}[弗琅禾费衍射][4]
+    在单缝的夫琅禾费衍射实验中，屏上第三级暗纹对应于单缝处波面可划分为\ans{$6$}个半波带，若将缝宽缩小一半，原来第三级暗纹处将是\ans{明}纹（填“明”或“暗”）.
+\end{problem}
+\begin{solution}*
+    半波带数目为$2k=6$.
+\end{solution}
+
+\begin{problem}[迈克尔逊干涉仪][3]
+    在迈克尔逊干涉仪的一条光路中，放入一折射率为$n$，厚度为$d$的透明薄片，这条光路的光程改变了\ans{$2\ab(n-1)d$}.
+\end{problem}
+\begin{solution}*
+    迈克尔逊干涉仪光路上的某点光碰到反射镜后会再次经过此处，故原来的光程为$2d$；现在加入了透明薄片，使得这里的光程为$2nd$，故光程差为$2\ab(n-1)d$.\sokka{A}
+\end{solution}
+
+\section{计算题（共54分）}
+\begin{problem}[简谐振动][12]
+    一物体作简谐振动，其速度最大值$v_{\max}=3\times 10^{-2}\mathrm{m/s}$，其振幅$A=2\times 10^{-2}\mathrm{m}$.若$t=0$时，物体位于平衡位置且向$x$轴的负方向运动.求
+    \begin{enumerate}
+        \item 振动周期$T$.
+        \item 加速度的最大值$a_{\max}$.
+        \item 振动方程的数值式.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}
+        \item $T=\frac{2\pi}{\omega}\xlongequal{v_{\max}=\omega A}\frac{2\pi A}{v}=\frac{4}{3}\pi\mathrm{s}.\point{4}$
+        \item $a_{\max}=\omega^2A\xlongequal{v_{\max}=\omega A}v^2/A=4.5\times 10^{-2}\mathrm{m/s}^2.\point{4}$
+        \item 由于$t=0$时$x=0,\ v<0$，所以初相$\varphi=\frac{\pi}{2}$.由1问可知角频率$\omega=1.5\mathrm{s}^{-1}$，所以振动方程为\point{2}
+        \[x=0.02\cos{\ab(1.5t+\frac{1}{2}\pi)}\ \text{(SI)}\eqno\point{2}\]
+    \end{enumerate}
+\end{solution}
+
+\begin{paracol}{2}
+    \begin{problem}[平面简谐波的波函数][6]
+        如图所示，一简谐波向$x$轴正向传播，波速$u=500\mathrm{m/s},\ x_0=1\mathrm{m}$处$P$点的振动方程为$y=0.03\cos{\ab(500\pi t-\frac{\pi}{2})} \text{(SI)}$.按图所示坐标系，写出相应的波的表达式.
+    \end{problem}
+    \begin{solution}*
+    $y\ab(x,t)=0.03\cos{\ab[500\pi\ab(t-\frac{x-1}{500})-\frac{1}{2}\pi]}$ (SI).\point{6}
+    \end{solution}
+    \switchcolumn\centering
+    \vfill
+\begin{tikzpicture}[scale=0.83]
+    \draw [->] (-2,0)--(4,0) node [anchor=north] {$x/\mathrm{m}$};
+    \draw [->] (0,-2)--(0,2) node [anchor=west] {$y/\mathrm{m}$};
+    \shade [ball color=H1] (1.5,0) circle (0.1) node [anchor=south] {$P$};
+    \length{(0,-0.5)}{(1.5,-0.5)}{$x_0$}{(0.5,0)}
+    \draw [->] (1.5,1.5)--(2.5,1.5) node [midway,anchor=south] {$u$};
+\end{tikzpicture}
+    \vfill
+\end{paracol}
+
+\begin{problem}[驻波][12]
+    设入射波的表达式为$y_1=A\cos{\ab[2\pi\ab(\frac{t}{T}+\frac{x}{\lambda})]}$，在$x=0$固定端发生反射，设反射时无能量损失.求
+    \begin{enumerate}
+        \item 反射波的表达式
+        \item 驻波的表达式
+        \item 波腹、波节的位置
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}
+    \item 到达反射端后波的传播方向改变，同时因半波损失带有$\pi$的相位差.所以反射波的表达式为\point{1}
+    \[y_2=A\cos{\ab[2\pi\ab(\frac{t}{T}-\frac{x}{\lambda})+\pi]}\eqno\point{2}\]
+    \item 驻波表达式$y=y_1+y_2=2A\cos{\ab(\frac{2\pi t}{T}+\frac\pi2)}\cos{\ab(\frac{2\pi x}{\lambda}-\frac{\pi}{2})}$.\point{3}
+    \item 
+    波腹的位置$\cos{\ab(\frac{2\pi x}{\lambda}-\frac{\pi}{2})}=\pm 1,\ x=\frac{2k+1}{4}\lambda,\ k=0,1,2,\cdots$.\point{3}
+
+    波节的位置$\cos{\ab(\frac{2\pi x}{\lambda}-\frac{\pi}{2})}=0,\ x=\frac{k}{2}\lambda,\ k=0,1,2,\cdots$.\point{3}
+\end{enumerate}
+\end{solution}
+
+\begin{problem}[双缝干涉][6]
+    在双缝干涉实验中，双缝与屏间的距离$D=1.2\mathrm{m}$，双缝间距$d=0.45\mathrm{mm}$，若测得屏上干涉条纹相邻明条纹间距为$1.5\mathrm{mm}$，求光源发出的单色光的波长$\lambda$.
+\end{problem}
+\begin{solution}*
+    由$\Delta x=\lambda D/d$得单色光波长$\lambda=\Delta xd/D=562.5\mathrm{nm}$.\point{6}
+\end{solution}
+
+\begin{problem}[劈尖干涉][12]
+    用波长$500\mathrm{nm}$的单色光垂直照射到由两块光学平玻璃构成的空气劈形膜上.在观察反射光的干涉现象中，距劈形膜棱边$l=1.56\mathrm{cm}$的$A$处是从棱边算起的第四条暗纹中心.
+    \begin{enumerate}
+        \item 求此空气劈形膜的劈尖角$\theta$.
+        \item 改用$600\mathrm{nm}$的单色光垂直照射到此劈尖上仍观察反射光的干涉条纹，$A$处是明条纹还是暗条纹？
+        \item 在第2问的情形从棱边到$A$处的范围共有几条明纹，几条暗纹？
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}
+        \item 考虑半波反射，两束光的光程差为$\delta=2h_k+\frac{\lambda}{2}$，由暗纹条件\point{1}
+        \[2h_4+\frac{\lambda}{2}=\frac{2k-1}{2}\lambda=\frac{2\times 4-1}{2}\lambda\eqno\point{2}\]
+        利用小角度近似得劈尖角$\theta\approx\frac{h_4}{l}=4.81\times 10^{-5}\mathrm{rad},\ h_4=750\mathrm{nm}$.\point{2}
+        \item 此时光程差$\delta=2h_4+\frac{\lambda^{\prime}}{2}=1800\mathrm{nm}=3\lambda^{\prime}$，满足明纹条件$\delta=k\lambda$. 所以$A$处是第3条明纹.\point{4}
+        \item 由棱边处的光程差$\delta=\frac{\lambda}{2}$可知棱边处为暗纹.所以共有$3$条明纹，$3$条暗纹.\point{3}
+    \end{enumerate}
+\end{solution}
+
+\begin{problem}[弗琅禾费衍射][6]
+    单缝的宽度$a=0.10\mathrm{mm}$，在缝后放一焦距为$50\mathrm{cm}$的会聚透镜，用平行绿光（$\lambda=546\mathrm{nm}$）垂直照射到单缝上，试求位于透镜焦平面处的屏幕上中央明条纹宽度.
+\end{problem}
+\begin{solution}*
+    $\Delta x=2\lambda f/a=5.46\mathrm{mm}$.\point{6}
+\end{solution}

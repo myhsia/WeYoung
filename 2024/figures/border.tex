@@ -1,0 +1,22 @@
+\documentclass[quiet,tikz]{standalone}
+
+\definecolor{weyoung}{HTML}{0c6fb7}
+
+\usepackage{ctex}
+\setCJKmainfont{FZXiaoBiaoSong-B05S}[AutoFakeBold = 2]
+
+\begin{document}
+
+\begin{tikzpicture}
+  \node [ inner sep = 0pt ] (a) {\includegraphics[height = 1in]{WY Logo}};
+  \node (b)
+    [ right = .1in, font = \Huge,
+      inner sep = 0pt, scale = 5, blue, font = \bfseries ]
+    at (a.east) {\textcolor{weyoung}{未央学社}};
+  \node [ right = .5in ] (c)
+    at (b.east) {\includegraphics[height = .9in]{7stars_logo}};
+  \node (d) [ right = .1in ]
+    at (c.east) {\includegraphics[height = .7in]{7stars_font}};
+\end{tikzpicture}
+
+\end{document}

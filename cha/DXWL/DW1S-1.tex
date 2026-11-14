@@ -1,0 +1,176 @@
+\chapter{Saint. 大学物理1作业解答}
+\section{质点运动学}
+{
+\begin{multicols}{2}
+\begin{problem}
+    The relation between the \underline{acceleration} and \underline{velocity} of a \underline{rectilinear} moving particle is $a=-kv^2$. Find the velocity expression $v=v\ab(x)$ with the coordinate $x$ as \underline{variable}. Assume the \underline{initial value} of $x_0$, $v\ab(x_0)=v_0$ are given.
+\end{problem}
+\begin{translation}
+    一做直线运动粒子的加速度与速度之间的关系为$a=-kv^2$.以坐标$x$为变量，求出速度的表达式$v\ab(x)$.给定坐标和速度的初始值为$x_0,\ v\ab(x_0)=v_0$.
+\end{translation}
+\begin{solution}
+    由加速度定义，利用链式求导法则
+    $$a=\frac{\d v}{\d t}=\frac{\d v}{\d x}\frac{\d x}{\d t}=v\frac{\d v}{\d x}=-kv^2$$
+
+    分离变量并积分得
+    $$\frac{\d v}{v}=-k\d x,\ \ln{v}=-kx+C$$
+
+    由初始条件$v\ab(x_0)=v_0$得
+    $$\ln{v_0}=-kx_0+C,\ C=\ln{v_0}+kx_0$$
+
+    将其带入得$v$关于$x$的表达式为
+    $$v=v_0\ee^{-k\ab(x-x_0)}$$
+\end{solution}
+
+\begin{problem}
+    The following \underline{equations} give the \underline{position} $x\ab(t)$ of an object in four situations.
+    \begin{tasks}(2)
+        \task $x=3t-4$
+        \task $x=-5t^3+4t^2+6$
+        \task $x=\frac{2}{t^2}-\frac{4}{t}$
+        \task $x=5t^2-3$
+    \end{tasks}
+    To which of these situations does the equation $\overline{v}=\frac{1}{2}\ab(v_0+v)$ \underline{apply}?
+\end{problem}
+\begin{translation}
+    下列表达式给出了物体在四种情况下的位置关于时间的函数$x\ab(t)$.
+    \begin{tasks}(2)
+        \task $x=3t-4$
+        \task $x=-5t^3+4t^2+6$
+        \task $x=\frac{2}{t^2}-\frac{4}{t}$
+        \task $x=5t^2-3$
+    \end{tasks}
+    哪一种情况中公式$\overline{v}=\frac{1}{2}\ab(v_0+v)$成立？
+\end{translation}
+\begin{solution}
+    当$x$为$t$的二阶多项式时，质点做匀变速直线运动，其平均速度大小满足$\overline{v}=\frac{1}{2}\ab(v_0+v)$.\sokka{D}
+\end{solution}
+
+\begin{problem}
+  A particle starts from \underline{the origin} at $t=0$ with a velocity of $8.00\mathrm{m/s}$ and moves in the $xy-$ plane with a \underline{constant} acceleration of $\ab(4.0\bm{i}+2.0\bm{j})\mathrm{m}/\mathrm{s}^2$. At the \underline{instant} the object’s $x$ \underline{coordinate} is $29\mathrm{m}$, What are (a) its $y$ coordinate and (b) its \underline{speed}?
+\end{problem}
+\begin{translation}
+  一个物体在$t=0$时刻开始以$8.00\bm{j}\mathrm{m/s}$的初速度，并以一恒定加速度$\ab(4.0\bm{i}+2.0\bm{j})\mathrm{m}/\mathrm{s}^2$从原点出发在$xy$平面运动，此时物体$x$坐标为$29\mathrm{m}$.求其(a) $y$坐标和(b) 任意时刻的速度.
+\end{translation}
+\begin{solution}
+    物体在$xy$两个方向均做匀变速直线运动.所以有
+    $$\bm{v}=2t^2\bm{i}+\ab(8+2t)\bm{j},\ y=8t+t^2$$
+\end{solution}
+
+\begin{problem}
+    An Earth satellite moves in a \underline{circular} orbit $640\mathrm{km}$ above the Earth’s surface with a \underline{period} of $98.0\mathrm{min}$⁡. What are (a) the speed and (b) the \underline{magnitude} of the \underline{centripetal acceleration} of the satellite? (The radius of the Earth $R=6.37\times10^6\mathrm{m}$)
+\end{problem}
+\begin{translation}
+    一地球卫星在地球表面以上$680\mathrm{km}$以$98.0\mathrm{min}$为周期做圆周运动.求卫星的(a) 速度和(b) 向心加速度大小（地球半径$R=6.37\times 10^6\mathrm{m}$，地球质量$M=5.972\times 10^{24}\mathrm{kg}$）.
+\end{translation}
+\begin{solution}
+    轨道半径$r=R+h=7.05\times 10^{6}\mathrm{m}$.由引力提供向心力
+    $$\frac{GMm}{r^2}=\frac{mv^2}{r}=m\frac{4\pi^2}{T^2}r$$
+    得卫星速度、加速度分别为
+    $$v=\sqrt{\frac{GM}{r}}=7.4\mathrm{km/s},\ a=\frac{4\pi^2}{T^2}r=47.33\mathrm{km/s}^2$$
+\end{solution}
+
+\begin{problem}
+    An aeroplane pilot wishes to fly due west. A wind of $80.0\mathrm{km/h}$ is blowing toward the south. (a) If the airspeed of the plane (its speed in \underline{still} air) is $320.0\mathrm{km/h}$ in which \underline{direction} should the pilot head? (b) What is the speed of the plane over the ground? Illustrate with a \underline{vector diagram}.
+\end{problem}
+\begin{translation}
+    一名飞行员希望向正西飞行.风速为$80\mathrm{km/h}$，风向为南风. (a) 如果飞机的空速（静止空气中的速度）为$320.0\mathrm{km/h}$，飞行员应该朝哪个方向飞行？ (b) 飞机相对地面的速度是多少？ 用矢量图来说明.
+\end{translation}
+\begin{solution}
+如图所示，应朝北偏西$\arccos{1/4}$的方向飞行；飞机相对地面的速度$v_{\text{aeroplane}}=\sqrt{320^2-80^2}=80\sqrt{15}\mathrm{m/s}$.
+
+\centering
+\begin{tikzpicture}
+    \draw [->] (0,0)--(0,-1) node [anchor=west] {$v_{\text{wind}}=80$};
+    \draw [->] (0,-1)--($({-sqrt(15)},0)$) node [midway] {$v_{\text{aeroplane}\to\text{widn}}=320$};
+    \draw [->] (0,0)--($({-sqrt(15)},0)$) node [anchor=south] {$v_{\text{aeroplane}}=80\sqrt{15}$};
+\end{tikzpicture}
+\end{solution}
+\end{multicols}
+}
+
+\newpage
+\section{牛顿运动定律}
+\begin{multicols}{2}
+{
+\begin{problem}
+    A $1000\mathrm{kg}$ boat is traveling at $90\mathrm{km/h}$ when its engine is shut off. The magnitude of the friction force between boat and water is proportional to the speed $v$: $f_k=-70v$, where $v$ is in $m/s$ and $f_k$ is in $\mathrm{N}$. Find the time required for the boat to slow to $45\mathrm{km/h}$.
+\end{problem}
+\begin{translation}
+    一艘$1000\mathrm{kg}$的船在发动机关闭时以$90\mathrm{km/h}$的速度行驶.船与水之间的摩擦力的大小$f(\mathrm{N})$与速度$v(\mathrm{m/s})$成正比：$f_k=-70v$.求船减速到$45\mathrm{km/h}$所需的时间.
+\end{translation}
+\begin{solution}
+    由牛顿运动定律
+    $$f=-70v=m\frac{\d v}{\d t}$$
+
+    分离变量并积分得
+    $$\frac{\d v}{v}=-\frac{1}{m}70\d t,\ \ln{v}=-\frac{70t}{m}+C$$
+
+    由初始条件$t=0,\ v=v_0$得$\ln{v_0}=C$，代入得速度$v$关于时间的表达式
+    $$v\ab(t)=v_0\ee^{-70t/m}$$
+
+    当船减速到$v=\frac{1}{2}v_0=45\mathrm{km/h}$时，$t=\frac{m}{70}\ln{2}=9.9\mathrm{s}$.
+\end{solution}
+
+\begin{problem}
+    A $40\mathrm{kg}$ slab rests on a frictionless floor. A $10\mathrm{kg}$ block rests on top of the slab. The coefficient of static friction $\mu_s$ between the bock and the slab is $0.60$, whereas their kinetic friction coefficient $\mu_k$ is $0.40$. The $10\mathrm{kg}$ block is pulled by a horizontal force with a magnitude of $100\mathrm{N}$. What are the resulting accelerations of (a) the block and (b) the slab?
+\end{problem}
+\begin{translation}
+    一块$40\mathrm{kg}$的平板放置在无摩擦的地板上.一块$10\mathrm{kg}$ 块放置在平板顶部.木块和板之间的静摩擦系数$\mu_s$为$0.60$，而动摩擦系数$\mu_k$为$0.40$.$10\mathrm{kg}$ 的块受到大小为$100\mathrm{N}$的水平力的拉动. (a) 块和 (b) 板的加速度是多少？
+\end{translation}
+\begin{solution}
+    木块与板之间的最大静摩擦力$f_s=\mu_smg=60\mathrm{N}$，所以木块在受到$100\mathrm{N}$拉力时其与板之间发生相对滑动.对木块列牛顿运动定律
+    $$F-\mu_smg=ma$$
+    
+    得木块的加速度$a_1=4\mathrm{m/s}^2$.对板列牛顿运动定律
+    $$\mu_sMg=Ma_2$$
+    
+    得板的加速度$a_2=1\mathrm{m/s}$.
+\end{solution}
+
+\begin{problem}
+    A model airplane with mass $m$ moves in the $xy$ plane such that its $x$ and $y$ coordinates vary in time according to $x\ab(t)=\alpha-\beta t^3$ and $y\ab(t)=\gamma t-\delta t^2$ where $\alpha,\ \beta,\ \gamma,\ \delta$ all are known positive constants. Write the net force expression $\bm{F}=\bm{F}\ab(t)$ on the airplane in the unit-vector notation.
+\end{problem}
+\begin{translation}
+    质量为$m$的模型飞机在$xy$平面上运动，其$x$和$y$坐标随时间变化，$x\ab(t)=\alpha-\beta t^3,\ y\ab(t)=\gamma t-\delta t^2$. 其中$\alpha,\ \beta,\ \gamma,\ \delta$都是已知的正常数.用单位向量表示法写出飞机上的净力表达式$\bm{F}=\bm{F}\ab(t)$.
+\end{translation}
+\begin{solution}
+    由牛顿运动定律
+    $$F_x=m\frac{\d^2x}{\d t^2}=-6m\beta t,\  F_y=m\frac{\d^2y}{\d t^2}=-2m\delta$$
+
+    写成矢量的形式为$\bm{F}\ab(t)=-6m\beta t\bm{i}-2m\delta\bm{j}$.
+\end{solution}
+
+\begin{problem}
+    A rocket whose initial mass $M_i$ is $850\mathrm{kg}$ consumes fuel at the rate $R=-\frac{\d m}{\d t}=2.30\mathrm{kg/s}$. The exhaust speed $v_{ex}$ (relative to the rocket) is $2.80\mathrm{km/s}$. (a) What thrust does the rocket engine provide? (b) What is the initial acceleration of the rocket? Suppose the mass $M_f$ of the rocket when its fuel is exhausted is $180\mathrm{kg}$. (c) What is the speed gain of the rocket $\Delta v=v_f-v_i$. Neglect any gravitational force acting on the rocket.
+\end{problem}
+\begin{translation}
+    初始质量为$M_i=850\mathrm{kg}$的火箭消耗燃料的速率为$R=-\frac{\d m}{\d t}=2.30\mathrm{kg/s}$.排气速度$v_{ex}$（相对于火箭）为$2.80\mathrm{km/s}$. (a) 火箭发动机提供多大的推力？(b)火箭的初始加速度是多少？假设燃料耗尽时火箭的质量$M_f$为$180\mathrm{kg}$. (c)火箭的速度增量$\Delta v=v_f-v_i$是多少忽略作用在火箭上的任何引力.
+\end{translation}
+\begin{solution}
+    由动量定理
+    $$F=\frac{\d p}{\d t}=v_{ex}\frac{\d m}{\d t}=6440\mathrm{N}$$
+
+    对火箭列牛顿运动定律
+    $$F-M_ig=M_ia$$
+    
+    得火箭初始的加速度$a=$
+\end{solution}
+
+\begin{problem}
+    A force $F=A+Bt^2$ in the direction of $x$ axis is applied to an object of mass $m$. (a) Find the impulse of the force from$t=t_1=0$ to $t=t_2$. (b) If the object is at rest at $t=t_1=0$, what is its speed at $t_2$?
+\end{problem}
+\begin{translation}
+    沿$x$轴方向的力$F=A+Bt^2$作用于质量为$m$的物体. (a) 求从$t=t_1=0$到$t=t_2$的力冲量. (b) 如果物体在$t=t_1=0$处静止，那么它在$t_2$处的速度是多少？
+\end{translation}
+\begin{solution}
+    力的冲量
+    $$I=\int_{t_1}^{t_2}{F\d t}=At_2+\frac{1}{3}Bt_2^3$$
+
+    由动量定理
+    $$I=\Delta p=mv-0$$
+        
+    得物体在$t_2$处的速度$v=\frac{At_2+1/3Bt_2^3}{m}$.
+\end{solution}
+}
+\end{multicols}

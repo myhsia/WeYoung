@@ -1,0 +1,49 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\int{\frac{x+1}{x^2+x+1}\d x}$}
+
+\teacher{张晓鹏}
+
+\postdate{2022年11月28日}
+
+\result{\frac{1}{2}\ln{\qty(x^2+x+1)}+\frac{\sqrt{3}}{3}\arctan{\qty(\frac{2x+1}{\sqrt{3}})}+C}
+
+\analysis{本题有多种解法，下列方法均可参考使用.}
+
+\solutionst{
+  考察$\int{\frac{mx+n}{x^2+px+q}\d x}$一类积分（分项积分）
+
+
+  对于$\int{\frac{mx+n}{x^2+px+q}\d x}$这类积分，先对分母进行配方，化为$\int{\frac{At+B}{t^2\pm a^2}\d t}$，再拆开为$A\int{\frac{t\d t}{t^2\pm a^2}}+B\int{\frac{\d t}{t^2\pm a^2}}$，其中$a,\ A,\ B$均为与$m,\ n,\ p,\ q$有关的常数，之后分别对应积分就可以了（详细操作可以看《积分的方法与技巧》1.2分项积分法）.
+  
+  对于本题，具体操作如下：
+  \formula{\int{\frac{x+1}{x^2+x+1}\d x}=\int{\frac{x+1}{\qty(x+\frac{1}{2})^2+\frac{3}{4}}\d x}}
+  
+  令$t=x+\frac{1}{2}$，则
+  \formula{
+  \begin{aligned}
+    \int{\frac{x+1}{\qty(x+\frac{1}{2})^2+\frac{3}{4}}\d x}&=\int{\frac{t+\frac{1}{2}}{t^2+\frac{3}{4}}\d t}\\
+    &=\int{\frac{t}{t^2+\frac{3}{4}}\d t}+\int{\frac{\frac{1}{2}}{t^2+\frac{3}{4}}\d t}\\
+    &=\frac{1}{2}\int{\frac{\d t^2}{t^2+\frac{3}{4}}}+\frac{1}{2}\cdot\frac{3}{4}\cdot\frac{\sqrt{3}}{2}\int{\frac{\d\frac{2t}{\sqrt{3}}}{\qty(\frac{2t}{\sqrt{3}})^2+1}}\\
+    &=\frac{1}{2}\ln{\qty(t^2+\frac{3}{4})}+\frac{\sqrt
+    3}{3}\arctan{\qty(\frac{2}{\sqrt{3}}t)}+C\\
+    &=\frac{1}{2}\ln{\qty(x^2+x+1)}+\frac{\sqrt{3}}{3}\arctan{\qty(\frac{2x+1}{\sqrt{3}})}+C
+  \end{aligned}
+  }
+}
+\newpage
+\solutionnd{
+  拆成$\int{\frac{f^{\prime}\qty(x)}{f\qty(x)}\d x}+\int{\frac{a}{x^2+px+q}}\d x$后分项积分
+  对于本题，具体操作如下：
+  \formula{
+  \begin{aligned}
+    \int{\frac{x+1}{x^2+x+1}\d x}&=\frac{1}{2}\int{\frac{2x+1+1}{x^2+x+1}\d x}\\
+    &=\frac{1}{2}\int{\frac{2x+1}{x^2+x+1}}+\int{\frac{1}{x^2+x+1}\d x}\\
+    &=\frac{1}{2}\int{\frac{\d\qty(x^2+x+1)}{x^2+x+1}}+\frac{1}{2}\int{\frac{\d x}{\qty(x+\frac{1}{2})^2+\frac{3}{4}}}\\
+    &=\frac{1}{2}\ln{\abs{x^2+x+1}}+\frac{1}{2}\int{\frac{\d x}{\qty(x+\frac{1}{2})^2+\frac{3}{4}}}\\
+    &=\frac{1}{2}\ln{\abs*{x^2+x+1}}+\frac{1}{\sqrt{3}}\arctan{\frac{2}{\sqrt{3}}}\qty(x+\frac{1}{2})+C
+  \end{aligned}
+  }
+}

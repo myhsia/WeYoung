@@ -1,0 +1,37 @@
+\PassOptionsToPackage{dvipdfmx}{graphicx}
+\documentclass[twocolumn, fontset = fandol]{ctexart}
+
+\input{../preamble.tex}
+
+% \setCJKmainfont{LXGW WenKai}[AutoFakeSlant]
+% \setCJKsansfont{LXGW Marker Gothic}[AutoFakeBold, AutoFakeSlant, Scale = .95]
+% \setCJKmonofont{LXGW WenKai Mono}[AutoFakeBold, AutoFakeSlant]
+\ctexset{section/format+ = \raggedright}
+\hdutexset{watermark = ../WY_Logo.pdf}
+% \usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+% \setmathfont[AutoFakeBold]{STIX Two Math}
+
+\makeatletter \def \@result #1{\underline{ \quad }} \makeatother
+
+\ctikzset
+  {
+    amplifiers/fill  = cyan!20,
+    resistors/fill   = violet!20,
+    sources/fill     = yellow!20,
+    diodes/fill      = red!20,
+    resistors/scale  = .64,
+    capacitors/scale = .6,
+    diodes/scale     = .6,
+    sources/scale    = .8,
+    inductors/scale  = .6,
+  }
+\tikzset {every node/.style = {font = \small, align = left}}
+
+\title{\sffamily\bfseries 24Spring \textsc{Hdu} 「模拟电子技术」补考试题}
+\author{} \date{}
+
+\begin{document}
+
+\maketitle
+
+\end{document}

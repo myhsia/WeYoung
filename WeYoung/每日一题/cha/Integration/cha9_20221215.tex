@@ -1,0 +1,43 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\int{\frac{\d x}{1+\sin{x}+\cos{x}}}$}
+
+\teacher{刘嘉玲}
+
+\postdate{2022年12月15日}
+
+\result{\ln{\abs{1+\tan{\frac{x}{2}}}}+C}
+
+\analysis{对于“分式中所含因式均为常数、$\sin{x}$、$\cos{x}$的线性组合，不会有高次项出现”的这类题目，万能替换法是可以做的.而高次项避免使用的原因是，有高次项时用这个方法会出现高次多项式，计算比较复杂.（同样也是经验总结，并非明确的定理）.下面实际操作一下.}
+
+\solution{
+  令$t=\tan{\frac{x}{2}}$，因为$\sin{x}=\frac{2\tan{\dfrac{x}{2}}}{1+\tan{\dfrac{x^2}{2}}},\ \cos{x}=\frac{1-\tan{\dfrac{x^2}{2}}}{1+\tan{\dfrac{x^2}{2}}}$
+
+
+  可得$\sin{x}=\frac{25}{1+t^2},\ \cos{x}=\frac{1-t^2}{1+t^2},\ \d x=\frac{2}{1+t^2}\d t$
+  因此
+  \formula{
+    \begin{aligned}
+        \int{\frac{\d x}{1+\sin{x}+\cos{x}}}&=\int{\frac{\dfrac{2\d t}{1+t^2}}{1+\dfrac{2t}{1+t^2}+\dfrac{1-t^2}{1+t^2}}}\\
+        &=\int{\frac{2\d t}{2+2t}}=\int{\frac{\d t}{1+t}}\\
+        &=\ln{\abs{1+t}}+C=\ln{\abs{1+\tan{\frac{x}{2}}}}+C
+    \end{aligned}
+  }
+  虽然万能替换法对于这类题目是一定可以转化为有理分式积分的，但不代表这种方法就一定迅速.因此我们也需要适当选择，先考虑结构关系，有无特殊部分可以凑微分等.
+
+
+  举个例子：$\int{\frac{1}{\sin^2{x}\cos^2{x}}\d x}$
+
+
+  在这题中如果使用万能替换法的话，则原积分转化为
+  \formula{\int{\frac{1}{\sin^2{x}\cos^2{x}}\d x}=\int{\frac{\qty(1+t^2)^3}{\qty(2t)^2\qty(1-t^2)^2}\d t}}
+  虽然后续也肯定可以做，但处理效率显然不如下面的方法
+  \formula{
+    \begin{aligned}
+        \int{\frac{1}{\sin^2{x}\cos^2{x}}\d x}&=\int{\frac{\sin^2{x}+\cos^2{x}}{\sin^2{x}\cos^2{x}}\d x}=\int{\qty(\sec^2{x}+\csc^2{x})\d x}\\
+        &=\tan{x}-\cot{x}+C
+    \end{aligned}
+  }
+}

@@ -1,0 +1,57 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\int{\sin^{2n+1}{x}\d x}$}%在花括号内输入题目
+
+\teacher{张晓鹏}%在花括号内输入你的名字
+
+\postdate{2022年12月22日}%在花括号内输入你想要发布那一天的日期
+
+\result{\sum_{k=0}^n{\qty(-1)^{k+1}}\binom{n}{k}\frac{\cos^{2k+1}{x}}{2k+1}+C}%在花括号内输入本题结果
+
+\analysis{
+    本题开始之前先简单解释下参考答案里的$\binom{n}{k}$是什么意思.其实这个只是我们组合数的另外一种写法，即$C_n^k=\binom{n}{k}=\frac{n!}{k!\qty(n-k)!}$.如果有小伙伴不太熟悉的，可以手动把下面的记号都切换一下，不过个人感觉这个记号用多了还是比较方便的，特别是对记忆这个公式来说.
+
+    好了，切回今天的正题，我们昨天通过倍角法留下了一个疑问，对于任意次数的$\cos^m{x}$都可以积分，但对于$\sin^n{x}$，我们昨天的方法貌似对奇数无效.那么有什么办法可以解决呢？这就是我们今天所需完成的内容.不过今天这个题比较“通法”，所以看着最后的结论比较复杂，但难度并不大，理解过程即可，结论也不必记忆.
+    }
+    
+\solution{
+    其实今天主要利用的是$\sin{x}$和$\cos{x}$他们的“互导性”（注意符号），即
+    \formula{\d\sin{x}=-\d\cos{x}}
+
+    下面直接上手吧
+    \formula{
+        \begin{aligned}
+            \int{\sin^{2n+1}{x}\d x}&=-\int{\sin^{2n}{x}\d\cos{x}}\\
+            &=-\int{\qty(1-\cos^2{x})^n\d\cos{x}}
+        \end{aligned}
+    }
+    下面我们把被积函数二项式展开，可得
+    \formula{
+        \begin{aligned}
+            \qty(1-\cos^2{x})^n&=\binom{n}{0}\qty(\cos^2{x})^0-\binom{n}{1}\qty(\cos^2{x})^1+\binom{n}{2}\qty(\cos^2{x})^2-\cdots+\qty(-1)^n\binom{n}{n}\qty(\cos^2{x})^n\\
+            &=1-n\cos^2{x}+\frac{n\qty(n-1)}{2!}\cos^4{x}-\frac{n\qty(n-1)\qty(n-2)}{3!}\cos^6{x}+\cdots+\qty(-1)^n\cos^{2n}{x}
+        \end{aligned}
+    }
+    那么再把展开式代回到积分中，并分项积分可得
+    \formula{
+        \begin{aligned}
+            \int{\sin^{2n+1}{x}\d x}&=-\int\qty[1-n\cos^2{x}+\frac{n\qty(n-1)}{2!}\cos^4{x}-\cdots+\qty(-1)^n\cos^{2n}{x}]\d\cos{x}\\
+            &=-\cos{x}+n\frac{\cos^3{x}}{3}-\frac{n\qty(n-1)}{2!}\frac{\cos^5{x}}{5}+\cdots-\qty(-1)^n\frac{\cos^{2n+1}x}{2n+1}+C\\
+            &=\sum_{k=0}^n{\qty(-1)^{k+1}}\binom{n}{k}\frac{\cos^{2k+1}{x}}{2k+1}+C
+        \end{aligned}
+    }
+    那么这个到这就结束了，其实还是很简单的对吧.
+
+    而对于$\int{\cos^{2n+1}x\d x}$来说，积分操作也是一样的
+    \formula{
+        \begin{aligned}
+            \int{\cos^{2n+1}{x}\d x}&=\int{\qty(1-\sin^2{x})^{2n+1}\d\sin{x}}\\
+            &=\int\qty[1-n\sin^2{x}+\frac{n\qty(n-1)}{2!}\sin^4{x}-\cdots+\qty(-1)^n\sin^{2n}{x}]\d\sin{x}\\
+            &\cdots\\
+            &=\sum_{k=0}^n{\qty(-1)^k}\binom{n}{k}\frac{\sin^{2k+1}{x}}{2k+1}+C
+        \end{aligned}
+    }
+    到这，我们已经完全明白了如何快速求解$\sin^m{x}$和$\cos^n{x}$的积分了，那如果他们组合在一起的话需要怎么操作呢？我们后面再看$\sim$
+}

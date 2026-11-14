@@ -1,0 +1,496 @@
+\chapter*{2024年\textsf{HDU}「概率论与数理统计」期中模拟}
+
+\vspace{-.4\baselineskip}\setcounter{page}{1}
+\begin{minipage}{.66\textwidth}
+  \centering
+  \includegraphics[width = .96\linewidth]{border}
+  % \begin{tasks}
+  %   [ label-width = 5\ccwd, item-indent = 2cm,
+  %     after-item-skip = 0pt ](2)
+  %   \task[\textbf{开课学院}：] 理学院
+  %   \task[\textbf{解析提供}：] \textsc{\textsf{X.Y. Xu \& J.G. Hou}}
+  %   \task[\textbf{课程编码}：] A0714040
+  %   \task[\textbf{\textsf\TeX~排版}：] \textsf{Skyrmion}
+  % \end{tasks}
+\end{minipage}
+\hfill
+\begin{minipage}{.15\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \node [ inner sep = 0 ] at (0,0) {
+      \qrcode[ height = 4em, version = 4 ]{http://weixin.qq.com/r/sRJiemTEGjllrSAZ90ej}};
+    \fill [ white ] (-14em/33,14em/33) rectangle (14em/33,-14em/33);
+    \fill [ DarkGreen!60, rounded corners = 4em/33 ]
+      (-12em/33,12em/33) rectangle (12em/33,-12em/33);
+    \node [ inner sep = 0, white, font = \scriptsize ]
+      (weixin) at (0,0) {\faIcon{weixin}};
+    \node
+      [ inner sep = .5ex, align = center, right,
+        xshift = 2em, font = \scriptsize ] at (weixin.east) {未\\央\\学\\社};
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.15\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \node [ inner sep = 0 ] at (0,0) {
+      \qrcode [ height = 4em, version = 4 ]{https://qm.qq.com/q/Oo6vNR8ccU}};
+    \fill [ white ] (-14em/33,14em/33) rectangle (14em/33,-14em/33);
+    \fill [ MidnightBlue!60, rounded corners = 4em/33 ]
+      (-12em/33,12em/33) rectangle (12em/33,-12em/33);
+    \node [ inner sep = 0, white, font = \scriptsize ]
+      (qq) at (0,0) {\faIcon{qq}};
+    \node
+      [ inner sep = .5ex, align = center, left,
+        xshift = -2em, font = \scriptsize ] at (qq.west) {数\\学\\营};
+  \end{tikzpicture}
+\end{minipage}
+
+\section{选择题（每题2分，共20分）}
+
+\begin{problem}
+  将一枚硬币独立地掷两次，有以下事件：$A_1 = \{\text{掷第一次出现正面}\}$，
+  $A_2 = \{\text{掷第二次出现正面}\}$，$A_3 = \{\text{正、反面各出现一次}\}$，
+  $A_4 = \{\text{正面出现两次}\}$，则事件
+\begin{tasks}(4)
+  \task $A_1,~ A_2,~ A_3$ 相互独立
+  \task $A_2,~ A_3,~ A_4$ 相互独立
+  \task[\true] $A_1,~ A_2,~ A_3$ 两两独立
+  \task $A_2,~ A_3,~ A_4$ 两两独立
+\end{tasks}
+\end{problem}
+\scratch[10ex]
+\begin{solution}
+  因为 $P(A_i) = 1/2$，$P(A_1A_2) = P(A_1A_3) = P(A_2A_3) = \frac14$，
+  $P(A_1A_2A_3) = 0$，$P(A_2A_4) \neq P(A_2) P(A_4)$，所以
+  $ P(A_1A_2) = P(A_1)P(A_2),~ P(A_1A_3) = P(A_1)P(A_3),~
+    P(A_2A_3) = P(A_2)P(A_3),~ P(A_1A_2A_3) = P(A_1)P(A_2)P(A_3)
+  $，$A_1,~ A_2,~ A_3$ 两两独立而不相互独立. $A_2,~ A_3,~ A_4$ 不两两独立更不相互独立.
+\end{solution}
+
+\begin{problem}
+  当事件 $A$ 与 $B$ 同时发生时，事件 $C$ 必发生，则下列结论中，正确的是
+  \begin{tasks}(4)
+    \task $P(C) = P(AB)$
+    \task $P(C) = P(A \cup B)$
+    \task[\true] $P(C) \geq P(A) + P(B) - 1$
+    \task $P(C) \leq P(A) + P(B) - 1$
+  \end{tasks}
+\end{problem}
+\scratch[4ex]
+\begin{solution}
+  因为事件 $A$ 与 $B$ 同时发生时，事件 $C$ 必发生，即 $AB \subset C$，
+  因此 $P(C) \geq P(AB)$. 又因 $P(A \cup B) = P(A) + P(B) - P(AB)$，
+  则 $P(C) \geq P(A) + P(B) - P(AB) \geq P(A) + P(B) - 1$.
+\end{solution}
+
+\begin{problem}
+  设 $F_1(x),~ F_2(x)$ 为两个分布函数，其相应的概率密度为 $f_1(x),~ f_2(x)$ 是连续函数，
+  则下列必为概率密度的是
+  \begin{tasks}(4)
+    \task $f_1(x) f_2(x)$
+    \task $2 f_2(x) F_1(x)$
+    \task $f_1(x) F_2(x)$
+    \task[\true] $f_1(x) F_2(x) + f_2(x) F_1(x)$
+  \end{tasks}
+\end{problem}
+\scratch[2ex]
+\begin{solution}
+  根据概率密度的性质，检验各选项得
+  $ \int_{-\infty}^{+\infty} [f_1(x) F_2(x) + f_2(x) F_1(x)] \d x
+  = F_1(x) F_2(x) \Big|_{-\infty}^{+\infty} = 1$.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 和 $Y$ 相互独立，且 $X$ 服从标准正态分布 $N(0,1),~ Y$ 的概率分布为
+  $P\{Y = 0\} = P\{Y = 1\} = 1/2$，记 $F_Z(z)$ 为随机变量 $Z = XY$ 的分布函数，
+  则函数 $F_Z(z)$ 间断点个数为
+  \begin{tasks}(4)
+    \task $0$
+    \task[\true] $1$
+    \task $2$
+    \task $3$
+  \end{tasks}
+\end{problem}
+\scratch[10ex]
+\begin{solution}\leavevmode
+  \begin{itemize}
+    \item 因为 $X,~ Y$ 相互独立，则
+    $ P\{X \cdot 0 \leq z | Y = 0\} = P\{X \cdot 0 \leq z\},~
+      P\{X \cdot 1 \leq z | Y = 1\} = P\{X \leq z\}$.
+    \item $F_Z(z) = P\{XY \leq z | Y = 0\} P\{Y = 0\}
+                  + P\{XY \leq z | Y = 1\} P\{Y = 1\}
+                  = \frac12 [P\{X \cdot 0 \leq z\} + P\{X \cdot 1 \leq z\}]$.
+    \item 若 $z < 0$，则 $F_Z(z) = \frac12 \Phi(z)$；
+    若 $z \geq 0$，则 $F_Z(z) = \frac12 [1 + \Phi(z)]$. 则 $z = 0$ 为间断点.
+  \end{itemize}
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 与 $Y$ 独立且具有相同的分布，设 $P(X = 0) = P(X = 1) = 1/2$，
+  则下列各式中正确的是
+  \begin{tasks}(4)
+    \task $P(X = Y) = 1/2$
+    \task $P(X = Y) = 1$
+    \task $P(XY = 0) = 1/4$
+    \task $P(X + Y = 1) = 1/4$
+  \end{tasks}
+\end{problem}
+\scratch[2ex]
+\begin{solution}
+  $ P(X = Y) = p(x = y = 1) + p(x = y = 0)
+  = p(x = 0) p(y = 0) + p(x = 1) p(y = 1) = 1/2$.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 的分布函数
+  $ F(X) =
+    \begin{cases}
+      0, & x < 0 \\ \frac12, & 0 \leq x < 1 \\ 1 - e^{-x}, & x \geq 1
+    \end{cases}
+  $，则 $P\{X = 1\}$ 等于
+  \begin{tasks}(4)
+    \task $0$
+    \task $\frac12$
+    \task[\true] $\frac12 - e^{-1}$
+    \task $1 - e^{-1}$
+  \end{tasks}
+\end{problem}
+\scratch[2ex]
+\begin{solution}
+  $ P\{X = 1\} = P\{X \leq 1\} - P\{X < 1\}
+  = F(1) - F(1 - 0) = 1 - e^{-1} - \frac12 = \frac12 - e^{-1}$.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 的概率密度为
+  \[
+    f(x) =
+    \begin{cases}
+      1/3, & 0 \leq x < 1 \\ k x^2, & 1 \leq x \leq 2 \\ 0, & \text {else}
+    \end{cases}
+  \]
+  则常数 $k$ 的值为
+  \begin{tasks}(4)
+    \task $1/7$
+    \task $2/7$
+    \task $3/14$
+    \task $3/8$
+  \end{tasks}
+\end{problem}
+\scratch[2ex]
+\begin{solution}
+  对 $f(x)$ 积分得
+  $\int_0^1 \frac13 \d x + \int_1^2 kx^2 \d x = (1 + 7k)/3 = 1,~ k = 2/7$.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 的分布函数为 $F(x) = 0.2\Phi(x) + k\Phi\ab(\frac{x-2}{4})$，
+  其中 $\Phi(x)$ 是标准正态分布的分布函数，$k$ 为某个常数，那么 $E[X]$ 为
+  \begin{tasks}(4)
+    \task[\true] $8/5$
+    \task $4/5$
+    \task $2$
+    \task $1$
+  \end{tasks}
+\end{problem}
+\scratch[12ex]
+\begin{solution}
+  利用分布函数的归一化条件得 $k = 1 - 0.2 = 0.8$，则 $X$ 的概率密度函数为
+  \[
+    f_X(x) = F'(x) = \frac{1}{5\sqrt{2\pi}} e^{-x^2/2}
+                   + \frac{4}{5\sqrt{32\pi}} e^{-(x - 2)^2/32}
+  \]
+  根据正态分布的期望
+  $ \int^{+\infty}_{-\infty} x\frac{1}{\sqrt{2\pi\sigma^2}}
+    e^{-\frac{(x - k)^2}{2\sigma^2}} \d x = k$ 得
+  $E[X] = \int^{+\infty}_{-\infty} xf_X(x) \d x = \frac05 + \frac85 = \frac85$.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X \sim N(\mu,\sigma^2)$（$\sigma > 0$），
+  记 $p = P(X \leq \mu + \sigma^2)$，则
+  \begin{tasks}(4)
+    \task $p$ 随 $\mu$ 的增加而增加
+    \task $p$ 随 $\sigma$ 的增加而增加
+    \task $p$ 随 $\mu$ 的增加而减少
+    \task $p$ 随 $\sigma$ 的增加而减少
+  \end{tasks}
+\end{problem}
+\scratch[2ex]
+\begin{solution}
+  $(X - \mu)/\sigma$ 服从标准正态分布，
+  $P(X \leq \mu + \sigma^2) = P[(x - \mu)/\sigma \leq \sigma] = \Phi(\sigma)$，
+  所以本题选择B项.
+\end{solution}
+
+\begin{problem}
+  已知随机变量 $Z = \min\{X,Y\}$，其中 $X,~ Y$ 相互独立，那么
+  \begin{tasks}(2)
+    \task $f_z(z) = f_x(z) f_y(z)$
+    \task $F_z(z) = F_x(z) F_y(z)$
+    \task $f_z(z) = (1 - F_x(z)) (1 - F_y(z))$
+    \task[\true] $F_z(z) = 1 - (1 - F_x(z)) (1 - F_y(z))$
+  \end{tasks}
+\end{problem}
+\scratch[4ex]
+\begin{solution}
+  $F_z(z) = P(Z < z) = P(\min\{X,Y\} < z) = 1 - P(\min\{X,Y\} \geq z)$，
+  该式可以写成 $1 - P(X \geq z, Y \geq z) = 1 - P(X \geq z)P(Y \geq z)$，
+  即 $1 - (1 - F_x(z)) (1 - F_y(z))$.
+\end{solution}
+
+\section{填空题（每题2分，共10分）}
+
+\begin{problem}
+  设两个相互独立的事件 $A$ 和 $B$ 都不发生的概率为 $\frac19$，
+  且 $A$ 发生 $B$ 不发生的概率与 $B$ 发生 $A$ 不发生的概率相等，
+  则 $P(A) = $\result{$2/3$}.
+\end{problem}
+\scratch[8ex]
+\begin{solution}
+  由于 $A,~ B$ 相互独立，则 $P(AB) = P(A) P(B)$，且
+  $P(\overline A\,\overline B) = 1/9,~ P(A \overline B) = P(\overline AB)$. 则有
+  \[
+    \begin{cases}
+      P(\overline A\,\overline B) = P(\overline{A + B})
+                                  = 1 - P(A + B) = \frac19\\
+      P(A) - P(AB) = P(B) - P(AB)
+    \end{cases},~
+    \begin{cases}
+      1 - P(A) - P(B) + P(A) P(B) = \frac19\\
+      P(A) = P(B)
+    \end{cases}
+  \]
+  所以 $1 - 2P(A) + P^2(A) = 1/9$.
+  解得 $P(A) - 1 = \pm 1/3,~ P(A) = 4/3$（舍去）或 $P(A) = 2/3$.
+\end{solution}
+
+\begin{problem}
+  已知随机变量 $X$ 服从参数为 $\lambda$ 的泊松分布，且 $P\{X = 0\} = e^{-1}$，
+  则 $\lambda = $\result{$1$}.
+\end{problem}
+\scratch[4ex]
+\begin{solution}
+  因为 $X \sim \pi(\lambda),~ P\{X = k\} = \frac{\lambda^k e^{-\lambda}}{k!}$
+  （$\lambda > 0$）故 $P\{X = 0\} = \frac{\lambda^0 e^{-\lambda}}{0!} = e^{-1}$，
+  则 $\lambda = 1$.
+\end{solution}
+
+\begin{problem}
+  设 $X \sim N(\mu,10^2),~ P(X > 85) = 1 - \Phi(1)$，则 $P(X > 65) = $
+  \result{$\Phi(1)$}.
+\end{problem}
+\scratch[8ex]
+\begin{solution}\leavevmode
+  \begin{itemize}
+    \item 题目中已知 $X \sim N(\mu,10^2)$，即 $X$ 服从均值为 $\mu$，
+    方差为 $10^2 = 100$ 的正态分布.
+    \item 给定 $P(X > 85) = 1 - \Phi(1)$. 根据正态分布的性质，$X$ 的标准化后分布满足
+    $P\ab(\frac{X - \mu}{10} > \frac{85 - \mu}{10}) = 1 - \Phi(1)$.
+    \item 由 $1 - \Phi(1) = P(Z > 1)$ 可得 $\frac{85 - \mu}{10} = 1$，
+    解得均值 $\mu = 75$.
+    \item 要求 $P(X > 65)$，首先对 $X$ 进行标准化
+    $P(X > 65) = P\ab(\frac{X - 75}{10} > \frac{65 - 75}{10}) = P(Z > -1)$.
+    \item 由于 $P(Z > -1) = \Phi(1)$，最终结果为 $P(X > 65) = \Phi(1)$.
+  \end{itemize}
+\end{solution}
+
+\begin{problem}[2010年全国考研题]
+  设 $f_1(x)$ 为标准正态分布的概率密度，$f_2(x)$ 为 $[-1,3]$ 上的均匀分布的概率密度，
+  若 $f(x) =
+  \begin{cases}
+    af_1(x), & x \leq 0\\
+    bf_2(x), & x > 0
+  \end{cases}$，（$a > 0,~ b > 0$）为概率密度，则 $a,~ b$ 应满足
+  \result{$a/2 + 3b/4 = 1$}.
+\end{problem}
+\scratch[4ex]
+\begin{solution}
+  $ \int_{-\infty}^{+\infty} f(x) \d x = \int_{-\infty}^0 af_1(x) \d x +
+    \int_0^{+\infty} bf_2(x) \d x = 1$，
+  那么得到$a/2 + 3b/4 = 1$.
+\end{solution}
+
+\begin{problem}
+  已知随机变量 $X$ 满足参数为 $\frac32$ 的指数分布，期望 $E(2e^x - 1) = $\result{$5$}.
+\end{problem}
+\scratch[8ex]
+\begin{solution}\leavevmode
+  \begin{itemize}
+    \item 假设随机变量 $X$ 满足参数为 $\lambda = \frac32$ 的指数分布，
+    则其概率密度函数为 $f_X(x) = \frac32 e^{-\frac32 x}$（$x \geq 0$）.
+    \item 要求 $E(2e^X - 1)$，根据期望的线性性质，可将其分解为
+    $E(2e^X - 1) = 2E(e^X) - E(1) = 2E(e^X) - 1$.
+    \item 接下来计算 $E(e^X)$：
+    $E(e^X) = \int_0^{\infty} e^x f_X(x) \d x
+            = \int_0^{\infty} e^x \cdot \frac32 e^{-\frac32x} \d x
+            = \frac32 \int_0^{\infty} e^{-\frac12x} \d x = 3$.
+    \item 最终得到：$E(2e^X - 1) = 2 \cdot 3 - 1 = 6 - 1 = 5$.
+  \end{itemize}
+\end{solution}
+
+\section{解答题（共60分）}
+
+\begin{problem}[本题12分]
+  设随机变量$X,~ Y$ 相互独立，它们的概率密度分别为
+  \[
+    f_X(x) =
+    \begin{cases}
+      e^{-x}, & x > 0\\
+      0,      & \text{else}
+    \end{cases},~
+    f_Y(y) = 
+    \begin{cases}
+      2y, & 0 < y < 1\\
+      0,  & \text{else}
+    \end{cases}
+  \]
+  \begin{tasks}[ label = \arabic*. ](2)
+    \task 求 $(X,Y)$ 的概率密度.
+    \task 求 $Z = X + Y$ 的概率密度.
+  \end{tasks}
+\end{problem}
+\scratch[18ex]
+\begin{solution}\leavevmode
+  \begin{enumerate}
+    \item 由于 $X,~ Y$ 相互独立，$(X,Y)$ 的概率密度为
+    \[
+      f(x,y) = f_X(x) f_Y(y) =
+        \begin{cases}
+          2ye^{-x}, & x > 0,~ 0 < y < 1\\
+          0,        & \text {else}
+        \end{cases}
+    \]
+    \item $(X,Y)$ 的正概率区域 $D$ 与所求概率
+    $F_Z(z) = P\{X + Y \leq z\}$ 的积分区域的公共部分有三种不同组合形式.
+    \begin{itemize}
+      \item 当 $z < 0$ 时，$F_z(z) = 0$.
+      \item 当 $0 \leq z < 1$ 时，
+      $F_z(z) = \int_0^z \d x \int_0^{-x} 2ye^{-x} \d y
+              = z^2 - 2z - 2e^{-z} + 2$.
+      \item 当 $z \geq 1$ 时，
+      $F_Z(z) = 1 - \int_0^1 \d y \int_{-y}^{+\infty} 2ye^{-x} \d x
+              = 1 - 2e^{-z}$.
+    \end{itemize}
+    因此 $Z = X + Y$ 的概率密度为
+    \[
+      f_Z(z) =
+      \begin{cases}
+        2 z + 2 e^{-z} - 2, & 0 < z < 1\\
+        2 e^{-z},           & z > 1\\
+        0,                  & \text{else}
+      \end{cases}
+    \]
+  \end{enumerate}
+\end{solution}
+
+\begin{problem}[本题12分]
+  某厂产品有 $70\%$ 不需要调试即可以出厂，另外 $30\%$ 需要调试，
+  调试后有 $80\%$ 的产品能出厂.
+  \begin{tasks}[ label = \arabic*. ](2)
+    \task 求该厂产品能出厂的概率.
+    \task 任取一出厂产品，求未经调试的概率.
+  \end{tasks}
+\end{problem}
+\scratch[12ex]
+\begin{solution}
+  $A$ 表示产品能出厂，$B_1$ 表示产品不需要调试，$B_2$ 表示产品需要调试.
+  则$P(B_1) = 70\%,~ P(B_2) = 30\%$，
+  $P(A | B_1) = 1,~ P(A | B_2) = 0.8$.
+  \begin{enumerate}
+    \item 由全概率公式可知
+    $P(A) = P(A | B_1) P(B_1) + P(A | B_2) P(B_2)
+          = 1 \times 0.7 + 0.8 \times 0.3 = 0.94$.
+    \item 由贝叶斯公式可得
+    $P(B_1 | A) = P(A | B_1) P(B_1)/P(A)
+                = 1 \times 0.7/0.94 = 0.74$.
+  \end{enumerate}
+\end{solution}
+
+\begin{problem}[本题6分]
+  设随机变量 $X,~ Y$ 相互独立，且服从同一分布. 试证明
+  \[P\{a < \min(X,Y) \leq b\} = [P\{X > a\}]^2 - [P\{X > b\}]^2\]
+\end{problem}
+\scratch[8ex]
+\begin{solution}
+  \begin{proof}
+    设 $Z = \min(X,Y),~ X,~ Y$ 服从同一分布的分布函数为 $F(\cdot)$，
+    则 $Z$ 的分布函数为
+    \[
+      F_Z(z) = P\{\min(X,Y) \leq z\} = 1 - P\{\min(X,Y) > z\}
+             = 1 - P\{X > z,Y > z\}
+    \]
+    由于 $X,~ Y$ 相互独立同分布，故 $F_Z(z) = 1 - [P(X \ge z)]^2$，
+    $P\{a < \min(X,Y) \leq b\} = F_Z(b) - F_Z(a)$.
+  \end{proof}
+\end{solution}
+
+\begin{problem}[本题12分]
+  今有甲乙两名射手轮流对同一目标进行射击，甲命中的概率为 $p_1$ ，乙命中的概率为 $p_2$，
+  谁先命中谁获胜，分别求甲、乙两人获胜的概率.
+\end{problem}
+\scratch[22ex]
+\begin{solution}
+  令 $A,~ B$ 分别表示 ``甲获胜''、``乙获胜''， $A_i,~ B_i$（$i = 1,~ 2,~ \ldots$）
+  分别表示``甲第 $i$ 次射击命中''、``乙第 $i$ 次射击命中''，则
+  $
+    A = A_1 \cup \overline{A_1} \overline{B_1} A_2 \cup
+        \overline{A_1} \overline{B_1} \overline{A_2} \overline{B_2} A_3 \cup
+        \ldots,~
+    B = \overline{A_1} B_1 \cup
+        \overline{A_1} \overline{B_1} \overline{A_2} B_2 \cup
+        \overline{A_1} \overline{B_1} \overline{A_2}
+        \overline{B_2} \overline{A_3} B_3 \cup \ldots
+  $，因而
+  \begin{align*}
+    P(A)& = P(A_1) + P(\overline A_1 \overline B_1 A_2) + \cdots
+          = P(A_1) + P(\overline A_1) P(\overline B_1) P(A_2) + \cdots \\
+        & = p_1 + (1 - p_1)(1 - p_2) p_1 + \cdots
+          = \frac{p_1}{1 - (1 - p_1)(1 - p_2)} = \frac{p_1}{p_1 + p_2 - p_1 p_2}
+  \end{align*}
+  因为 $A$ 与 $B$ 为互逆事件，
+  所以 $P(B) = 1 - P(A) = \frac{(1 - p_1) p_2}{p_1 + p_2 - p_1 p_2}$.
+\end{solution}
+
+\begin{problem}[本题18分]
+  某单位招聘 $155$ 人，按考试成绩录用，共有 $523$ 人报名，
+  假设报名者的考试成绩 $X$ 服从正态分布 $N(\mu,\sigma^2)$.
+  已知 $90$ 分以上的有 $12$ 人，$60$ 分以下的有 $83$ 人，若从高分到低分依次录取，
+  某人的考试成绩为 $78$ 分，此人能否被录取？
+  附数据：
+  $ \Phi(0.54) = 0.7054,~ \Phi(0.8) = 0.7881,~
+    \Phi(1.0) = 0.8413,~ \Phi(2.0) = 0.9771 $.
+\end{problem}
+\scratch[10ex]
+\begin{solution}
+  分别求出 $P\{X \leq 90\},~ P\{ X < 60 \}$，并标准化
+  \begin{tasks}[ label = \ensuremath\bullet ](2)
+    \task $P\{X \leq 90\} = 1 - P\{X > 90\} = 1 - 12/523 \approx 0.9771$
+    \task
+    $ P\ab\{\frac{X - \mu}{\sigma} \leq \frac{90 - \mu}{\sigma}\}
+    = \Phi\ab(\frac{90 - \mu}{\sigma}) = 0.9771$
+    \task $P\{X < 60\} = 83/523 \approx 0.1587$
+    \task
+    $ P\ab\{\frac{X - \mu}{\sigma} < \frac{60 - \mu}{\sigma}\}
+    = \Phi\ab(\frac{60 - \mu}{\sigma}) = 0.1587$
+  \end{tasks}
+  查表得
+  $\frac{90 - \mu}{\sigma} \approx 2.0,~ \frac{\mu - 60}{\sigma} \approx 1.0$.
+  联立解得 $\mu = 70,~ \sigma = 10$，则 $X \sim N(70,10^2)$.
+  录取率为 $155/523 \approx 0.2964$.
+  \begin{description}[ labelwidth = 1em, leftmargin = 0pt ]
+    \item[解法1.]
+    $ P\{X > 78\} = 1 - P \{X \leq 78\}
+    = 1 - P\ab\{\frac{X - 70}{10} \leq \frac{78 - 70}{10}\}
+    = 1 - \Phi(0.8) \approx 0.2119 < 0.2964$，可以被录取.
+    \item[解法2.] 设被录取者的最低分为 $x_0$，则 $P\{X > x_0\} = 0.2964$. 由于
+    $P\{X \leq x_0\} = 1 - P\{X > x_0\} \approx 0.7036$.
+    \[
+        P\{X \leq x_0\} = P\ab\{\frac{X - 70}{10} \leq \frac{x_0 - 70}{10}\}
+      = P\ab\{X^* \leq \frac{x_0 - 70}{10}\} = \Phi\ab(\frac{x_0 - 70}{10})
+      = 0.7036
+    \]
+    则有 $\frac{x_0 - 70}{10} < 0.54$，解得 $x_0 < 75.4$，
+    该人分数为 $78$ 分，大于 $75.4$ 分，可以被录取.
+  \end{description}
+\end{solution}

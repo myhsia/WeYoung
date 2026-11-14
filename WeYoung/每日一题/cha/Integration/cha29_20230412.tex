@@ -1,0 +1,27 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\int{\ee^{ax}\cos{bx}\d x}$}%在花括号内输入题目
+
+\teacher{张晓鹏}%在花括号内输入你的名字
+
+\postdate{2023年4月12日}%在花括号内输入你想要发布那一天的日期
+
+\result{\frac{1}{a^2+b^2}\ee^{ax}\qty(a\cos{bx}+b\sin{bx})}%在花括号内输入本题结果
+
+今天基本上是每日一题不定积分方法篇的最后一题了.绝大部分常见的不定积分方法 被已经介绍完了，但实际上积分的方法还有很多很多，感兴趣的同学可以看金玉明老师编 著的《积分的方法与技巧》.
+\analysis{
+那么今天继续介绍组合积分法经典例题.指数函数和三角函数都是常见的自导和互导 函数，非常满足组合积分法的特征.下面直接来解：
+
+构造对应的配对积分
+\formula{I_1=\int{\ee^{ax}\cos{bx}\d x},\ I_2=\int{\ee^{ax}\sin{bx}\d x}}
+在组合积分法中，我们融合微分法（微分法之前没介绍，但《积分的方法与技巧》一 书中有，想要系统学习的同学们可以翻翻），对被积分函数取微商
+\formula{\qty(\ee^{ax}\cos{bx})^{\prime}=a\ee^{ax}\cos{bx}-b\ee^{ax}\sin{bx}}
+\formula{\qty(\ee^{ax}\sin{bx})^{\prime}=a\ee^{ax}\sin{bx}+b\ee^{ax}\cos{bx}}
+对等式两边分别积分，可得
+\formula{\ee^{ax}\cos{bx}\d x=a\int{\ee^{ax}\cos{bx}\d x}-b\int{\ee^{ax}\sin{bx}\d x}=aI_1-bI_2}
+\formula{\ee^{ax}\sin{bx}\d x=a\int{\ee^{ax}\sin{bx}\d x}+b\int{\ee^{ax}\cos{bx}\d x}=aI_2+bI_1}
+联立解方程可得最后结果
+\formula{I_1=\frac{1}{a^2+b^2}\ee^{ax}\qty(a\cos{bx}+b\sin{bx})}
+}%在花括号内输入分析

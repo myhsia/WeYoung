@@ -1,0 +1,37 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\int{\sin^p{x}\cos^q{x}\d x}$，其中$p+q=-2n$}%在花括号内输入题目
+
+\teacher{张晓鹏}%在花括号内输入你的名字
+
+\postdate{2022年12月26日}%在花括号内输入你想要发布那一天的日期
+
+\result{\sum_{k=0}^{n-1}\binom{n-1}{k}\frac{\tan^{p+2k+1}{x}}{p+2k+1}+C}%在花括号内输入本题结果
+
+\analysis{
+    这类积分可以通过转化为含$\tan{x}$或$\cot{x}$的多项式解决
+    
+    令$t=\tan{x}$，则$\sec^2{x}\d x=\d t$
+
+    同时我们可以如下变形
+    \formula{
+        \begin{aligned}
+            \sin^p{x}\cos^q{x}&=\frac{\sin^p{x}}{\cos^p{x}}\cos^p{x}\cos^q{x}=\tan^p{x}\cos^{p+q}{x}\\
+            &=\tan^p{x}\cos^{-2n}{x}=\tan^p{x}\sec^{2n}{x}\\
+            &=\tan^p{x}\qty(\sec^2{x})^n
+        \end{aligned}
+    }
+    那么可以对原积分化简得
+    \formula{
+        \begin{aligned}
+            \int{\sin^p{x}\cos^q{x}\d x}&=\int{\tan^p{x}\qty(\sec^2{x})^n\d x}=\int{\tan^p{x}\qty(1+\tan^2{x})^{n-1}\sec^2{x}\d x}\\
+            &=\int{\tan^p{x}\qty(1+\tan^2{x})^{n-1}\d\tan{x}}\\
+            &=\int{t^p\qty(1+t^2)^{n-1}\d t}
+        \end{aligned}
+    }
+    之后再对$\qty(1+t^2)^{n-1}$二项式展开，并分项积分可得最后结论
+    \formula{\int{\sin^p{x}\cos^q{x}\d x}=\sum_{k=0}^{n-1}\binom{n-1}{k}\frac{\tan^{p+2k+1}{x}}{p+2k+1}+C\mbox{，其中}-2n=p+q}
+    详细过程就不写了，写了意义也不大，跟前几天的操作也是差不多的，大家可以自己动手算算一些特殊情况，感受一下这个思路和过程，最后的结论相对于思路并不重要，需要时会推即可.
+    }%在花括号内输入分析

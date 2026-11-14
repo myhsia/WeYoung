@@ -1,0 +1,299 @@
+\PassOptionsToPackage{dvipdfmx}{graphicx}
+\documentclass[twocolumn, fontset = fandol]{ctexart}
+
+\input{../preamble.tex}
+
+% \setCJKmainfont{LXGW WenKai}[AutoFakeSlant]
+% \setCJKsansfont{LXGW Marker Gothic}[AutoFakeBold, AutoFakeSlant, Scale = .95]
+% \setCJKmonofont{LXGW WenKai Mono}[AutoFakeBold, AutoFakeSlant]
+\ctexset{section/format+ = \raggedright}
+\hdutexset{watermark = ../WY_Logo.pdf}
+% \usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+% \setmathfont[AutoFakeBold]{STIX Two Math}
+
+\makeatletter \def \@result #1{\underline{ \quad }} \makeatother
+
+\ctikzset
+  {
+    amplifiers/fill  = cyan!20,
+    resistors/fill   = violet!20,
+    sources/fill     = yellow!20,
+    diodes/fill      = red!20,
+    resistors/scale  = .64,
+    capacitors/scale = .6,
+    diodes/scale     = .6,
+    sources/scale    = .8,
+    inductors/scale  = .6,
+  }
+\tikzset {ev fonery node/.style = {font = \small, align = left}}
+
+\title{\sffamily\bfseries 24Fall \textsc{Hdu} 「模拟电子技术」补考试题}
+\author{} \date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}[12 pt]% 1
+  如图所示为加减运算电路，求输出电压 $v_o$ 的表达式.
+  \begin{center}
+    \begin{circuitikz}
+      \draw (0,0) node [ op amp, anchor = out ] (A) {$\mathrm A$}
+       to [ short, -o ] ++ (1,0) node [ right ] {$v_o$};
+      \draw (A.-) --++ (-.5,0)
+       to [ short, -o, european resistor, l_ = $R_1$, name = R1 ] ++
+       (-2,0) node [ font = \footnotesize\ttfamily ] at (R1) {10k}
+       node [ left ] {$v_{i_1}$};
+      \draw (A.+) --++ (-.5,0)
+       to [ short, -o, european resistor, l_ = $R_3$, name = R3 ] ++
+       (-2,0) node [ font = \footnotesize\ttfamily ] at (R3) {10k}
+       node [ left ] {$v_{i_2}$};
+      \draw ([xshift = -.5cm]A.-) node [ above right ] {$v_n$}
+       to [ short, *- ] ++ (0,1)
+       to [ european resistor, l = $R_2$, name = R2 ] ++ (3,0) coordinate (R2r)
+       node [ font = \footnotesize\ttfamily ] at (R2) {30k}
+       to [ short, -* ] (R2r |- A.out);
+      \draw ([xshift = -.5cm]A.+) node [ below right ] {$v_p$}
+       to [ short, *- ] ++ (0,-.25)
+       to [ european resistor, l_ = $R_4$, name = R4 ] ++ (0,-1.25)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (R4) {10k}
+       node [ rground ] {};
+    \end{circuitikz}
+  \end{center}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}[15 pt]% 3
+  电路图如图所示，硅 BJT 三极管的 $\beta = 100$，$C_1$ 和 $C_2$ 为隔直耦合电容.
+  \begin{enumerate}
+    \item 求 $Q$ 点.
+    \item 求三极管放大电路的电压增益 $A_{vz}$，输入电阻 $R_i$ 和输出电阻 $R_o$.
+  \end{enumerate}
+  \begin{center}
+    \begin{circuitikz}
+      \draw (0,0) node [ npn, anchor = B ] (npn) {$T$}
+       to [ european resistor, l_ = $R_b$, name = Rb ] ++ (-2,0)
+       node [ font = \footnotesize\ttfamily ] at (Rb) {500}
+       to [ european voltage source, l_ = $V_s$ ] ++ (0,-2)
+       coordinate (ground) node [ rground ] {};
+      \draw (npn.C) to [ european resistor, l = $R_c$, name = Rc ] ++ (0,1.5)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (Rc) {10k}
+       node [ vcc ] {$+\qty{15}\V$} (npn.E)
+       to [ european resistor, l_ = $R_e$, name = Re ] ++ (0,-1.5)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (Re) {15k}
+       node [ vee ] {$-\qty{15}\V$};
+      \draw (npn.E) to [ short, *-, C = $C_2$ ] ++ (1.75,0) coordinate (C2)
+       (C2 |- ground) node [ rground ] {} -- (C2);
+      \draw (npn.C) to [ short, *-, C = $C_1$ ] ++ (2.5,0)
+       node [ below left ] {$+$}
+       to [ european resistor, l = $R_L$, name = RL ] ++ (0,-1.75)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (RL) {5k}
+       node [ above left ] {$V_0$}(RL |- ground)
+       node [ rground ] {} node [ left ] {$-$} -- (RL);
+    \end{circuitikz}
+  \end{center}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\newpage
+
+\begin{problem}[12 pt]% 2
+  如图电路，$D$ 为硅二极管，$D_z$ 为，且稳定电压 $V_z = \qty3\V$，
+  动态电阻 $r_z = \qty{20}\ohm$, $V_\text{DD} = \qty5\V$, $R = \qty1\kohm$，
+  正弦信号 $v_s = 100\sin(2\pi \times 50t)\unit{\mV}$. 求输出电压 $v_o$.
+  \begin{center}
+    \begin{circuitikz}[american]
+      \draw (0,0) node [ below ] {$+$} to [ short, o- ] ++ (-1.5,0)
+       to [ stroke diode, invert, l_ = D ] ++ (-3,0)
+       to [ sV_ = $v_s$ ] ++ (0,-2)
+       to [ battery1, l_ = $V_\text{DD}$] ++ (0,-1) to [ short, -o ] ++ (4.5,0)
+       node [ above ] {$-$};
+      \draw (-1.5,-3) to [ short, *-, stroke diode, l_ = $D_2$ ] ++ (0,1.5)
+       to [ short, -*, european resistor, l_ = $R$ ] ++ (0,1.5);
+      \node at (0,-1.5) {$v_o$};
+    \end{circuitikz}
+  \end{center}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}[8 pt]% 8
+  电路如图所示，试用相位平衡条件判断能不能振荡. 如果能，请说明理由；
+  如果不能，也请说明理由，并最少程度上修改电路使其能产生振荡.
+  \begin{center}
+    \begin{circuitikz}
+      \draw (0,0) node [ npn, anchor = B ] (npn2) {$T_2$} (npn2.B)
+       to [ short, -* ] ++ (-.5,0) to [ european resistor, l = $R_d$ ] ++
+       (0,1.5) coordinate (Rdr) to [ short, -o ] ++ (3,0)
+       node [ right ] {$V_\text{CC}$};
+      \draw (npn2.C) to [ short, -* ] (npn2.C |- Rdr)
+       node [ njfet, anchor = D ] (njfet1) at ([xshift = -.5cm]npn2.B) {$T_1$}
+       (njfet1.S) to [ european resistor, l_ = $R_1$ ] ++ (0,-1) --++
+       (0,-.5) coordinate (R1r) to [ short, -* ] (R1r -| npn2.E)
+       node (ground) [ rground ] {} --++ (0,.5)
+       to [ european resistor, l = $R_c$ ] ++ (0,1) to [ short, -* ] (npn2.E);
+      \draw (npn2.E) to [ european resistor, l = $R$ ] ++ (1.5,0)
+       to [ C = $C$ ] ++ (1.5,0) coordinate (capacitor1r)
+       to [ short, *-*, european resistor, l_ = $R$ ] (capacitor1r |- ground) --
+       (ground);
+      \draw (capacitor1r) --++ (1.25,0) coordinate (capacitor2l)
+       to [ short, *-, C = $C$ ] (capacitor2l |- ground) -- (ground);
+      \draw (capacitor2l) --++ (1,0) --++ (0,-3) --++ (-8,0) |- (njfet1.G);
+    \end{circuitikz}
+  \end{center}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\newpage
+
+\begin{problem}[15 pt]% 4
+  电路如图所示，设 MOSFET 的参数为 $V_\text{TN} = \qty1\V$，
+  $K_n = \qty{0.5}{\mA/\V^2}$, $\lambda = 0$.
+  \begin{enumerate}
+    \item 试判断场效应管类型及其工作区.
+    \item 求静态工作点.
+    \item 画出电路的微变等效电路，求电路的电压增益 $A_v$，
+    输入电阻 $R_i$ 和输出电阻 $R_o$.
+  \end{enumerate}
+  \begin{center}
+    \begin{circuitikz}
+      \draw (0,0) node [ below ] {$+$}
+       to [ short, o-, C = $C_1$ ] ++ (1.75,0) --++ (.75,0)
+       node (fet) [ anchor = G, nigfete, solderdot ] {$T$} (fet.S)
+       to [ european resistor, l = $R_s$, name = Rs ] ++ (0,-1)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (Rs) {1k} --++
+       (0,-1) node [ rground ] (ground) {};
+      \draw (fet.D) to [ european resistor, l_ = $R_d$, name = Rd ] ++ (0,2)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (Rd) {20k}
+       node [ vdd ] (vdd) {$+\qty{10}\V$};
+      \draw (0,-2) node [ above ] {$-$} coordinate (negative)
+       to [ short, o-* ] (negative -| ground);
+      \draw (1.75,-2)
+       to [ short, *-*, european resistor, l_ = $R_{g_2}$, name = Rg2 ] (1.75,0)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (Rg2) {25k}
+       to [ european resistor, l_ = $R_{g_1}$, name = Rg1]
+       ++ (0,2.5) --++ (0,.5) coordinate (Rg1r)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (Rg1) {100k}
+       to [ short, -* ] (Rg1r -| vdd);
+      \draw (fet.D) to [ short, *-o, C = $C_2$ ] ++ (2.5,0)
+       node [ below ] {$v_o$};
+    \end{circuitikz}
+  \end{center}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}[12 pt]% 7
+  双电源互补对称电路如图所示，设最大输出功率 $P_\text{om} = \qty9\W$,
+  $R_L = \qty8\ohm$, $v_i$ 为正弦波，忽略 BJT 的饱和压降. 求
+  \begin{enumerate}
+    \item 正负电源 $V_\text{CC}$ 的最小值.
+    \item 直流电源供给的功率 $P_v = \frac2\pi \cdot \frac{V_\text{CC}^2}{R_L}$，
+    根据所求 $V_\text{CC}$ 的最小值，求放大器的效率 $\eta$.
+  \end{enumerate}
+  \begin{center}
+    \begin{circuitikz}
+      \draw (0,0) node [ vee ] {$-V_\text{CC}$} --++ (0,.25)
+       node [ pnp, anchor = C ] (pnp) {$T_2$} (pnp.E)
+       node [ npn, anchor = E ] (npn) {$T_1$} (npn.C) --++ (0,.25)
+       node [ vcc ] {$+V_\text{CC}$};
+      \draw (pnp.E) to [ short, *-o ] ++ (.9,0) --++ (.6,0)
+       node [ right ] {$+$} to [ european resistor, l_ = $R_L$ ] ++ (0,-1.5)
+       node [ right ] {$-$} node [ rground ] {};
+      \draw ([xshift = -1.5cm]pnp.E) coordinate (vi) to [ short, *-o ]
+            ([xshift = -2.5cm]pnp.E) node [ left ] {$v_i$};
+      \draw (npn.B) -| (vi) |- (pnp.B);
+    \end{circuitikz}
+  \end{center}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\newpage
+
+\begin{problem}[14 pt]% 5
+  已知图示电路，设硅三极管 BJT 的 $\beta_1 = \beta_2 = 100$.
+  \begin{enumerate}
+    \item 求 $T_1$, $T_2$ 的 $Q$ 点.
+    \item 计算三极管小信号模型输入电阻 $r_{be_1}$, $r_{be_2}$
+    和双端输入、双端输出时的差模电压增益.
+  \end{enumerate}
+  \begin{center}
+    \begin{circuitikz}
+      \draw (0,0) node [ vee ] {$V_\text{EE}-\qty{10}\V$}
+       to [ european resistor, l_ = $R_e$, name = Re ] ++ (0,1)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (Re) {9k3}
+       to [ short, -* ] ++ (0,.25) coordinate (base);
+      \draw (base) -| (-1,2) node (npn1) [ npn, anchor = E ] {$T_1$}
+       (npn1.B) to [ short, -o ] ++ (-.25,0) node [ left ] {$V_{i_1}$}
+       (npn1.C) to [ european resistor, l = $R_{e_1}$, name = Re1 ] ++ (0,2)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (Re1) {10k} --++
+       (1,0) coordinate (top);
+      \draw (base) -| (1,2)
+       node (npn2) [ npn, xscale = -1, anchor = E, reversed ]
+       {\ctikzflipx{$T_2$}}
+       (npn2.B) to [ short, -o ] ++ (.25,0) node [ right ] {$V_{i_2}$}
+       (npn2.C) to [ european resistor, l_ = $R_{e_2}$, name = Re2 ] ++ (0,2)
+       node [ rotate = 90, font = \footnotesize\ttfamily ] at (Re2) {10k}
+       to [ short, -* ] ++ (-1,0);
+      \draw (top) --++ (0,.25) node [ vcc ] {$V_\text{CC}+\qty{10}\V$};
+      \draw (npn1.C) to [ short, *-o ] ++ (.25,0) node [ right ] {$V_{e_1}$}
+            (npn2.C) to [ short, *-o ] ++ (-.25,0) node [ left ] {$V_{e_2}$};
+    \end{circuitikz}
+  \end{center}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\begin{problem}[12 pt]% 6
+  如图所示放大电路.
+  \begin{enumerate}
+    \item 请判断反馈放大电路的反馈组态.
+    \item 在深度负反馈条件下，求反馈系数和闭环增益表达式.
+  \end{enumerate}
+  \begin{center}
+    \begin{circuitikz}[scale = .75]
+      \ctikzset { resistors/scale = .54, sources/scale = .6 }
+      \draw (0,-1.75) node [ vee ] (vss) {$-V_\text{SS}$}
+        to [ short, *-*, european current source, l = $I_O$ ] (0,0);
+      \draw (0,0) -- (-1,0)
+       node (fet1) [ anchor = S, nigfete, solderdot ] {$T_1$} (fet1.G) --++
+       (-.5,0) to [ european resistor, l_ = $R_{g_1}$] ++ (0,-1.25)
+       to [ european voltage source, l_ = $v_g$ ] ++ (0,-1) node [ rground ] {};
+      \draw (0,0) -- (1,0)
+       node (fet2) [ anchor = S, nigfete, solderdot, xscale = -1 ]
+        {\ctikzflipx{$T_2$}} (fet2.G) --++ (.25,0)
+       to [ short, *-, european resistor, l_ = $R_{g_2}$ ] ++ (0,-1.5)
+       node [ rground ] {};
+      \draw (fet1.D) to [ short, *- ] ++ (5,0)
+       node (npn) [ npn, anchor = B ] {$T_3$}
+        (npn.E) to [ european resistor, l = $R_g$ ] ++ (0,-2.25) |- (vss)
+        (npn.C) to [ short, *-*, european resistor, l = $R_c$ ] ++ (0,1.5)
+        coordinate (Rcr);
+      \draw ([xshift = .25cm]fet2.G) to [ european resistor, l_ = $R_f$ ] ++
+        (1.5,0) |- (npn.C) to [ short, *-o ] ++ (1,0) coordinate (vo+);
+      \draw (fet2.D) to [ short, -*, european resistor, l = $R_{d_2}$ ]
+        (fet2.D |- Rcr) (fet1.D) to [ european resistor, l = $R_{d_1}$ ]
+        (fet1.D |- Rcr) -- (Rcr) to [ short, -o ] ++ (1,0)
+       node [ below ] {$+V_\text{DD}$};
+      \draw ([xshift = 1cm]npn.E) coordinate (vo-) to [ short, o- ] ++ (0,-.25)
+       node [ rground ] {};
+      \path (vo-) -- node {$v_o$} (vo+);
+    \end{circuitikz}
+  \end{center}
+\end{problem}
+\begin{solution}
+  
+\end{solution}
+
+\end{document}

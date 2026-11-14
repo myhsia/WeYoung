@@ -1,0 +1,485 @@
+\chapter*{\sffamily 2024年\textsf{\textsc{Hdu}}「概率论 \& 数理统计」期中试题}
+
+\ExplSyntaxOn
+\vspace{-12.0pt}\setcounter{page}{1}
+\begin{center}
+  \begin{minipage}{.66\textwidth}
+    \centering
+    \begin{tasks}
+      [ label-width = 5\ccwd, item-indent = 2cm,
+        after-item-skip = 1ex ](2)
+      \task[\textbf{课程信息}：] 理学院/A0714030
+      \task[\textbf{解析提供}：] 幻想大白
+      \task[\textbf{授课教师}：] 大学数学教学团队
+      \task[{\makebox[2em][c]{\textbf{\textsf\TeX}}}\textbf{排版}：] \textsf{Izumi~Sakai}
+    \end{tasks}
+  \end{minipage}
+  \begin{minipage}{.15\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \node [ inner~sep = 0 ] (wechat) {
+        \fancyqr
+          [ size = 4em, image~padding = 1,
+            image = \raisebox{4em/33}{\textcolor{DarkGreen \l__whats_darkmode_fading_tl}{\faIcon{weixin}}},
+            r~color = DarkGreen \l__whats_darkmode_fading_tl, version = 4
+          ]{http://weixin.qq.com/r/sRJiemTEGjllrSAZ90ej}
+        };
+      \node [ inner~sep = .5ex, align = center, right, font = \scriptsize ]
+        at (wechat.east) {未\\央\\学\\社};
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}{.15\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \node [ inner~sep = 0 ] (qq) {
+        \fancyqr
+          [ size = 4em, image~x~padding = 2, image~y~padding = 1,
+            image = \raisebox{4em/33}{\textcolor{MidnightBlue \l__whats_darkmode_fading_tl}{\faIcon{qq}}},
+            l~color = MidnightBlue \l__whats_darkmode_fading_tl, version = 4
+          ]{https://qm.qq.com/q/rbfYuqPhQs}
+        };
+      \node [ inner~sep = .5ex, align = center, left, font = \scriptsize ]
+        at (qq.west) {数\\学\\营};
+    \end{tikzpicture}
+  \end{minipage}
+\end{center}
+\ExplSyntaxOff
+
+\section{选择题（每题3分，共30分）}
+
+\begin{problem}
+  以 $A$ 表示``甲种产品合格，乙种产品合格''，则其对立事件 $\overline A$ 为
+  \begin{tasks}(2)
+    \task 甲种产品不合格，乙种产品合格
+    \task 甲、乙两种产品均不合格
+    \task 甲种产品合格、乙种产品不合格
+    \task[\true] 甲种产品不合格或乙种产品不合格
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  设甲、乙产品合格为 $A_1,~ A_2$. $A = A_1 \cup A_2$.
+  $\overline A = \overline{A_1 \cup A_2} = \overline A_1 \cup \overline A_2$.
+  所以D选项正确.
+\end{solution}
+
+\begin{problem}
+  设 $A,~ B,~ C$ 为三个随机事件，则 $A,~ B,~ C$ 至少有一个不发生的概率为
+  \begin{tasks}(4)
+    \task $\overline A\, \overline B\, \overline C$
+    \task[\true] $\overline{ABC}$
+    \task $A \cup B \cup C$
+    \task $ABC$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  $A$、$B$、$C$ 至少一个不发生为
+  $\overline A \cup \overline B \cup \overline C = \overline{ABC}$.
+\end{solution}
+
+\begin{problem}
+  设 $A$、$B$ 为相互独立的随机事件，$P(\overline AB) = 3P(A)P(B) > 0$，则 $P(A|B) = $
+  \begin{tasks}(4)
+    \task $1$
+    \task $1/2$
+    \task $1/3$
+    \task[\true] $1/4$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  $P(\overline A B) = P(B) - P(A)P(B) = 3P(A)P(B)$，所以
+  $P(B) = 4P(AB),~ P(A|B) = P(AB)/P(B) = 1/4$.
+\end{solution}
+
+\begin{problem}
+  设 $F_1(x),~ F_2(x)$ 分别为随机变量 $X_1$ 和 $X_2$ 的分布函数.
+  为使 $aF_1(x) - bF_2(x)$ 为某一随机变量的分布函数，则在下列给出的各组数值中应取
+  \begin{tasks}(4)
+    \task $a = 1/3,~ b = 1/3$
+    \task $a = -1/2,~ b = 3/2$
+    \task[\true] $a = 2/5.~ b = -3/5$
+    \task $a = 1/2.~ b = -3/2$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+若 $F_1(x),~ F_2(x),~ \cdots,~ F_n(x)$ 都是分布函数，
+当 $k_i \geq 0$ 且 $\sum k_i = 1$ 时，$\sum_{k = 1}^n k_i F_i(x)$ 也是分布函数.
+\end{solution}
+
+\begin{problem}
+  设连续型随机变量 $X$ 的概率密度函数和分布函数分别为 $f(x)$ 和 $F(x)$.
+  则根据 $f(x)$ 和 $F(x)$ 的性质，下列说法正确的是
+  \begin{tasks}(4)
+    \task[\true] $f(x)$ 可以是偶函数
+    \task $f(x)$ 可以是奇函数
+    \task $F(x)$ 可以是偶函数
+    \task $F(x)$ 可以是奇函数
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  由 $f(x)$ 的性质 $\int_{-\infty}^{+\infty} f(x) \d x = 1$，
+  若 $f(x)$ 为奇函数，则 $\int_{-\infty}^{+\infty} f(x) \d x = 0$，所以B选项错误.
+  由 $F(x)$ 的性质
+  $\lim_{x \to -\infty} F(x) = 0,~ \lim_{x \to +\infty} F(x) = 1$，
+  $F(x)$ 不可能为奇函数或偶函数.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 和 $Y$ 相互独立，分别服从参数为 $-\frac12$ 和 $\frac12$ 的指数分布
+  （指数分布密度函数 $F(x) =
+  \begin{cases}
+    \frac1\theta e^{-x/\theta}, & x > 0\\
+    0,                          & x \leq 0
+  \end{cases}$，$\theta$ 为参数），则 $P\{X > Y\} = $
+  \begin{tasks}(4)
+    \task $1/2$
+    \task $1/6$
+    \task $2/5$
+    \task[\true] $3/5$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  参考 Problem 19. $P\{X > Y\} = 3/(2 + 3) = 3/5$.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 的概率密度为 $f_X(x),~ x \in \mathbb R$. 令 $Y = 1 - 2X$，
+  则 $Y$ 的概率密度 $f_Y(y)$ 为
+  \begin{tasks}(4)
+    \task $-2f_X\ab(1 - \frac y2)$
+    \task[\true] $\frac12 f_X\ab(\frac{1-y}{2})$
+    \task $2f_X(1 - 2y)$
+    \task $-\frac12 f_X\ab(-\frac{1 - y}{2})$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  $  F_Y(y) = P(1 - 2X \leq y) = P\ab(X \geq \frac12(1 - y))
+   = \int_{(1 - y)/2}^{+\infty} f_X(x) \d x$.
+  $f_Y(y) = F_Y'(y) = \frac12 f_X\ab(\frac{1 - y}{2})$.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 服从正态分布 $N \sim (\mu, \sigma^2)$，则随着 $\sigma > 0$ 减少，
+  概率 $P\{|X - \mu| > \sigma\}$
+  \begin{tasks}(4)
+    \task 单调减少
+    \task 单调增加
+    \task[\true] 保持不变
+    \task 减少或增加不确定
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  $P(|x - \mu| > \sigma) = P\ab(\frac{|x - \mu|}{\sigma} > 1) = 1 - \Phi(1)$，
+  所以概率 $P\{|X - \mu| > \sigma\}$ 保持不变.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 和 $Y$ 相互独立，服从相同的分布，且 $X$ 的分布函数为 $F(x)$，
+  则 $Z = \max(X, Y)$ 的分布函数为
+  \begin{tasks}(4)
+    \task[\true] $F^2(x)$
+    \task $F(x)F(y)$
+    \task[\true] $F^2(z)$
+    \task $1 - [1 - F(z)]^2$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  $ F_Z(z) = P\{Z \leq z\} = P{\max\{X, Y\} \leq z} = P\{X \leq z,~ Y\leq z\}
+  = P\{X \leq z\} P\{Y \leq z\} = F(x)F(y) = F^2(x)$.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $(X, Y)$ 在单位元内服从均匀分布，其概率密度函数为 $f(x,y) =
+  \begin{cases*}
+    C, & $x^2 + y^2 < 1$\\
+    0, & else
+  \end{cases*}$，则 $C = $
+  \begin{tasks}(4)
+    \task $1$
+    \task $2$
+    \task $\pi$
+    \task[\true] $1/\pi$
+  \end{tasks}
+\end{problem}
+\begin{solution}
+  二维随机变量在区域 $D:~ x^2 + y^2 < 1$ 服从均匀分布，所以 $C = 1/S = 1/\pi$.
+\end{solution}
+
+\section{填空题（每题3分，共15分）}
+
+\begin{problem}
+  甲口袋有 $5$ 个白球、$3$ 个黑球，乙口袋有 $4$ 个白球、$6$ 个黑球，
+  从两口袋中任取一球，取到的两个球颜色相同的概率为 \result{$19/40$}.
+\end{problem}
+\begin{solution}
+  $P = \frac58 \times \frac4{10} + \frac38 \times \frac6{10} = \frac{19}{40}$.
+\end{solution}
+
+\begin{problem}
+  设 $S = \{x | 0 \leq x \leq 2\},~ A = \ab\{A | \frac12 < x \leq 1\},~
+  B = \ab\{x | \frac14 \leq x < \frac23\}$，
+  则 $\overline{\overline A\,\overline B} = $
+  \result{$\{x | \frac14 \leq x \leq 1\}$}.
+\end{problem}
+\begin{solution}
+  $\overline{\overline A\,\overline B} = A \cup B = \{x|1/4 \leq x \leq 1\}$.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 的分布律为 $P\{X = k = A(2 + k)^{-1}\},~ k = 0,~ 1,~ 2$，
+  则常数 $A = $ \result{$12/13$}.
+\end{problem}
+\begin{solution}
+  $ \sum_{k = 0}^2 P\{X = k\} \frac12 k + \frac13 k + \frac14 k = 1,~
+    k = \frac{12}{13}$.
+\end{solution}
+
+\begin{problem}
+  设随机变量 $X$ 的概率密度函数为 $f(x) = \frac{1}{3\sqrt{2\pi}}e^{-(x + 1)^2/18},~
+  x \in \mathbb R$，则 $Y = $ \result{$(x + 1)/3$} $\sim N(0,1)$.
+\end{problem}
+\begin{solution}
+  由正态分布概率密度函数
+  $f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-(x - \mu)^2/2\sigma^2}$
+  得 $\mu = -1,~ \sigma = 3$.
+  所以 $Y = (x - \mu)/\sigma = (x + 1)/3 \sim N(0,1)$.
+\end{solution}
+
+\begin{problem}
+  设 $(X,Y)$ 为二维连续型随机变量，则 $P\{X = Y\} = $ \result{$0$}.
+\end{problem}
+\begin{solution}
+  二维连续型随机变量落在它平面区域内任意一条直线或曲线上概率均为 $0$.
+\end{solution}
+
+\section{计算题（共49分）}
+
+\begin{problem}[本题5分]
+  根据美国的一份资料显示，在美国总的来说患肺癌的概率约为 $0.1\%$，
+  在人群中有 $20\%$ 是吸烟者，他们患肺癌的概率约为 $0.4\%$，
+  利用全概率公式求不吸烟者患肺癌的概率是多少？
+\end{problem}
+\begin{solution}
+  令``患肺癌事件''为 $A$，$B_1,~ B_2$ 分别表示吸烟者和不吸烟者.
+  则 $P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2)$.
+  又 $P(A) = 0.1\%,~ P(A|B_1) = 0.4\%,~ P(B_1) = 20\%,~ P(B_2) = 80\%$.
+  代入得 $P(A|B) = 0.025\%$.
+\end{solution}
+
+\begin{problem}[本题10分]
+  设随机变量 $X$ 的分布函数为 $F(x) =
+  \begin{cases}
+    0,    & x < 0\\
+    ax^2, & 0 \leq x \leq 1\\
+    1,    & x > 1
+  \end{cases}$.
+  \begin{tasks}[ label = \arabic*. ](3)
+    \task 求 $a$ 的值.
+    \task 求 $X$ 的密度函数 $f(x)$.
+    \task 求 $P\{0.3 < X < 0.7\}$.
+  \end{tasks}
+\end{problem}
+\begin{solution}\leavevmode
+  \begin{tasks}[ label = \arabic*. ](2)
+    \task $\lim_{x \to 1^+} F(x) = F(1)$，即 $1 = F(1) = ax^2|_{x = 1} = a$.
+    \task $f(x) = F'(x) =
+    \begin{cases}
+      2x, & 0 \leq x \leq 1\\
+      0,  & \text{else}
+    \end{cases}$.
+    \task! $P\{0,~ 3 < x < 0\} = F(0.7) - F(0.3) = 0.7^2 - 0.3^2 = 0.4$.
+  \end{tasks}
+\end{solution}
+
+\begin{problem}[本题12分]
+  设 $X,~ Y$ 是相互独立的随机变量，其密度函数分别为
+  \[
+    f_X(x) =
+    \begin{cases}
+      \alpha e^{-\alpha x}, & x > 0\\
+      0,                    & x \leq 0
+    \end{cases},~
+    f_Y(x) =
+    \begin{cases}
+      \beta e^{-\beta x}, & y > 0\\
+      0,                  & y \leq 0
+    \end{cases}
+  \]
+  其中常数 $\alpha > 0,~ \beta > 0$. 定义随机变量
+  $Z =
+  \begin{cases}
+    1, & \text{当 $X \leq Y$}\\
+    0, & \text{当 $ X > Y$}
+  \end{cases}$.
+  \begin{tasks}[ label = \arabic*. ](3)
+    \task 求条件概率 $f_{X|Y}(x|y)$.
+    \task 求 $Z$ 的分布律.
+    \task 求 $Z$ 的分布函数.
+  \end{tasks}
+\end{problem}
+\begin{solution}\leavevmode
+  \begin{enumerate}
+    \item 由于 $X,~ Y$ 独立，所当 $y > 0$ 时，
+    $f_{X|Y}(x,y) = f_X(x) =
+    \begin{cases}
+      \alpha e^{-\alpha x}, & x > 0\\
+      0,                    & x \leq 0
+    \end{cases}$.
+    \item $f(x,y) = f_X(x) \cdot f_Y(y) =
+    \begin{cases}
+      \alpha \beta e^{-\alpha x} e^{-\beta y}, & x > 0,~ y > 0\\
+      0,                                       & \text{else}
+    \end{cases}$. 积分区域 $D:\{0 < x < +\infty,~ 0 \leq x \leq y\}$.
+    \begin{align*}
+    & P\{X > Y\}
+    = \iint_D f(x,y)\d x \d y
+    = \int_0^{+\infty} \alpha e^{-\alpha x}\d x \int_0^x \beta e^{-\beta y}\d y
+    = \frac{\beta}{\alpha + \beta}\\
+    & P\{X < Y\} = 1 - P\{X > Y\} = \frac{\alpha}{\alpha + \beta}
+    \end{align*}
+    \begin{minipage}{.54\linewidth}
+      \centering
+      \begin{minipage}{.36\linewidth}
+        \centering
+        \begin{tikzpicture} 
+          \draw [ -> ] (-.2,0) -- (1.8,0) node [ below ] {$x$};
+          \draw [ -> ] (0,-.2) -- (0,1.8) node [ left ] {$y$};
+          \fill [ pattern = north west lines ]
+            (0,0) -- (1.5,0) -- (1.5,1.5) -- cycle;
+          \draw (-.2,-.2) -- (1.5,1.5) node [ left ] {$y = x$};
+        \end{tikzpicture}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.6\linewidth}
+        \centering
+        \begin{tabular}{*3c}
+          \toprule
+          $Z$ & $0$ & $1$\\
+          \midrule
+          $P$ & $\dfrac{\beta}{\alpha + \beta}$
+              & $\dfrac{\alpha}{\alpha + \beta}$\\
+          \toprule
+        \end{tabular}
+      \end{minipage}
+    \end{minipage}
+    \begin{minipage}{.42\linewidth}
+      \item $F_Z(z) = P\{Z \leq z\} =
+      \begin{dcases}
+        0,                            & z < 0\\
+        \frac{\beta}{\alpha + \beta}, & 0 \leq z < 1\\
+        1,                            & z \geq 1
+      \end{dcases}$.
+    \end{minipage}
+  \end{enumerate}
+\end{solution}
+
+\begin{problem}[本题12分]
+  抛一枚硬币 $3$ 次，$X,~ Y$ 分别表示出现 $H$ 的次数和出现 $H,~ T$ 次数差的绝对值.
+  \begin{tasks}[ label = \arabic*. ](7)
+    \task*(2) 求 $(X,Y)$ 的分布律.
+    \task*(2) 求分布函数 $F(2.5,1.5)$ 值.
+    \task*(3) 问 $X$ 和 $Y$ 是否相互独立，并说明理由.
+  \end{tasks}
+\end{problem}
+\begin{solution}\leavevmode\newline
+  \begin{textfig}[5:8]\leavevmode
+    \begin{enumerate}
+      \renewcommand*\arraystretch{.5}
+      \item 
+      \begin{tabular}{*5c}
+        \toprule
+        $Y \backslash X$ & $0$   & $1$   & $2$   & $3$ \\
+        \midrule
+        $1$              & $0$   & $3/8$ & $3/8$ & $0$\\
+        $3$              & $1/8$ & $0$   & $0$   & $1/8$\\
+        \bottomrule
+      \end{tabular}
+    \end{enumerate}
+    \textfigsplit
+    \begin{enumerate}
+      \addtocounter{enumi}{1}
+      \item $F(2.5,1.5) = P\{X = 1,~ Y = 1\} + P\{X = 2,~ Y = 1\} = 3/4$.
+      \item $P\{X = 0,~ Y = 1\} \neq P \{X = 0\}P\{Y = 1\}$，
+      $X,~ Y$ 不相互独立.
+    \end{enumerate}
+  \end{textfig}
+\end{solution}
+
+\begin{textfig}[3:1]
+  \begin{problem}[本题10分]
+    设随机变量 $X$ 与 $Y$ 的联合分布律如右侧图表所示.
+    \begin{tasks}[ label = \arabic*. ](2)
+      \task 求 $p$.
+      \task 求 $P\{X < 1 | Y = 2\}$.
+      \task 求 $P\{X = 2Y\}$.
+      \task 求 $Z = X + Y $ 的分布函数.
+    \end{tasks}
+  \end{problem}
+  \textfigsplit\centering
+  \renewcommand*\arraystretch{.6}
+  \begin{tabular}{cccc}
+    \toprule
+    $Y \backslash X$ & $0$   & $1$ & $2$\\
+    \midrule
+    $0$                    & $1/4$ & $0$ & $1/4$\\
+    $1$                    & $0$   & $p$ & $0$\\
+    $2$                    & $1/12$& $0$ & $1/12$\\
+    \bottomrule
+  \end{tabular}
+\end{textfig}
+\begin{solution}\leavevmode\newline
+  \begin{textfig}[1:1]\leavevmode
+    \begin{enumerate}
+      \item $1/4 + 1/4 + p + 1/12 + 1/12 = 1,~ p = 1/3$.
+      \item $P\{X < 1|Y\} = P\{X < 1,~ Y = 2\}/P\{Y = 2\} = 1/2$.
+      \item $P = P\{X = 0,~ Y = 0\} + P\{X = 2,~ Y = 1\} = 1/4$.
+    \end{enumerate}
+    \textfigsplit\centering
+    \begin{enumerate}
+      \addtocounter{enumi}{3}
+      \item 若保留 $X + Y = 1,~ 3$，扣1分.
+      
+      \renewcommand*\arraystretch{.8}
+      \begin{tabular}{cc}
+        \toprule
+        $Z$ & $P$\\
+        \midrule
+        $0$ & $1/4$\\
+        $2$ & $2/3$\\
+        $4$ & $1/12$\\
+        \bottomrule
+      \end{tabular}
+      $F_{X + Y}(z) =
+      \begin{cases}
+        0,     & z < 0\\
+        1/4,   & 0 \leq z < 2\\
+        11/12, & 2 \leq z < 4\\
+        1,     & z \geq 4
+      \end{cases}$.
+    \end{enumerate}
+  \end{textfig}
+\end{solution}
+
+\begin{problem}[本题6分]
+  设随机变量 $X,~ Y$ 相互独立，且 $X \sim \pi(\lambda_1),~ Y \sim \pi(\lambda_2)$.
+  证明：$X + Y \sim \pi(\lambda_1 + \lambda_2)$.
+\end{problem}
+\begin{solution}
+  \begin{proof}
+    $X \sim \pi(\lambda_1),~ Y \sim \pi(\lambda_2)$ 相互独立，
+    $ P\{X = k\} = \frac{e^{-\lambda_1} \lambda_1^k}{k!},~
+      P\{Y = l\} = \frac{e^{-\lambda_2} \lambda_2^k}{l!},~ k,~ l = 0,~ 1,~ 2,~ \cdots$.
+    $X + Y$ 所有能取的值为 $n = 0,~ 1,~ 2,~ 3,~ \cdots$. 所以
+    \begin{align*}
+        & P\{X + Y = n\}
+      = \sum_{k = 0}^n P\{X = k\} P\{Y = n - k\}
+      = \sum_{k = 0}^n \frac{e^{-\lambda_1} \lambda_1^k}{k!}
+                       \frac{e^{-\lambda_2} \lambda_2^k}{l!}\\
+      = & \frac{e^{-(\lambda_1 + \lambda_2)}}{n!}
+        \sum_{k = 0}^n \frac{n!}{k!(n - k)!} \lambda_1^k \lambda_2^{n - k}
+      = \frac{e^{-(\lambda_1 + \lambda_2)}}{n!}
+        \sum_{k = 0}^n C_n^k \lambda_1^k \lambda_2^{n - k}
+      = \frac{e^{-(\lambda_1 + \lambda_2) \cdot (\lambda_1 + \lambda_2)^n}}{n!}
+    \end{align*}
+    即 $X + Y \sim \pi(\lambda_1 + \lambda_2)$.
+  \end{proof}
+\end{solution}

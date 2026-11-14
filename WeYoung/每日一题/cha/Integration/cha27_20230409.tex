@@ -1,0 +1,34 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\int{\frac{\d x}{a+b\cos{x}}}$}%在花括号内输入题目
+
+\teacher{张晓鹏}%在花括号内输入你的名字
+
+\postdate{2023年4月9日}%在花括号内输入你想要发布那一天的日期
+
+\result{\frac{2}{\sqrt{a^2-b^2}}\arctan{\qty(\sqrt{\frac{a-b}{a+b}}\tan{\frac{x}{2}})}+C}%在花括号内输入本题结果
+
+\analysis{
+    这题呢主要是回顾一下经典的万能替换法.
+
+    其实万能替换法在考试中用的不算多，因为这个的计算会比较复杂，但是如果确定了 能用万能替换法来做的题目，最后一定是可以算的，适用于没思路的时候.
+
+           而今天的题目指代的就是，被积函数为$f\qty(\sin{x},\cos{x})$的一类积分，都可以用万能替换法来转化为有理分式积分，从而结合之前的技巧解决.
+
+      万能替换法其实很简单，就是一个公式：令$t=\tan{\frac{x}{2}}$，而其他下面的内容都是可以推算出来的，当然你也可以记住：
+      \formula{\sin{x}=\frac{2t}{1+t^2},\ \cos{x}=\frac{1-t^2}{1+t^2},\ \d x=\frac{2\d t}{1+t^2}}
+      如果记忆的话，$\sin{x}$和$\cos{x}$的记忆，可以联合$\tan{2x}=\frac{2\tan{x}}{1-\tan^2{x}}$这个二倍角公式记忆.下面直接代入就行了，剩下的交给计算.
+      \formula{
+        \begin{aligned}
+            \int{\frac{\d x}{a+b\cos{x}}}&=\int{\frac{\dfrac{2\d t}{1+t^2}}{a+b\dfrac{1-t^2}{1+t^2}}}=\int{\frac{2\d t}{\qty(a+b)+\qty(a-b)t^2}}\\
+            &=\frac{2}{a+b}\int{\frac{\d t}{1+\qty(\sqrt{\dfrac{a-b}{a+b}}t)}}=\frac{2}{\sqrt{a^2-b^2}}\int{\frac{\d\qty(\sqrt{\dfrac{a-b}{a+b}}t)}{1+\qty(\sqrt{\dfrac{a-b}{a+b}}t)^2}}\\
+            &=\frac{2}{\sqrt{a^2-b^2}}\arctan{\qty(\sqrt{\frac{a-b}{a+b}}t)}+C\\
+            &=\frac{2}{\sqrt{a^2-b^2}}\arctan{\qty(\sqrt{\frac{a-b}{a+b}}\tan{\frac{x}{2}})}+C
+        \end{aligned}
+      }
+      其他的几个积分也是一样，比如：
+      \formula{\int{\frac{\d x}{\sin{x}}},\ \int{\frac{\d x}{\cos{x}}},\ \int{\frac{\d x}{a+b\sin{x}}},\ \int{\frac{\d x}{a\cos{x}+b\sin{x}}},\ \int{\frac{\d x}{a+b\cos{x}+c\sin{x}}}}
+      具体的结果可以看参考书籍：《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著，在大概第76页的位置，同时也可以看看和1.13.1的方法（大概62页）有什么区别.
+}%在花括号内输入分析

@@ -1,0 +1,286 @@
+\chapter{2023年HDU高等数学D2期中试题解析}
+\section{选择题（每题3分，共15分）}
+\begin{exercise}
+    $\lim_{\ab(x,y)\to\ab(2,0)}\frac{\tan{xy}}{y}=$\ans{C}
+    \begin{tasks}(4)
+        \task $0$
+        \task $1$
+        \task $2$
+        \task 不存在
+    \end{tasks}
+\end{exercise}
+\begin{solution}
+    $\lim_{\ab(x,y)\to\ab(2,0)}\frac{\tan{xy}}{y}=\lim_{\ab(x,y)\to\ab(2,0)}\frac{\tan{xy}}{xy}x=1\times 2=2$.
+\end{solution}
+
+\begin{exercise}
+    已知$z=\arctan{\frac{y}{x}}$，则$\frac{\partial z}{\partial y}$与$\frac{\partial z}{\partial x}$的比值为\ans{C}
+    \begin{tasks}(4)
+        \task $\frac{x}{y}$
+        \task $\frac{y}{x}$
+        \task $-\frac{x}{y}$
+        \task $-\frac{y}{x}$
+    \end{tasks}
+\end{exercise}
+\begin{solution}
+    $$\pdv{z}{y}=\frac{\dfrac{1}{x}}{1+\ab(\dfrac{y}{x})^2},\ \pdv{z}{x}=\frac{-\dfrac{y}{x^2}}{1+\ab(\dfrac{y}{x})^2}$$
+\end{solution}
+
+\begin{exercise}
+    设$I_1=\iint\limits_D{\cos{\sqrt{x^2+y^2}}\d\sigma},\ I_2=\iint\limits_D{\cos{\ab(x^2+y^2)}\d\sigma},\ I_3=\iint\limits_D{\cos{\ab(x^2+y^2)^2}\d\sigma}$，其中$D=\ab{\ab(x,y)\big|x^2+y^2\le 1}$.则下列关系成立的是\ans{A}
+    \begin{tasks}(4)
+        \task $I_3>I_2>I_1$
+        \task $I_1>I_2>I_3$
+        \task $I_2>I_1>I_3$
+        \task $I_1>I_1>I_2$
+    \end{tasks}
+\end{exercise}
+\begin{solution}
+    $$\cos{\ab(x^2+y^2)^2}\le\cos{\ab(x^2+y^2)}\le\cos{\sqrt{x^2+y^2}}$$
+\end{solution}
+
+\begin{exercise}
+    $\int_0^!{\d x}\int_0^{\sqrt{1-x^3}}{\d y}=$\ans{B}
+    \begin{tasks}(4)
+        \task $0$
+        \task $\frac{\pi}{4}$
+        \task $\frac{\pi}{2}$
+        \task $\pi$
+    \end{tasks}
+\end{exercise}
+\begin{solution}
+    积分区域$D=\ab{\ab(x,y)\big|0\le x\le 1,0\le y\le\sqrt{1-x^2}}$，结果为$\frac{1}{4}$圆面积.
+\end{solution}
+
+\begin{exercise}
+    下列正项级数发散的是\ans{C}
+    \begin{tasks}(4)
+        \task $\sum_{n=2}^{\infty}{\frac{1}{\sqrt{n^3+1}}}$
+        \task $\sum_{n=1}^{\infty}\ab(\frac{1}{2})^n$
+        \task $\sum_{n=2}^{\infty}{\frac{1}{\ln{n}}}$
+        \task $\sum_{n=1}^{\infty}{\ab(\frac{1}{n^2}\sin{\frac{1}{n}})}$
+    \end{tasks}
+\end{exercise}
+
+\section{填空题（每题3分，共15分）}
+\begin{exercise}
+    级数$\sum_{n=2}^{\infty}{\frac{1}{n^2-1}}$的和等于\fillans{$\frac{3}{4}$}.
+\end{exercise}
+\begin{solution}
+    $$\frac{1}{n^2-1}=\frac{1}{\ab(n+1)\ab(n-1)}=\frac{1}{2}\ab(\frac{1}{n-1}-\frac{1}{n+1})$$
+    $$
+    \begin{aligned}
+        S=\lim_{n\to\infty}{S_n}\\
+        &=\lim_{n\to\infty}{\frac{1}{2}\ab(1-\frac{1}{3}+\frac{1}{2}-\frac{1}{4}+\frac{1}{3}-\frac{1}{5}+\frac{1}{4}-\frac{1}{6}+\cdots+\frac{1}{n-1}-\frac{1}{n+1})}\\
+        &=\lim_{n\to\infty}{\frac{1}{2}\ab(1+\frac{1}{2}-\frac{1}{n+1})}=\frac{3}{4}
+    \end{aligned}
+    $$
+\end{solution}
+
+\begin{exercise}
+    设$u=\ab(\frac{y}{x})^{1/2}$，则$\d u\ab(1,1,1)=$\fillans{$-\d x+\d y$}.
+\end{exercise}
+
+\begin{exercise}
+    设$z=2^{x^2+y}$，其中$y=\frac{x^3}{3}+x$，则$\dv{z}{x}=$\fillans{$2^{x^2+\frac{x^3}{3}+x}\ln{2}\cdot\ab(x+1)^2$}.
+\end{exercise}
+
+\begin{exercise}
+    设$D=\ab{\ab(x,y)\big|x^2+y^2\le 1,x\ge 0}$，则$\iint\limits_D{\frac{x^2\sin^3{y}}{1+\sqrt{x^2+y^2}}\d\sigma}=$\fillans{$0$}.
+\end{exercise}
+\begin{solution}
+    积分区域关于$x$轴对称，被积函数关于$y$为奇函数.
+\end{solution}
+
+\begin{exercise}
+    设$D$是由圆$x^2+y^2=R^2$，直线$x=0$及圆$x^2+y^2=Rx$所围成的在第一象限内的部分，将$I=\iint\limits_D{f\ab(x,y)\d\sigma}$在极坐标下化为二次积分，则$I=$\fillans{$\int_0^{\frac{\pi}{2}}{\d\theta}\int_{R\cos{\theta}}^R{f\ab(r\cos{\theta},r\sin{\theta})r\d r}$}.
+\end{exercise}
+
+\begin{exercise}
+    某工厂生产甲、乙两种铲皮，出售单价分别为$10$元与$9$元，生产$x$单位的甲产品与生产$y$单位的乙产品的总费用是$400+2x+3y+0.01\ab(3x^2+xy+3y^2)$（元）.求两种产品各生产多少，工厂可取得最大利润.
+\end{exercise}
+\begin{solution}
+    $$
+    \begin{aligned}
+        L\ab(x,y)&=10x+9y-\ab[400+2x+3y+0.01\ab(3x^2+xy+3y^2)]\\
+        &=8x+6y-400-0.03x^2-0.01xy-0.03y^2
+    \end{aligned}
+    $$
+    $$
+    \left\{
+        \begin{aligned}
+            &L_x^{\prime}=8-0.06x-0.01y=0\\
+            &L_y^{\prime}=6-0.01x-0.06y=0
+        \end{aligned}
+    \right.\implies
+    \left\{
+        \begin{aligned}
+            &x=120\\
+            &y=80
+        \end{aligned}
+    \right.
+    $$
+    $\therefore$当甲生产$120$单位，乙生产$80$单位时，利润最大.
+\end{solution}
+
+\section{计算题（每题6分，共36分）}
+\begin{exercise}
+    设$z=f\ab(x^2,\ln\ab(xy))$，其中$f$具有二阶连续偏导数，请哦·求$\pdv{z}{x}{y}$.
+\end{exercise}
+\begin{solution}
+    $$\pdv{z}{x}=2xf_1^{\prime}+\frac{1}{x}f_2^{\prime}$$
+    $$
+    \begin{aligned}
+        \pdv{z}{x}{y}&=2xf_{12}^{\prime\prime}\cdot\frac{1}{y}+\frac{1}{x}f_{22}^{\prime\prime}\frac{1}{y}\\
+        &=\frac{2x}{y}f_{12}^{\prime\prime}+\frac{1}{xy}f_{22}^{\prime\prime}
+    \end{aligned}
+    $$
+\end{solution}
+
+\begin{exercise}
+    设函数$z=z\ab(x,y)$由方程$z=\ee^{2x-3z}+2y$确定，求$3\pdv{z}{x}+\pdv{z}{y}$.
+\end{exercise}
+\begin{solution}
+    $$\pdv{z}{x}=\ee^{2x-3z}\ab(2-3\pdv{z}{x})\implies\pdv{z}{x}=\frac{2\ee^{2x-3z}}{1+3\ee^{2x-3z}}$$
+    $$\pdv{z}{y}=\ee^{2x-3z}\ab(-3\pdv{z}{y})+2\implies\pdv{z}{y}=\frac{2}{1+3\ee^{2x-3z}}$$
+    $\therefore 3z_x+z_y=2$.
+\end{solution}
+
+\begin{exercise}
+    判断函数$f\ab(x,y)=\left\{
+        \begin{aligned}
+            &\frac{x^2y}{x^2+y^2},&&\ab(x,y)\neq\ab(0,0)\\
+            &0,&&\ab(x,y)=\ab(0,0)
+        \end{aligned}
+    \right.$在$\ab(0,0)$处的连续性.
+\end{exercise}
+\begin{solution}
+    当$\ab(x,y)\neq\ab(0,0)$时
+    $$0\le\abs{f\ab(x,y)}=\abs{\frac{x^2y}{x^2+y^2}}\le\frac{x}{2}\to 0,\ \ab(x,y)\to\ab(0,0)$$
+    $\therefore\lim_{\ab(x,y)\to\ab(0,0)}{f\ab(x,y)}=0=f\ab(0,0)$，$\therefore f\ab(x,y)$在$\ab(0,0)$处连续.
+\end{solution}
+
+\begin{exercise}
+    判断正项级数的敛散性：$\sum_{n=1}^{\infty}{\frac{1}{4^n}\ab(1+\frac{1}{n})^{n^2}}$.
+\end{exercise}
+\begin{solution}
+    $\because\lim_{n\to\infty}{\sqrt{\frac{1}{4^n}\ab(1+\frac{1}{n})^{n^2}}}=\lim_{n\to\infty}{\frac{1}{4}\ab(1+\frac{1}{n})^n}=\frac{\ee}{4}<1$，$\therefore$收敛.
+\end{solution}
+
+\begin{exercise}
+    已知$D=\ab{\ab(x,y)\big|x^2+y^2\le 1,x\le 0}$.求$\iint\limits_D{\ln{\ab(1+x^2+y^2)}\d\sigma}$.
+\end{exercise}
+\begin{solution}
+    $$
+    \begin{aligned}
+        I&=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}{\d\theta}\int_0^1{\ln{\ab(1+r^2)}r\d r}\\
+        &=\frac{\pi}{2}\ab(2\ln{2}-1)
+    \end{aligned}
+    $$
+\end{solution}
+
+\begin{exercise}
+    交换积分次序并计算$\int_0^1{y^2\d y}\int_y^1{\frac{1}{\sqrt{1+x^4}}\d x}$.
+\end{exercise}
+\begin{solution}
+    $$
+    \begin{aligned}
+        I&=\int_0^1{\d x}\int_0^x{\frac{y^2}{\sqrt{1+x^4}}\d y}\\
+        &=\int_0^1{\frac{1}{\sqrt{1+x^4}}\frac{y^3}{3}\Bigg|_0^1\d x}\\
+        &=\frac{1}{3}\int_0^1{\frac{x^3}{\sqrt{1+x^4}}\d x}\\
+        &=\frac{1}{6}\ab(\sqrt{2}-1)
+    \end{aligned}
+    $$
+\end{solution}
+\section{综合题（每题7分，共28分）}
+\begin{exercise}
+    求内接于球面$x^2+y^2+z^2=R^2$的长方体的最大体积.
+\end{exercise}
+\begin{solution}
+    长方体在第一卦限内与球面交点坐标为$x,y,z$，则其面积$V=8xyz$.即求满足$x^2+y^2+z^2=R^2$下$xxyz$最大化.
+    $$L\ab(x,y,z,\lambda)=xyz+\lambda\ab(x^2+y^2+z^2-R^2)$$
+    $$
+    \left\{
+        \begin{aligned}
+            &L_x=yz+2\lambda x\\
+            &L_y=xz+2\lambda y\\
+            &L_z=xy+2\lambda z\\
+            &L_{\lambda}=x^2+y^2+z^2-R^2=0
+        \end{aligned}
+    \right.\implies\left\{
+    \begin{aligned}
+        &xyz+2\lambda x^2=0\\
+        &xyz+2\lambda y^2=0\\
+        &xyz+2\lambda z^2=0
+    \end{aligned}\right.\implies\left\{
+    \begin{aligned}
+        &x=y=z\\
+        &x^2+y^2+z^2-R^2=0
+    \end{aligned}
+    \right.\implies\left\{
+        \begin{aligned}
+            &x=\frac{\sqrt{3}}{3}R\\
+            &y=\frac{\sqrt{3}}{3}R\\
+            &z=\frac{\sqrt{3}}{3}R
+        \end{aligned}
+    \right.
+    $$
+    由背景可知，当$x=y=z=\frac{\sqrt{3}}{3}R$时，体积最大为
+    $$V_{\max}=8\cdot\ab(\frac{\sqrt{3}}{3}R)^3=\frac{8}{9}\sqrt{e}R^3$$
+\end{solution}
+
+\begin{exercise}
+    由旋转抛物面$z=x^2+y^2+z^2+1$、圆柱面$x^2+y^2=1$及$xOy$平面所围成的立体的体积.
+\end{exercise}
+\begin{solution}
+    $$D=\ab{\ab(x,y)\big|x^2+y^2\le 1}$$
+    $$
+    \begin{aligned}
+    V&=\iint\limits_D{\ab(x^2+y^2+1)\d\sigma}\\
+    &=\int_0^{2\pi}{\d\theta}\int_0^1{\ab(r^2+1)r\d r}\\
+    &=\frac{3}{2}\pi
+    \end{aligned}
+    $$
+\end{solution}
+
+\begin{exercise}
+    设$f\ab(x,y)=\left\{
+        \begin{aligned}
+            &1-x,&&x+y\le 1\\
+            &2,&&x+y>1
+        \end{aligned}
+    \right.$，计算$\iint\limits_D{f\ab(x,y)\d x\d y}$，其中$D=\ab{\ab(x,y)\big|0\le x\le 1,0\le y\le 1}$.
+\end{exercise}
+\begin{solution}
+    $$
+    \begin{aligned}
+        I&=\iint\limits_{D_1}{2\d\sigma}+I&=\iint\limits_{D_2}{\ab(1-x)\d\sigma}\\
+        &=2\cdot\frac{1}{2}+\int_0^1{\d x}\int_0^{1-x}{\ab(1-x)\d y}\\
+        &=1+\int_0^1{\ab(1-x)^2\d x}\\
+        &=\frac{4}{3}
+    \end{aligned}
+    $$
+\end{solution}
+
+\begin{exercise}
+    设函数$f\ab(x)$在$\comm{0}{1}$上连续，证明：$\int_0^1{\ee^{f\ab(x)}\d x}\int_0^1{\ee^{-f\ab(y)}\d y}\le 1$.
+\end{exercise}
+\begin{proof}
+    $D=\ab{\ab(x,y)\big|0\le x\le 1,0\le y\le 1}$.
+    $$
+    \begin{aligned}
+        &\int_0^1{\ee^{f\ab(x)}\d x}\int_0^1{\ee^{-f\ab(y)}\d y}=\iint\limits_D{\ee^{f\ab(x)-f\ab(y)}\d\sigma}\\
+        &\begin{aligned}
+            \int_0^1{\ee^{f\ab(y)}\d y}\int_0^1{\ee^{-f\ab(x)}\d x}&=\int_0^1{\ee^{f\ab(y)}\d y}\int_0^1{\ee^{-f\ab(x)}\d x}\\
+            &=\iint\limits_D{\ee^{f\ab(y)-f\ab(x)}\d\sigma}
+        \end{aligned}
+    \end{aligned}
+    $$
+    $$
+    \begin{aligned}
+    \implies\int_0^1{\ee^{f\ab(x)}\d x}\int_0^1{\ee^{-f\ab(y)}\d y}&=\frac{1}{2}\iint\limits_D{\ab[\ee^{f\ab(x)-f\ab(y)}+\ee^{f\ab(y)-f\ab(x)}]\d\sigma}\\
+    &\le\frac{1}{2}\iint\limits_D{\sqrt{\ee^{f\ab(x)-f\ab(y)}\cdot\ee^{f\ab(y)-f\ab(x)}}\d\sigma}\\
+    &=\iint\limits_D{\d\sigma}=1
+\end{aligned}
+    $$
+\end{proof}

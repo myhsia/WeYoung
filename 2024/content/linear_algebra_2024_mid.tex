@@ -1,0 +1,512 @@
+\chapter*{2024年\textsf{\textsc{Hdu}}「线性代数」期中试题}
+
+\ExplSyntaxOn
+\vspace{-12.0pt}\setcounter{page}{1}
+\begin{center}
+  \begin{minipage}{.66\textwidth}
+    \centering
+    \begin{tasks}
+      [ label-width = 5\ccwd, item-indent = 2cm,
+        after-item-skip = 1ex ](2)
+      \task[\textbf{课程信息}：] 理学院/A0714040
+      \task[\textbf{解析提供}：] \textsf{幻想大白}
+      \task[\textbf{授课教师}：] 大学数学教学团队
+      \task[{\makebox[2em][c]{\textbf{\textsf\TeX}}}\textbf{排版}：] \textsf{Izumi Sakai}
+    \end{tasks}
+  \end{minipage}
+  \begin{minipage}{.15\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \node [ inner~sep = 0 ] (wechat) {
+        \fancyqr
+          [ size = 4em, image~padding = 1,
+            image = \raisebox{4em/33}{\textcolor{DarkGreen \l__whats_darkmode_fading_tl}{\faIcon{weixin}}},
+            r~color = DarkGreen \l__whats_darkmode_fading_tl, version = 4
+          ]{http://weixin.qq.com/r/sRJiemTEGjllrSAZ90ej}
+        };
+      \node [ inner~sep = .5ex, align = center, right, font = \scriptsize ]
+        at (wechat.east) {未\\央\\学\\社};
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}{.15\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \node [ inner~sep = 0 ] (qq) {
+        \fancyqr
+          [ size = 4em, image~x~padding = 2, image~y~padding = 1,
+            image = \raisebox{4em/33}{\textcolor{MidnightBlue \l__whats_darkmode_fading_tl}{\faIcon{qq}}},
+            l~color = MidnightBlue \l__whats_darkmode_fading_tl, version = 4
+          ]{https://qm.qq.com/q/rbfYuqPhQs}
+        };
+      \node [ inner~sep = .5ex, align = center, left, font = \scriptsize ]
+        at (qq.west) {数\\学\\营};
+    \end{tikzpicture}
+  \end{minipage}
+\end{center}
+\ExplSyntaxOff
+
+\section{选择题（每题3分，共18分）}
+
+\begin{problem}
+  设 $\mat A = \diag{(a_1,~ a_2,~ \cdots,~ a_n)},~
+      a_i \neq a_j~ (i,~ j = 1,~ 2,~ \cdots,~ n)$，
+  那么与 $\mat A$ 乘法可交换的矩阵为
+  \begin{tasks}(4)
+    \task[\true] 对角矩阵
+    \task 上三角矩阵
+    \task 下三角矩阵
+    \task 对称矩阵
+  \end{tasks}
+\end{problem}
+\scratch
+\begin{solution}
+  $\mat A$ 为对角阵，若 $\mat{AB} = \mat{BA}$，
+  显然 $\mat B$ 也为对角阵，所以A选项正确.
+\end{solution}
+
+\begin{problem}
+  如果 $n$ 阶方阵 $\mat A$ 满足 $\trans{\mat A} \mat A =
+  \mat A \trans{\mat A} = \mat E$，则 $\mat A$ 的行列式有
+  \begin{tasks}(4)
+    \task $\det A = 0$
+    \task[\true] $\det A \neq 0$
+    \task $\det A = k$（$k > 1$）
+    \task $\det A = k$（$k < 1$）
+  \end{tasks}
+\end{problem}
+\scratch
+\begin{solution}
+  由 $\mat A \trans{\mat A} = \mat E$ 得
+  $\det{A \trans A} = \det E$，所以
+  $\det A^2 = 1,~ \mat A = \pm1 \neq 0$.
+\end{solution}
+
+\begin{problem}
+  设 $\mat A$ 为 $n$ 阶对称矩阵，$B$ 为 $n$ 阶反对称矩阵，则下列矩阵中为对称矩阵的是
+  \begin{tasks}(4)
+    \task[\true] $\mat{BAB}$
+    \task $\mat{ABA}$
+    \task $\mat{ABAB}$
+    \task $\mat{BABA}$
+  \end{tasks}
+\end{problem}
+\scratch
+\begin{solution}
+  由题意
+  $\mat A = \trans{\mat A},~ \mat B = -\trans{\mat B}$.
+  A选项
+  $ \mat{BAB} = \trans{\mat B} \trans{\mat A} \trans{\mat B}
+  = (-\mat B) \cdot (\mat A) \cdot (-\mat B) = \mat{BAB}$. 所以A选项正确.
+\end{solution}
+
+\begin{problem}
+  设 $\mat A$ 为 $n$ 阶方阵，$\det A = a \neq 0$，
+  $\mat A^*$ 为 $\mat A$ 的伴随矩阵，则 $\det{A^*} = $
+  \begin{tasks}(4)
+    \task $a$
+    \task $a^{-1}$
+    \task[\true] $a^{n-1}$
+    \task $a^*$
+  \end{tasks}
+\end{problem}
+\scratch
+\begin{solution}
+  $\det{A^*} = \det A^{n-1} = a^{n-1}$. 所以C选项正确.
+\end{solution}
+
+\begin{problem}
+  设 $\mat A,~ \mat B$ 均为 $n$ 阶方阵，则下列说法正确的是
+  \begin{tasks}(2)
+    \task 若 $\mat{AB} = \mat O$，
+    则 $\mat A = \mat O$ 或 $\mat B = \mat O$
+    \task 若 $\mat{AB} = \mat{AC}$，且 $\mat A \neq 0$，
+    则 $\mat B = \mat C$
+    \task[\true] 若 $\mat{AB} = \mat O$，则 $\det A = \mat O$
+    或 $\det B = \mat O$
+    \task 若 $\mat{AB} = \mat{CA}$，且 $\mat A$ 可逆，
+    则 $\mat B = \mat C$
+  \end{tasks}
+\end{problem}
+\scratch
+\begin{solution}
+  由 $\mat AB = \mat O$ 得 $\det{AB} = \det A \det B = \det O$，
+  所以 $\det A = 0$ 或 $\det B = 0$，C选项正确.
+\end{solution}
+
+\begin{problem}
+  设三阶实的方阵 $\mat A = (a_{ij})$ 满足
+  $\mat A^* = \trans{\mat A}$，$\mat A^*$ 为 $\mat A$的伴随矩阵，
+  $\trans{\mat A}$ 为 $\mat A$ 的转置矩阵.
+  若 $a_{11} = a_{12} = a_{13} > 0$，则 $a_{11} = $
+  \begin{tasks}(4)
+    \task $\sqrt2/2$
+    \task $\sqrt3/2$
+    \task $\sqrt2/3$
+    \task[\true] $\sqrt3/3$
+  \end{tasks}
+\end{problem}
+\scratch
+\begin{solution}
+  由 $|\mat A^*| = \det{\trans A}$ 得
+  $\det A^{n-1} = \det A,~ \det A = 1$.
+  将行列式按行展开得 $a_{11}^2 + a_{12}^2 + a_{13}^2 = 3a^2 = 1,~ a = 1/\sqrt3$.
+\end{solution}
+
+\section{填空题（每题3分，共12分）}
+
+\begin{problem}
+  排列 $135798642$ 是 \result{偶} （填奇或偶）排列.
+\end{problem}
+\begin{solution}
+  逆序有 $(3,2),~ (5,2),~ (5,4),~ (7,2),~ (7,4),~ (7,6),~(9,2),~ (9,4),~
+  (9,6),~ (9,8)$，共 $12$ 个，偶排列.
+\end{solution}
+
+\begin{problem}
+  $ \mat E_3(1,2)
+    \begin{bmatrix}
+      2 & 1 & 0\\
+      1 & 1 & 1\\
+      3 & 0 & 2
+    \end{bmatrix} = $
+  \result
+    {\fbox{
+      $\begin{bmatrix}
+      1 & 1 & 1\\
+      2 & 1 & 0\\
+      3 & 0 & 2
+      \end{bmatrix}$}
+    }.
+\end{problem}
+
+\begin{problem}
+  当 $n$ 为奇数时，$n$ 阶行列式 $D =
+  \begin{vmatrix}
+    0       & a_{12}  & \cdots & a_{1n}\\
+    -a_{12} & 0       & \cdots & a_{2n}\\
+    \vdots  & \vdots  & \ddots & \vdots \\
+    -a_{1n} & -a_{2n} & \cdots & a_{nn}
+  \end{vmatrix} = $
+  \result{$0$}.
+\end{problem}
+\begin{solution}
+  $ D = \trans D =
+    \begin{vmatrix}
+      0      & -a_{12} & \cdots & -a_{1n}\\
+      a_{12} & 0       & \cdots & -a_{2n}\\
+      \vdots & \vdots  & \ddots & \vdots \\
+      a_{1n} & a_{2n}  & \cdots & -a_{nn}
+    \end{vmatrix} = (-1)^n
+    \begin{vmatrix}
+      0      & a_{12} & \cdots & a_{1n}\\
+      a_{12} & 0      & \cdots & a_{2n}\\
+      \vdots & \vdots & \ddots & \vdots \\
+      a_{1n} & a_{2n} & \cdots & a_{nn}
+    \end{vmatrix} = (-1)^n \trans D = -\trans D$，所以 $D = 0$.
+\end{solution}
+
+\begin{problem}
+  已知三阶方阵 $\mat A$ 的第二行元素为 $1,~ 2,~ 3$，
+  $\mat A$ 中第一行元素的余子式为 $3,~ a,~ 1$，则 $a = $ \result{$3$}.
+\end{problem}
+\begin{solution}
+  $3 \times 1 + (-a) \times 2 + 1 \times 3 = 0$，所以 $a = 3$.
+\end{solution}
+
+\section{解答题A（每题6分，共24分）}
+
+\begin{problem}
+  求行列式 $D =
+  \begin{vmatrix}
+    a_1 & 0   & 0   & b_1\\
+    0   & a_2 & b_2 & 0\\
+    0   & b_3 & a_3 & 0\\
+    b_4 & 0   & 0   & a_4
+  \end{vmatrix}$ 的值.
+\end{problem}
+\scratch
+\begin{solution}
+  \begin{align*}
+    D & = a_1
+    \begin{vmatrix}
+      a_2 & b_2 & 0\\
+      b_3 & a_3 & 0\\
+      0   & 0   & a_4
+    \end{vmatrix} - b_4
+    \begin{vmatrix}
+      0   & a_2 & b_2\\
+      0   & b_3 & a_3\\
+      b_4 & 0   & 0
+    \end{vmatrix}
+        = a_1(a_2a_3a_4 - b_2b_3b_4) - b_1(a_2a_3b_4 - b_2b_3b_4)\\
+      & = a_1a_4(a_2a_3 - b_2b_3) - b_1b_4(a_2a_3 - b_2b_3)
+        = (a_1a_4 - b_1b_4)(a_2a_3 - b_2b_3)
+  \end{align*}
+\end{solution}
+
+\begin{problem}
+  求矩阵 $\mat A =
+  \begin{bmatrix}
+    2 & 5 & 0 & 0\\
+    3 & 8 & 0 & 0\\
+    0 & 0 & 1 & 3\\
+    0 & 0 & 0 & 2
+  \end{bmatrix}$ 的逆矩阵.
+\end{problem}
+\scratch
+\begin{solution}
+  令 $\mat A_1 = \begin{bmatrix} 2 & 5\\ 3 & 8\end{bmatrix},~
+      \mat A_2 = \begin{bmatrix} 1 & 3\\ 0 & 2\end{bmatrix}$，
+  则 $\mat A =
+  \begin{bmatrix} \mat A_1 & \mat O\\ \mat O & \mat A_2 \end{bmatrix}$，
+  $\mat A^{-1} =
+  \begin{bmatrix}
+    \mat A_1^{-1} & O\\
+    \mat O        & \mat A_2^{-1}
+  \end{bmatrix}$.\par\noindent
+  其中 $\mat A_1^{-1} =
+  \begin{bmatrix} 8 & -5\\ -3 & 2 \end{bmatrix},~
+  \mat A_2^{-1} =
+  \begin{bmatrix} 1 & -3/2\\ 0 & 1/2 \end{bmatrix}$. 所以 $\mat A^{-1} =
+  \begin{bmatrix}
+    8  & -5 & 0 & 0\\
+    -3 & 2  & 0 & 0\\
+    0  & 0  & 1 & -3/2\\
+    0  & 0  & 0 & 1/2
+  \end{bmatrix}$.
+\end{solution}
+
+\begin{problem}
+  若 $\det A = \vxmat a33 = m,~
+  \det B =
+  \begin{vmatrix}
+    a_{11} & a_{12} & b_{13}\\
+    a_{21} & a_{22} & b_{23}\\
+    a_{31} & a_{32} & b_{33}
+  \end{vmatrix} = n$，求 $\det{A + B}$ 的值.
+\end{problem}
+\scratch
+\begin{solution}
+  将矩阵 $\mat A$、$\mat B$ 列分块，
+  令 $\mat A = (\bm\alpha_1, \bm\alpha_2, \bm\alpha_3),~
+  \mat B = (\bm\alpha_1, \bm\alpha_2, \bm\beta)$.
+  则 $ \det{A + B} = |(2\bm\alpha_1, 2\bm\alpha_2, \bm\alpha_3 + \bm\beta)|
+      = 4|(\bm\alpha_1, \bm\alpha_2, \bm\alpha_3 + \bm\beta)|
+      = 4[|(\bm\alpha_1, \bm\alpha_2, \bm\alpha_3)|
+        + |(\bm\alpha_1, \bm\alpha_2, \bm\beta)|] = 4(m + n)$.
+\end{solution}
+
+\begin{problem}
+  已知从变变量 $x_1,~ x_2,~ x_3$ 到变量 $y_1,~ y_2,~ y_3$ 的线性变换为
+  $\begin{cases}
+    y_1 =  x_1 + 2x_2 - x_3\\
+    y_2 = 3x_1 + 4x_2 - 2x_3\\
+    y_3 = 5x_1 - 4x_2 + x_3
+  \end{cases}$，求从变量 $y_1,~ y_2,~ y_3$ 到变量
+  $x_1,~ x_2,~ x_3$ 的线性变换.
+\end{problem}
+\scratch
+\begin{solution}
+  令 $\mat X = \trans{(\bm x_1, \bm x_2, \bm x_3)},~
+  \mat Y = \trans{(\bm y_1, \bm y_2, \bm y_3)},~
+  \mat A =
+  \begin{bmatrix}
+    1 & 2 & -1\\
+    3 & 4 & -2\\
+    5 & -4& 1
+  \end{bmatrix},~ \det A = 2 \neq 0$，$\mat A$ 可逆.
+  由 $\mat Y = \mat{AX}$ 得
+  \[
+    \mat X = \mat{A}^{-1}\mat Y =
+    \begin{bmatrix}
+      -2    & 1 & 0\\
+      -13/2 & 3 & -1/2\\
+      -16   & 7 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      y_1\\ y_2\\ y_3
+    \end{bmatrix} \longrightarrow
+    \begin{cases}
+      x_1 = -2y_1 + y_2\\
+      x_2 = -\frac{13}{2}y_1 + 3y_2 - \frac12y_3\\
+      x_3 = -16y_1 + 7y_2 + y_3
+    \end{cases}
+  \]
+\end{solution}
+
+\section{解答题B（每题7分，共28分）}
+
+\begin{problem}[本题7分]
+  设行列式 $D =
+  \begin{vmatrix}
+    2 & 1  & 4 & 1\\
+    3 & -1 & 2 & 1\\
+    1 & 2  & 3 & 2\\
+    5 & 0  & 6 & 2
+  \end{vmatrix}$，求 $M_{13} - M_{23} + 2M_{33}$，
+  其中 $M_{ij}$ 是 $D$ 中第 $i$ 行 第 $j$ 列元素的余子式.
+\end{problem}
+\scratch[2ex]
+\begin{solution}
+  $ M_{13} - M_{23} + 2M_{33} = A_{13} + A_{23} + 2A_{33} + 0 \cdot A_{43} =
+    \begin{vmatrix}
+      2 &  1 & 1 & 1\\
+      3 & -1 & 1 & 1\\
+      1 & 2  & 2 & 2\\
+      5 & 0  & 0 & 2
+    \end{vmatrix} = -12$.
+\end{solution}
+
+\begin{problem}[本题7分]
+  已知 $\mat A =
+  \begin{bmatrix}
+    2 & 1  & 1\\
+    3 & 1  & 2\\
+    1 & -1 & 0
+  \end{bmatrix}$，且 $\mat{AX} + 2\mat E = \mat A^2 + \mat A + \mat X$，
+  求 $\mat X$.
+\end{problem}
+\scratch[2ex]
+\begin{solution}\leavevmode
+  \begin{itemize}
+    \item $\mat{AX} + 2\mat E = \mat A^2 + \mat A + \mat X$ 可改写为
+    $ (\mat A - \mat E)\mat X = (\mat A - \mat E)(\mat A + 2\mat E),~
+      (\mat A - \mat E)(\mat X - \mat A - 2\mat E) = \mat O$.
+    \item 由于 $\det{A - E} \neq 0$，所以 $\mat A$ 可逆.
+    齐次线性方程组 $\mat A\bm x = \bm 0$ 仅有零解.
+    \item 所以 $\mat X - \mat A - 2\mat E = \mat O,~ \mat X = \mat A + 2\mat E =
+    \begin{bmatrix}
+      4 & 1 & 1\\
+      3 & 3 & 2\\
+      1 & -1 & 2
+    \end{bmatrix}$.
+  \end{itemize}
+\end{solution}
+
+\begin{problem}[本题7分]
+  求 $f(x) =
+  \begin{vmatrix}
+    x - 2 & -2  & 2\\
+    -2    & x-5 & 4\\
+    2     & 4   & x-5
+  \end{vmatrix} = 0$ 的根.
+\end{problem}
+\scratch[2ex]
+\begin{solution}
+  \[
+      f(x) =
+      \begin{vmatrix}
+        x - 2 & 0     & 2\\
+        -2    & x - 1 & 4\\
+        4     & 0     & x - 9
+      \end{vmatrix}
+    = (x - 1)(-1)^{2+2}
+      \begin{vmatrix}
+        x - 2 & 2\\
+        4     & x - 9
+      \end{vmatrix}
+    = (x - 1)^2(x - 10) = 0,~ x_1 = x_2 = 1,~ x_3 = 10
+  \]
+\end{solution}
+
+\begin{problem}[本题7分]
+  设线性方程组
+  $\begin{cases}
+    x_1  + 2x_2        + 3x_3 = 1\\
+    2x_1 + 2x_2        + 5x_3 = 2\\
+    3x_1 + \lambda x_2 + x_3  = 1
+  \end{cases}$
+  有唯一解，求 $\lambda$ 的取值范围。
+\end{problem}
+\scratch[2ex]
+\begin{solution}
+  令 $\mat A =
+  \begin{bmatrix}
+    1 & 2       & 3\\
+    2 & 2       & 5\\
+    3 & \lambda & 1
+  \end{bmatrix},~
+  \bm\beta =
+  \begin{bmatrix}
+    1\\ 2\\ 1
+  \end{bmatrix}$. $\mat{A}\bm x = \beta$ 有唯一解，则
+  $\mathbf R(\mat A) = \mathbf R(\mat A,\bm\beta) = 3,~
+    \det A = \lambda + 10\neq 0,~ \lambda \neq -10$.
+\end{solution}
+
+\section{综合证明题（共18分）}
+
+\begin{problem}[本题10分]
+  设 $m$ 次多项式
+  $f(x) = a_mx^m + a_{m - 1}x^{m - 1} + \cdots + a_1x + a_0$，
+  $\mat A$ 为 $n$ 阶单位矩阵，定义矩阵多项式
+  $f(\mat A) = a_m\mat A^m + a_{m - 1}\mat A^{m - 1} + \cdots
+             + a_1\mat A + a_0\mat E$.
+  若 $\bm\alpha = \trans{(1,2,3)},~ \beta = (1, \frac12, \frac13),~
+  \mat A = \bm\alpha\bm\beta$，则
+  \begin{tasks}[ label = \arabic*. ](2)
+    \task 求 $\mat A^m$.
+    \task 若 $f(x) = x^2 - x - 1$，求矩阵多项式 $f(\mat A)$.
+  \end{tasks}
+\end{problem}
+\scratch[2ex]
+\begin{solution}\leavevmode
+  \begin{enumerate}
+    \item
+    $ \mat A^m = (\bm\alpha\bm\beta)^m
+    = \bm\alpha(\bm\beta\bm\alpha)^{m-1}\bm\beta$，其中
+    $\bm\alpha\bm\beta =
+    \begin{bmatrix}
+      1 & 1/2 & 1/3\\
+      2 & 1       & 2/3\\
+      3 & 3/2 & 1
+    \end{bmatrix},~ \bm\beta\bm\alpha = 1 + 1 + 1 = 3$.
+    所以 $\mat A^m = 3^{m - 1}
+    \begin{bmatrix}
+      1 & 1/2 & 1/3\\
+      2 & 1   & 2/3\\
+      3 & 3/2 & 1
+    \end{bmatrix}$.
+    \item $\mat A^2 = 3\mat A,~
+      f(\mat A) = 3\mat A - \mat A - \mat E = 2\mat A - \mat E
+    = \begin{bmatrix}
+      1 & 2 & 2/3\\
+      4 & 1 & 4/3\\
+      6 & 3 & 1
+    \end{bmatrix}$.
+  \end{enumerate}
+\end{solution}
+
+\begin{problem}[本题8分]
+  设 $n$ 阶方阵 $\mat A$ 和 $\mat B$ 满足等式 $2(\mat{A + B} = \mat{BA})$.
+  \begin{tasks}[ label = \arabic*. ](2)
+    \task 证明：$\mat A - 2\mat E$ 可逆.
+    \task 若 $\mat B =
+    \begin{bmatrix}
+      1 & 1 & 0\\
+      2 & 1 & 0\\
+      0 & 0 & 3
+    \end{bmatrix}$，求 $\mat A$.
+  \end{tasks}
+\end{problem}
+\scratch[2ex]
+\begin{solution}\leavevmode
+  \begin{enumerate}
+    \item \begin{proof}
+      由 $2\mat A + 2\mat B = \mat{BA}$ 得
+      $ 2\mat A = \mat B(\mat A - 2\mat E),~
+        \mat A - 2\mat E = \frac12\mat B(\mat A - 2\mat E) - 2\mat E,~
+        \longrightarrow
+        \ab(\frac14\mat B- \frac12\mat E)(\mat A - 2\mat E) = \mat E$，
+      所以 $\mat A - 2\mat E$ 可逆，
+      $(\mat A - 2\mat E) = \frac14(\mat B - 2\mat E)$.
+    \end{proof}
+    \item $
+      \mat A = \ab[\frac14(\mat B - 2\mat E)]^{-1} + 2\mat E =
+    \begin{bmatrix}
+      6 & 4 & 0\\
+      8 & 6 & 0\\
+      0 & 0 & 6
+    \end{bmatrix}$.
+  \end{enumerate}
+\end{solution}

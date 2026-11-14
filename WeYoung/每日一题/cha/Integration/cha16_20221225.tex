@@ -1,0 +1,33 @@
+\chapter*{不定积分每日一题}
+
+\refer{《积分的方法与技巧》金玉明\ 顾新身\ 毛瑞庭\ /\ 编著}
+
+\exercise{求积分$\int{\sin^p{x}\cos^{2n+1}{x}\d x}$}%在花括号内输入题目
+
+\teacher{张晓鹏}%在花括号内输入你的名字
+
+\postdate{2022年12月25日}%在花括号内输入你想要发布那一天的日期
+
+\result{\sum_{k=0}^n{\qty(-1)^n\binom{n}{k}\frac{\sin^{p+2k+1}{x}}{p+2k+1}}}+C%在花括号内输入本题结果
+
+\analysis{
+    我们今天来继续讨论$\int{\sin^p{x}\cos^q{x}\d x}$这一积分.根据$\sin{x}$和$\cos{x}$的互导性，我们可以分析发现，如果$\cos{x}$是奇数次，那么我们可以提取一个$\cos{x}$放到$\d$后面变成$\d\sin{x}$，剩下的$\cos{x}$就变成了偶数次，而偶数次则可以利用$\cos^2{x}=1-\sin^2{x}$，全部转化为$\sin{x}$，从而化简.下面是计算过程
+    \formula{
+        \begin{aligned}
+            \int{\sin^p{x}\cos^{2n+1}{x}\d x}&=\int{\sin^p{x}\cos^{2n}{x}\d x}\\
+            &=\int{\sin^p{x}\qty(1-\sin^2{x})^n\d\sin{x}}
+        \end{aligned}
+    }
+    对$\qty(1-\sin^2{x})^n$按二项式展开
+    \formula{\qty(1-\sin^2{x})^n=1-n\sin^2{x}+\frac{n\qty(n-1)}{2!}\sin^4{x}-\cdots+\qty(-1)^n\sin^{2n}{x}}
+    代入到积分中可得
+    \formula{
+        \begin{aligned}
+            \int{\sin^p{x}\cos^{2n}{x}\d x}&=\int{\qty(\sin^p{x}-n\sin^{2+p}{x}+\frac{n\qty(n-1)}{2!}\sin^{4+p}{x}-\cdots+\qty(-1)^n\sin^{2n+p}{x})\d\sin{x}}\\
+            &=\frac{\sin^{p+1}{x}}{p+1}-n\frac{\sin^{p+3}{x}}{p+3}+\frac{n\qty(n-1)}{2!}\frac{\sin^{p+5}{x}}{p+5}+\cdots+\qty(-1)^n\frac{\sin^{p+2n+1}{x}}{p+2n+2}\\
+            &=\sum_{k=0}^n{\qty(-1)^n\binom{n}{k}\frac{\sin^{p+2k+1}{x}}{p+2k+1}}+C
+        \end{aligned}
+    }
+    同样的，如果$\sin{x}$是奇数次，那么也可以采用类似的方法，全部转化为$\cos{x}$的积分
+    \formula{\int{\sin^{2n+1}{x}\cos^q{x}\d x}=-\int{\sin^{2n}{x}\cos^q{x}\d\cos{x}}=-\int{\qty(1-\cos^2{x})^n\cos^q{x}\d\cos{x}}}
+}%在花括号内输入分析

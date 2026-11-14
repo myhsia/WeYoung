@@ -1,0 +1,65 @@
+\documentclass
+  [
+    openany,
+    math-font    = STIX Two Math,
+    main-font    = { {Libertinus Serif} },
+    sans-font    = { {Libertinus Sans} },
+    mono-font    = { {Libertinus Mono} },
+    CJKmain-font =
+      { {Zhuque Fangsong (technical preview)} [AutoFakeBold, AutoFakeSlant] },
+    CJKsans-font = { {LXGW Marker Gothic} [AutoFakeBold = 1, AutoFakeSlant] },
+    CJKmono-font = { {Kaiti SC} },
+    % hideanswer   = true,
+    darkmode     = true
+  ] {whatsnote}
+
+\usepackage{fancyqr,magicwatermark}
+\MagicWatermark
+  {
+    setup =
+      {
+        style = {opacity = .15}, pages = {*},
+        content = {\includegraphics[width = .6\linewidth]{WY Logo}},
+      },
+  }
+
+\usetikzlibrary{angles, quotes}
+\renewcommand*\det[1]{|\mathbf{#1}|}
+\newcommand*\mat[1]{\mathbf{#1}}
+\newcommand*\trans[1]{#1^{\mkern-1.5mu\mathsf{T}}}
+\DeclareMathOperator{\diag}{diag}
+
+\begin{document}
+
+\ExplSyntaxOn
+\fancyhead[OL]
+  {
+    \color{DarkGreen \l__whats_darkmode_fading_tl}
+    \href{http://weixin.qq.com/r/DBIABcHEqgnWKIVmb0eI}{\faIcon{weixin}~微信公众号：未央学社}
+  }
+\pagestyle{fancy}
+
+% \fancyhead[ER]
+%   {
+%     \color{MidnightBlue \l__whats_darkmode_fading_tl}
+%     \href{https://qm.qq.com/q/j5cuCU4ucw}{\faIcon{qq}~未央物理营：782790567}
+%   }
+\fancyhead[ER]
+  {
+    \color{MidnightBlue \l__whats_darkmode_fading_tl}
+    \href{https://qm.qq.com/q/rbfYuqPhQs}{\faIcon{qq}~未央数学营：995491549}
+  }
+\ExplSyntaxOff
+
+\clearpage\null
+\setcounter{page}{1}
+
+% \input{content/linear_algebra_2024_mid.tex}
+\input{content/static_2024_mid.tex}
+% \input{content/adv_math_A1_2024_mid.tex}
+
+% \input{content/basic_phys2_2024_mid.tex}
+% \input{content/general_phys2_2023_mid.tex}
+% \input{content/general_phys2_2024_mid.tex}
+
+\end{document}
